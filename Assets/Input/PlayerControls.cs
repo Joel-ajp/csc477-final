@@ -48,7 +48,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""WASD"",
                     ""id"": ""fa7b13e7-5673-44ae-a2ac-2b1d86969925"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",

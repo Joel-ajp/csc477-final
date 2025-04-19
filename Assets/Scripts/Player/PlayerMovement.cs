@@ -4,28 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private float _moveSpeed = 5f;
 
-    public float speed = 4f;
-    Vector2 moveInput; 
-    Rigidbody2D rb;
-    PlayerControls controls;
+    private Vector2 _movement;
+    private Rigidbody2D _rb;
 
-    void Awake()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        controls = new PlayerControls();
+        _rb = GetComponent<Rigidbody2D>();
     }
-
-    void OnEnable()
-    {
-        controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        controls.Player.Move.canceled  += ctx => moveInput = Vector2.zero;
-        controls.Enable();
-    }
-
-    void OnDisable() => controls.Disable();
-
-    void FixedUpdate() => rb.velocity = moveInput * speed;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
+
+        _rb.velocity = _movement * _moveSpeed;
     }
 }
