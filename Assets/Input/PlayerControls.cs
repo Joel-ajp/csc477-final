@@ -44,6 +44,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""InteractE"",
+                    ""type"": ""Button"",
+                    ""id"": ""02404f6b-b93b-4b13-bb14-01097b650a43"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InteractClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""e670f6bd-50cd-4a17-8479-5c9f440b84b5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -123,6 +141,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""SwapEnvironment"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3fa1a72e-8949-4834-9d79-11aa35a2d1f2"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InteractE"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18a4a037-7c10-49ef-b636-587128b2a69a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InteractClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -133,6 +173,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_SwapEnvironment = m_Player.FindAction("SwapEnvironment", throwIfNotFound: true);
+        m_Player_InteractE = m_Player.FindAction("InteractE", throwIfNotFound: true);
+        m_Player_InteractClick = m_Player.FindAction("InteractClick", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -201,12 +243,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_SwapEnvironment;
+    private readonly InputAction m_Player_InteractE;
+    private readonly InputAction m_Player_InteractClick;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @SwapEnvironment => m_Wrapper.m_Player_SwapEnvironment;
+        public InputAction @InteractE => m_Wrapper.m_Player_InteractE;
+        public InputAction @InteractClick => m_Wrapper.m_Player_InteractClick;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -222,6 +268,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SwapEnvironment.started += instance.OnSwapEnvironment;
             @SwapEnvironment.performed += instance.OnSwapEnvironment;
             @SwapEnvironment.canceled += instance.OnSwapEnvironment;
+            @InteractE.started += instance.OnInteractE;
+            @InteractE.performed += instance.OnInteractE;
+            @InteractE.canceled += instance.OnInteractE;
+            @InteractClick.started += instance.OnInteractClick;
+            @InteractClick.performed += instance.OnInteractClick;
+            @InteractClick.canceled += instance.OnInteractClick;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -232,6 +284,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SwapEnvironment.started -= instance.OnSwapEnvironment;
             @SwapEnvironment.performed -= instance.OnSwapEnvironment;
             @SwapEnvironment.canceled -= instance.OnSwapEnvironment;
+            @InteractE.started -= instance.OnInteractE;
+            @InteractE.performed -= instance.OnInteractE;
+            @InteractE.canceled -= instance.OnInteractE;
+            @InteractClick.started -= instance.OnInteractClick;
+            @InteractClick.performed -= instance.OnInteractClick;
+            @InteractClick.canceled -= instance.OnInteractClick;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -253,5 +311,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnSwapEnvironment(InputAction.CallbackContext context);
+        void OnInteractE(InputAction.CallbackContext context);
+        void OnInteractClick(InputAction.CallbackContext context);
     }
 }
