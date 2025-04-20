@@ -2,26 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class WalkingSurface : MonoBehaviour
 {
     // Im getting the parent to see if its moving
     private Rigidbody2D _parentRB;
 
     // Only set to public currently for testing purposes, intended to be private
-    public GroundSurfaceState _currentSurface;
+    private GroundSurfaceState _currentSurface;
     private SoundType _currentSurfaceSound;
     private float _pitchSpeed;
     private bool _walking;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
         _parentRB = GetComponentInParent<Rigidbody2D>();
-        SetSurface(_currentSurface);
+        SetSurface(GroundSurfaceState.WOOD); // default
     }
 
     // Update is called once per frame
@@ -30,17 +26,15 @@ public class WalkingSurface : MonoBehaviour
         // This is a roundabout way of doing it, didnt want to mess with movement script yet, this can be improved later
         if (_parentRB.velocity.magnitude > 0.05f && !_walking)
         {
+            //CheckSurface();
             StartCoroutine(PlayWalkSound());
         }
     }
 
+    // This specifically waits the length of the clip so it doesnt cut off
     IEnumerator PlayWalkSound()
     {
-        Debug.Log("Im Playing A Sound!");
         _walking = true;
-
-
-
         AudioClip clip = SoundManager.Instance.GetClip(_currentSurfaceSound);
         if (clip != null)
         {
@@ -54,7 +48,15 @@ public class WalkingSurface : MonoBehaviour
         _walking = false;
     }
 
-    void SetSurface(GroundSurfaceState state)
+
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * 1f); // Adjust length if needed
+    }
+
+    public void SetSurface(GroundSurfaceState state)
     {
         _currentSurface = state;
         // Pitch is currently being used to match speed with animation
