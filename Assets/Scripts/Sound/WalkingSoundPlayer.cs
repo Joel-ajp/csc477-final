@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class WalkingSurface : MonoBehaviour
 {
@@ -8,10 +10,25 @@ public class WalkingSurface : MonoBehaviour
     private Rigidbody2D _parentRB;
 
     // Only set to public currently for testing purposes, intended to be private
+    public Tilemap _currentTilemapFloor;
     private GroundSurfaceState _currentSurface;
     private SoundType _currentSurfaceSound;
+    private TileBase _currentTile;
     private float _pitchSpeed;
     private bool _walking;
+
+
+    [SerializeField]
+    private List<FloorTileData> tileData;
+
+    private Dictionary<TileBase, GroundSurfaceState> audioData;
+
+    private void Awake()
+    {
+        // FIlls teh dictionary to be referencesd.
+        PopulateTileSoundDictionary();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +43,7 @@ public class WalkingSurface : MonoBehaviour
         // This is a roundabout way of doing it, didnt want to mess with movement script yet, this can be improved later
         if (_parentRB.velocity.magnitude > 0.05f && !_walking)
         {
-            //CheckSurface();
-            StartCoroutine(PlayWalkSound());
+            UpdateSurfaceCheck();
         }
     }
 
@@ -44,16 +60,58 @@ public class WalkingSurface : MonoBehaviour
             SoundManager.Instance.Play(_currentSurfaceSound, _pitchSpeed);
             yield return new WaitForSeconds(clipLengthAdjust);
         }
-
         _walking = false;
     }
 
-
-
-    void OnDrawGizmos()
+    public void UpdateSurfaceCheck()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * 1f); // Adjust length if needed
+        Vector2 playerPosition = (Vector2)_parentRB.transform.position; // Player location on grid
+        TileBase tile = _currentTilemapFloor.GetTile(_currentTilemapFloor.WorldToCell(playerPosition)); // what tile they are on
+        if (tile != null)
+        {
+            _currentTile = tile; // updates most recent tile
+            if (audioData.ContainsKey(tile))
+            {
+                // Set the surface sound and update the surface state
+                SetSurface(audioData[tile]); // Uses the dictionary made above
+                StartCoroutine(PlayWalkSound());
+            }
+            else
+            {
+                Debug.Log("Tile does not have assigned sound: ", tile);
+                StartCoroutine(PlayWalkSound());
+            }
+        }
+        else
+        {
+            // play last sound
+            Debug.Log("I played!");
+            StartCoroutine(PlayWalkSound());
+        }
+    }
+
+    public void PopulateTileSoundDictionary()
+    {
+        // load all the available tile sounds from audio folder stuff
+        tileData = new List<FloorTileData>(Resources.LoadAll<FloorTileData>("Movement/FloorTileAudioAssign"));
+        audioData = new Dictionary<TileBase, GroundSurfaceState>();
+
+        foreach (var tileGroup in tileData)
+        {
+            foreach (var tile in tileGroup.surfaceTiles)
+            {
+                if (tile != null && !audioData.ContainsKey(tile))
+                {
+                    audioData.Add(tile, tileGroup.surfaceType);
+                }
+            }
+        }
+
+        Debug.Log("AudioData dictionary populated with the following tiles:");
+        foreach (var entry in audioData)
+        {
+            Debug.Log($"Tile: {entry.Key.name}, Surface: {entry.Value}");
+        }
     }
 
     public void SetSurface(GroundSurfaceState state)
@@ -80,4 +138,6 @@ public class WalkingSurface : MonoBehaviour
                 break;
         }
     }
+
+
 }
