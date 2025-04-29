@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46da0a2c8f663564eb70bd9535f2920b
+guid: 84fc7e87a4fa33749bf888c85aea56cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,54 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: charging enemy spritesheet_0
+      name: underworld_some_room1_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 276
-        width: 66
+        x: 143
+        y: 153
+        width: 49
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89caa84ac48d56c438169f25d94880e0
+      internalID: -870873434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: underworld_some_room1_1
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 153
+        width: 49
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab1c7237dff247479c0aa8472eb8e9e
+      internalID: 1954873166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: underworld_some_room1_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 47
         height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -124,104 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31cc2bcf331620d448fa7124aaf8b6ef
-      internalID: 1764140442
+      spriteID: 50f938463a19a8b42958ae74fa8d0627
+      internalID: 1618227431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 276
-        width: 66
-        height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5ce9d986658ec14392ab0f530d65f23
-      internalID: -1978980669
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: charging enemy spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 276
-        width: 66
-        height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c064dc774e71b004ea37ffca93e5b79f
-      internalID: -1542666745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: charging enemy spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 177
-        width: 66
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4927cef33e8fe38468ca7fec22647e6d
-      internalID: -1990784325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: charging enemy spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 174
-        width: 66
-        height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c885bbcf704a87b43bc84058a5515ae3
-      internalID: 47468582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: charging enemy spritesheet_5
+      name: underworld_some_room1_3
       rect:
         serializedVersion: 2
         x: 144
-        y: 174
-        width: 66
-        height: 93
+        y: 109
+        width: 48
+        height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +187,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f392cdee41092464e8bc10aaf388be4e
-      internalID: -27427762
+      spriteID: 1630e8b7efdcfa94690fe50d80b754b8
+      internalID: -820058523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_6
+      name: underworld_some_room1_4
       rect:
         serializedVersion: 2
-        x: 3
+        x: 144
+        y: 77
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da64c55e50a3f7e4e88baf50c097925f
+      internalID: 542847270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: underworld_some_room1_5
+      rect:
+        serializedVersion: 2
+        x: 240
         y: 78
-        width: 57
-        height: 96
+        width: 48
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be4372787faa1ce479866a2408260133
-      internalID: 253827939
+      spriteID: dff1acd6cfcf5f342b59f59e6826e7e9
+      internalID: -298319567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_7
+      name: underworld_some_room1_6
       rect:
         serializedVersion: 2
-        x: 69
-        y: 72
-        width: 66
-        height: 99
+        x: 192
+        y: 77
+        width: 48
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,29 +250,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b42b31ea55f8f644aa04289fb178675
-      internalID: 172732751
+      spriteID: 362e1b7d518b6c2419c2b136cf03f13f
+      internalID: 1063530179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_8
+      name: underworld_some_room1_7
       rect:
         serializedVersion: 2
-        x: 144
-        y: 72
-        width: 72
-        height: 96
+        x: 48
+        y: 192
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 612125b1f4f87f547ba5820bc7ea6532
-      internalID: -751007394
+      spriteID: 829f5c8be180f314995c6e7092698527
+      internalID: 1238696818
       vertices: []
       indices: 
       edges: []
@@ -309,15 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      charging enemy spritesheet_0: 1764140442
-      charging enemy spritesheet_1: -1978980669
-      charging enemy spritesheet_2: -1542666745
-      charging enemy spritesheet_3: -1990784325
-      charging enemy spritesheet_4: 47468582
-      charging enemy spritesheet_5: -27427762
-      charging enemy spritesheet_6: 253827939
-      charging enemy spritesheet_7: 172732751
-      charging enemy spritesheet_8: -751007394
+      underworld_some_room1_0: -870873434
+      underworld_some_room1_1: 1954873166
+      underworld_some_room1_2: 1618227431
+      underworld_some_room1_3: -820058523
+      underworld_some_room1_4: 542847270
+      underworld_some_room1_5: -298319567
+      underworld_some_room1_6: 1063530179
+      underworld_some_room1_7: 1238696818
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

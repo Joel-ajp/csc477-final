@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46da0a2c8f663564eb70bd9535f2920b
+guid: 67d813035fe64a04f9c4afac77ddb3aa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: charging enemy spritesheet_0
+      name: underworld_cave2_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 276
-        width: 66
-        height: 96
+        x: 0
+        y: 320
+        width: 80
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31cc2bcf331620d448fa7124aaf8b6ef
-      internalID: 1764140442
+      spriteID: ca490fa404d3979418f1a3d305a45886
+      internalID: 1049025337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_1
+      name: underworld_cave2_1
       rect:
         serializedVersion: 2
-        x: 72
-        y: 276
-        width: 66
-        height: 93
+        x: 90
+        y: 321
+        width: 71
+        height: 74
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5ce9d986658ec14392ab0f530d65f23
-      internalID: -1978980669
+      spriteID: d3632d18f0501e5409642140b71f9919
+      internalID: -2081589811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_2
+      name: underworld_cave2_2
       rect:
         serializedVersion: 2
-        x: 147
-        y: 276
-        width: 66
-        height: 93
+        x: 240
+        y: 320
+        width: 80
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c064dc774e71b004ea37ffca93e5b79f
-      internalID: -1542666745
+      spriteID: d180da8b0798c27479a037d48dabe2d5
+      internalID: 550257570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_3
+      name: underworld_cave2_3
       rect:
         serializedVersion: 2
-        x: 3
-        y: 177
-        width: 66
-        height: 96
+        x: 320
+        y: 320
+        width: 80
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4927cef33e8fe38468ca7fec22647e6d
-      internalID: -1990784325
+      spriteID: 8894d781c37c1bb4a99c16f7170f9076
+      internalID: -306303305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_4
+      name: underworld_cave2_4
       rect:
         serializedVersion: 2
-        x: 75
-        y: 174
-        width: 66
-        height: 93
+        x: 400
+        y: 320
+        width: 80
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c885bbcf704a87b43bc84058a5515ae3
-      internalID: 47468582
+      spriteID: f7fd62dfe73ff7c4e9cea4496a9cf9f1
+      internalID: 522233581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_5
+      name: underworld_cave2_5
       rect:
         serializedVersion: 2
-        x: 144
-        y: 174
-        width: 66
-        height: 93
+        x: 400
+        y: 240
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f392cdee41092464e8bc10aaf388be4e
-      internalID: -27427762
+      spriteID: ca4205aba91100042b798da86cce2a07
+      internalID: -643310486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_6
+      name: underworld_cave2_6
       rect:
         serializedVersion: 2
-        x: 3
-        y: 78
-        width: 57
-        height: 96
+        x: 400
+        y: 160
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be4372787faa1ce479866a2408260133
-      internalID: 253827939
+      spriteID: fc9f3caf63bb3fb4298c12fed4148a1d
+      internalID: 291512970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_7
+      name: underworld_cave2_7
       rect:
         serializedVersion: 2
-        x: 69
-        y: 72
-        width: 66
-        height: 99
+        x: 400
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b42b31ea55f8f644aa04289fb178675
-      internalID: 172732751
+      spriteID: 23bd39873ae9f3f48a48a5ff5dd6b6ff
+      internalID: -1835505076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: charging enemy spritesheet_8
+      name: underworld_cave2_8
       rect:
         serializedVersion: 2
-        x: 144
-        y: 72
-        width: 72
-        height: 96
+        x: 320
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,8 +292,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 612125b1f4f87f547ba5820bc7ea6532
-      internalID: -751007394
+      spriteID: 28a9fdd9f0420c741bddb5e3845416d5
+      internalID: 957142632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: underworld_cave2_9
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d7e938927618f45a7eac499623f117
+      internalID: -1648065859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: underworld_cave2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ccaa87fc7481d048a47243700adc89f
+      internalID: 816108535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: underworld_cave2_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b1b5a063d9be345915a2178eaded5b
+      internalID: -1871383588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: underworld_cave2_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539cb4aafc2b483448b97c98f7a3b5d0
+      internalID: -955023739
       vertices: []
       indices: 
       edges: []
@@ -309,15 +393,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      charging enemy spritesheet_0: 1764140442
-      charging enemy spritesheet_1: -1978980669
-      charging enemy spritesheet_2: -1542666745
-      charging enemy spritesheet_3: -1990784325
-      charging enemy spritesheet_4: 47468582
-      charging enemy spritesheet_5: -27427762
-      charging enemy spritesheet_6: 253827939
-      charging enemy spritesheet_7: 172732751
-      charging enemy spritesheet_8: -751007394
+      underworld_cave2_0: 1049025337
+      underworld_cave2_1: -2081589811
+      underworld_cave2_10: 816108535
+      underworld_cave2_11: -1871383588
+      underworld_cave2_12: -955023739
+      underworld_cave2_2: 550257570
+      underworld_cave2_3: -306303305
+      underworld_cave2_4: 522233581
+      underworld_cave2_5: -643310486
+      underworld_cave2_6: 291512970
+      underworld_cave2_7: -1835505076
+      underworld_cave2_8: 957142632
+      underworld_cave2_9: -1648065859
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
