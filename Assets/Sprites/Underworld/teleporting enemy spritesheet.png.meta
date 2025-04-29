@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: teleporting enemy spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 259
+        width: 216
+        height: 198
+      alignment: 9
+      pivot: {x: 0.5178326, y: 0.052562676}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05655672275cf940b9c77d18decd669
+      internalID: -1695129720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleporting enemy spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 261
+        width: 225
+        height: 189
+      alignment: 9
+      pivot: {x: 0.51027155, y: 0.031256136}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fcb400bae698e949adf6dde87a70c72
+      internalID: 1626934028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleporting enemy spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 10
+        width: 216
+        height: 215
+      alignment: 9
+      pivot: {x: 0.5499313, y: 0.12018954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6187ae09f70bc6a4e89f672e2bd950f3
+      internalID: 21123253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleporting enemy spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 10
+        width: 216
+        height: 206
+      alignment: 9
+      pivot: {x: 0.50713307, y: 0.08634219}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d07a8199ccf2949b67d443398fa35a
+      internalID: 678739893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      teleporting enemy spritesheet_0: -1695129720
+      teleporting enemy spritesheet_1: 1626934028
+      teleporting enemy spritesheet_2: 21123253
+      teleporting enemy spritesheet_3: 678739893
+      teleporting enemy spritesheet_4: 1097212493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
