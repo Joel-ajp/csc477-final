@@ -43,16 +43,16 @@ public class Sword : MonoBehaviour
     else
     {
         // Face up or down flip the z
-        if (dir.y > 0f)
-        {
-            // moving up
-            activeWeapon.transform.localRotation = Quaternion.Euler(0f, 0f,  90f);
-        }
-        else
-        {
-            // moving down
-            activeWeapon.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
-        }
+        if (dir.y > 0){
+    activeWeapon.transform.localRotation = Quaternion.Euler(0,0,90f);
+    activeWeapon.transform.localPosition = new Vector3(0,  .1f, 0);
+}
+else
+{
+    activeWeapon.transform.localRotation = Quaternion.Euler(0,0,-90f);
+    activeWeapon.transform.localPosition = new Vector3(0, -.1f, 0);
+}
+
     }
 }
 

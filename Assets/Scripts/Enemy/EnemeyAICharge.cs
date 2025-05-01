@@ -10,6 +10,7 @@ public class EnemyAICharge : MonoBehaviour
     [SerializeField] private float retreatDistance = 4f;
     [SerializeField] private float recoverTime = 1f;
     [SerializeField] private float chargePrepTime= 5f; 
+    [SerializeField] private float detectionRadius = 5f;
 
     private Rigidbody2D rb;
     private bool isBusy = false;
@@ -25,15 +26,15 @@ public class EnemyAICharge : MonoBehaviour
         }
     }
 
-    // This fires the moment something enters the trigger
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (isBusy) return;
-        if (!other.CompareTag("Player")) return;
-
-        // Start the charge sequence
+    // This fires the moment something enters the trigge
+    private void Update()
+{
+    if (isBusy) return;
+    
+    float dist = Vector2.Distance(transform.position, player.position);
+    if (dist < detectionRadius)
         StartCoroutine(ChargeAndRetreatRoutine());
-    }
+}
 
     private IEnumerator ChargeAndRetreatRoutine()
     {
