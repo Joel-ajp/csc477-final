@@ -8,8 +8,8 @@ public class InventoryToggle : MonoBehaviour
 
     private bool isOpen;
 
-    private Vector3 closePos = new Vector3(-125, 53, 0);
-    private Vector3 openPos = new Vector3(-125, 352, 0);
+    private Vector3 closePos = new Vector3(-70, 70, 0);
+    private Vector3 openPos = new Vector3(-70, 375, 0);
 
     void Start()
     {
