@@ -18,6 +18,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        if (FindObjectsOfType<PlayerMovement>().Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+
         Instance = this;
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();

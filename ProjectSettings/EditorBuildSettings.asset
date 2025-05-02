@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Fork in Road.unity
+    guid: d80a73261cd534e48bc96701f920d7aa
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Fountain Room.unity
+    guid: 046d807a16bb31c46914753699cf5980
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Start Room.unity
+    guid: c356023d0dde6df45b2729d313a7095f
   m_configObjects: {}
