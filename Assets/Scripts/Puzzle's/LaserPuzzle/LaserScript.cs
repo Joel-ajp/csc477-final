@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class LaserScript : MonoBehaviour
@@ -8,7 +9,8 @@ public class LaserScript : MonoBehaviour
     public float maxDistance = 100f;
     private LineRenderer _lineRenderer;
     public LayerMask reflectionMask;
-    public bool refract;
+    public bool isActive;
+
 
     void Start()
     {
@@ -17,7 +19,15 @@ public class LaserScript : MonoBehaviour
 
     void Update()
     {
-        DrawLaser(transform.position, transform.right);
+        if (isActive)
+        {
+            DrawLaser(transform.position, transform.right);
+        }
+    }
+
+    void ToggleActive()
+    {
+        isActive = !isActive;
     }
 
     void DrawLaser(Vector2 startPos, Vector2 direction)
@@ -35,7 +45,6 @@ public class LaserScript : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(currentPosition, currentDirection, maxDistance, reflectionMask);
 
-            // target endpoint
             if (hit.collider != null)
             {
                 if (hit.collider.name == "laserEndPoint")
@@ -56,8 +65,6 @@ public class LaserScript : MonoBehaviour
                 _lineRenderer.SetPosition(reflections + 1, currentPosition + currentDirection * maxDistance);
                 break;
             }
-
-
         }
     }
 }

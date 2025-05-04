@@ -122,13 +122,23 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void Play(SoundType type, float pitch, AudioSource overrideSource = null)
+    public void Play(SoundType type, float pitch = -1f, AudioSource overrideSource = null)
     {
         if (sounds.ContainsKey(type))
         {
             var source = overrideSource ?? audioSrc;
             audioSrc.volume = Random.Range(0.70f, 1.0f) * mainVolume;
-            audioSrc.pitch = pitch; // Setting to 1 since it needs to sink to the animation better
+            // Randomizes pitch if it isnt specified.
+            if (pitch == -1f)
+            {
+                audioSrc.pitch = Random.Range(0.70f, 1.0f);
+            }
+            else
+            {
+                audioSrc.pitch = pitch;
+            }
+
+            // Setting to 1 since it needs to sink to the animation better
             audioSrc.clip = sounds[type].GetRandClip();
             audioSrc.Play();
         }

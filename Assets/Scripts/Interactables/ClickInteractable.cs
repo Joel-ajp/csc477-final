@@ -9,22 +9,22 @@ public class ClickInteractable : MonoBehaviour
 
     void Awake()
     {
-        controls = new PlayerControls();
+        controls = ControlsManager.Instance.Controls;
         col = GetComponent<Collider2D>();
         col.isTrigger = false; // so OverlapPoint works on graphic area
-        
+
         // Hook the mouse‑click action
         controls.Player.InteractClick.performed += ctx => HandleClick();
     }
 
-    void OnEnable()  => controls.Enable();
+    void OnEnable() => controls.Enable();
     void OnDisable() => controls.Disable();
 
     void HandleClick()
     {
         // read mouse pos from the new Input System
         Vector2 mouseScreen = Mouse.current.position.ReadValue();
-        Vector3 worldPoint  = Camera.main.ScreenToWorldPoint(mouseScreen);
+        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mouseScreen);
         Vector2 clickPoint = worldPoint;
 
         // if this click landed on _this_ collider, fire
