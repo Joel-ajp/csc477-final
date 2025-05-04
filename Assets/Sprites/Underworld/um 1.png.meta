@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c308b5c95856aad4b9ce23ec1f38d531
+guid: 301fdbbdec22de4449bf6fd9adc8c27d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: overworld tilemap natural_0
+      name: um 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
-        width: 64
-        height: 64
+        y: 240
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f8f60c3524f79548b2ac295c1e41fdf
-      internalID: 298389316
+      spriteID: 5631c9e7a6598c14a9f7ca432cf61364
+      internalID: 1604673811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_1
+      name: um 1_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
-        width: 64
-        height: 64
+        x: 48
+        y: 240
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bcfa321e63e38c40bd241efbd19e204
-      internalID: -1779970212
+      spriteID: 86bec3081486f014eb26a583015066a6
+      internalID: 1116637791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_2
+      name: um 1_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
-        width: 64
-        height: 64
+        x: 96
+        y: 240
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33cfb429f363ddc47bb6ec5b913ac5c6
-      internalID: 1717241642
+      spriteID: 1fa6d619a71e5ff489f6b4edb1bc177c
+      internalID: -2068138308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_3
+      name: um 1_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67d62495d2684b4f8544bd4e72cdf19
+      internalID: 1691987510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: um 1_4
       rect:
         serializedVersion: 2
         x: 192
-        y: 256
-        width: 64
-        height: 64
+        y: 240
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ba73ba37de75e044a9070efaf152c09
-      internalID: -493890350
+      spriteID: 906a2ea985a4e894fbe70a62e91a38c1
+      internalID: -482104864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_4
+      name: um 1_5
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
-        width: 64
-        height: 64
+        x: 240
+        y: 240
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f615062c53d5944d89398d45634ec92
-      internalID: -1712742952
+      spriteID: 0c3176053b99b2c49bf07b1eb93f245a
+      internalID: 392714893
       vertices: []
       indices: 
       edges: []
@@ -241,8 +262,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 192
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11f9bdf65bfc3b543a924e0eabacdea9
-      internalID: 1612351317
+      spriteID: ae19156a70721b148930fa4df3f12143
+      internalID: 37306842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_9
+      name: um 1_7
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 192
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38bf7c33f74dbe64f80dd0eab6ec4fde
-      internalID: -928003232
+      spriteID: f1f9bb78f3cc80c429b91dd20fb8bbb5
+      internalID: -631049690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_10
+      name: um 1_8
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 192
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +313,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16665b5b54730b24baf9129e415cde50
-      internalID: -1303233581
+      spriteID: d4bb7b1a7018d6248bd7eab1689026e5
+      internalID: -1179556144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_11
+      name: um 1_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1adfb05830c4cc542a4441be991d3398
+      internalID: 2033897341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: um 1_10
       rect:
         serializedVersion: 2
         x: 192
         y: 192
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67e177b7bcf21ac45afca69b0a37ef54
-      internalID: 5652516
+      spriteID: 24fdd64aa0293c44ebd1c2f7bf1e7dc4
+      internalID: 1074506285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_12
+      name: um 1_11
       rect:
         serializedVersion: 2
-        x: 256
+        x: 240
         y: 192
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,8 +376,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 007ac07030d3a234bbbee399bb2f8ebd
-      internalID: -406871337
+      spriteID: 6f5b0ef99d4050c408a73f5b81ce9984
+      internalID: -801544025
       vertices: []
       indices: 
       edges: []
@@ -408,9 +450,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 64
-        height: 64
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,20 +460,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4beed69e2fcbe34ea81362329e520bb
-      internalID: -1812585012
+      spriteID: 79179a19289ba4e4a8a78d1abbcc2bd2
+      internalID: 1217804328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_17
+      name: um 1_13
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
+        x: 48
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,20 +481,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fddc8e8292c92de48bd47d28ca3107b9
-      internalID: -1781149650
+      spriteID: bc6408c98df62c343b1814afd9977978
+      internalID: 1214693797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_18
+      name: um 1_14
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
+        x: 96
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,20 +502,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5650ba9f2e6780c4e81a66f57e9c53ba
-      internalID: -1084644302
+      spriteID: b3d7f682ec14a8e4989dc52226451ac6
+      internalID: 1987008518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_19
+      name: um 1_15
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4f3c258589af648b16759e739bd9a4
+      internalID: 586099154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: um 1_16
       rect:
         serializedVersion: 2
         x: 192
-        y: 128
-        width: 64
-        height: 64
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,20 +544,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38544800f63aa82489ce4c719fc733c4
-      internalID: -1722037111
+      spriteID: a12b31884f61e15418687dda247d5456
+      internalID: 432930529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_20
+      name: um 1_17
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
-        width: 64
-        height: 64
+        x: 240
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,8 +565,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4848314196663943b89b396c966a125
-      internalID: 675757363
+      spriteID: 7af3f5fdd553f5b41803172fab991f3a
+      internalID: -33917415
       vertices: []
       indices: 
       edges: []
@@ -576,9 +639,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 64
-        height: 64
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -586,20 +649,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93a316ec92c2d5049a9cb41d8979bacc
-      internalID: 1653571817
+      spriteID: 28b1c9245a0a10846a33794fbf27a956
+      internalID: -1615224726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_25
+      name: um 1_19
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
+        x: 48
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -607,20 +670,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 248b0f61d293c824798f61ed90199f8d
-      internalID: -493352091
+      spriteID: b687a17cac50ba34291763cc4948fa67
+      internalID: 1226660931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_26
+      name: um 1_20
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
+        x: 96
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,20 +691,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4270e2f98e747504da41ff906695d33b
-      internalID: -1152470325
+      spriteID: 3a234409da861e54788e6f14fc1f76c5
+      internalID: -1894679314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_27
+      name: um 1_21
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98341a49a2a20cc458683cbebd5a09a6
+      internalID: -139760635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: um 1_22
       rect:
         serializedVersion: 2
         x: 192
-        y: 64
-        width: 64
-        height: 64
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -649,20 +733,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7d862043bc33874d939edc147e9046c
-      internalID: 593850152
+      spriteID: b270b53a3f8dff24eac6c61ea4ba6186
+      internalID: 858399056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_28
+      name: um 1_23
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
-        height: 64
+        x: 240
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,20 +754,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a569bf6a8db0164fb9addae71286a04
-      internalID: 1992308621
+      spriteID: 58d273a535815bf4dadcc1515d105723
+      internalID: 1863574734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_29
+      name: um 1_24
       rect:
         serializedVersion: 2
-        x: 320
-        y: 64
-        width: 64
-        height: 64
+        x: 0
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -691,14 +775,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73625ac91ba51d04093b051dc7156adb
-      internalID: -1460395322
+      spriteID: f669f27024c2ecd45b2335f9dc4a9a42
+      internalID: -1404803019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_30
+      name: um 1_25
       rect:
         serializedVersion: 2
         x: 384
@@ -712,14 +796,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9d96441862ae8340806319fd28ccf94
-      internalID: 164502665
+      spriteID: 7d66c58be2e84284b9d192ad94bbab06
+      internalID: 1008271515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_31
+      name: um 1_26
       rect:
         serializedVersion: 2
         x: 448
@@ -733,20 +817,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70d0402ab38386f4ab1f48dc44a6b6ff
-      internalID: -960177322
+      spriteID: 449a2028961249f46ac0b3b7a42c8261
+      internalID: 1256597529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_32
+      name: um 1_27
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f670bf606e1f16d44bbabf7d8eaef12c
+      internalID: 984018137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: um 1_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2a44c87875e0d488919a2ba5b848d8
+      internalID: -906935212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: um 1_29
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61826c8c9ebe5c34bbd44073e72ce76b
+      internalID: 1154801550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: um 1_30
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -754,20 +901,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67b50a261a282d44787a12acbe07a287
-      internalID: 995802415
+      spriteID: b0bc763298a74a145ba89fcc3448cd89
+      internalID: -848762372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_33
+      name: um 1_31
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -775,20 +922,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fb84405b7b3ac44a9857b0695ba43f7
-      internalID: 1041996727
+      spriteID: 5fef59db3134087428971aac45c73134
+      internalID: 523080140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_34
+      name: um 1_32
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -796,20 +943,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9d7625e41343a0428d3ffab4169092a
-      internalID: -625941861
+      spriteID: c4ac141ccac687c43a07f2a7bbf288aa
+      internalID: -85588276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_35
+      name: um 1_33
       rect:
         serializedVersion: 2
-        x: 256
+        x: 144
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -817,20 +964,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44f4f3bc73f65824c9a298483ea745cf
-      internalID: -1220188068
+      spriteID: a5b7f168c33a4a6409f267743b679cdc
+      internalID: -734747843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_36
+      name: um 1_34
       rect:
         serializedVersion: 2
-        x: 320
+        x: 192
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -838,17 +985,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dd6756747157924790e67a2e2896a55
-      internalID: -1735513698
+      spriteID: 66052223556e8924b97e894504912bd0
+      internalID: 2109496724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: overworld tilemap natural_37
+      name: um 1_35
       rect:
         serializedVersion: 2
-        x: 384
+        x: 240
         y: 0
         width: 64
         height: 64
@@ -897,45 +1044,42 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      overworld tilemap natural_0: 298389316
-      overworld tilemap natural_1: -1779970212
-      overworld tilemap natural_10: -1303233581
-      overworld tilemap natural_11: 5652516
-      overworld tilemap natural_12: -406871337
-      overworld tilemap natural_13: 966197197
-      overworld tilemap natural_14: 1991765244
-      overworld tilemap natural_15: -2084161423
-      overworld tilemap natural_16: -1812585012
-      overworld tilemap natural_17: -1781149650
-      overworld tilemap natural_18: -1084644302
-      overworld tilemap natural_19: -1722037111
-      overworld tilemap natural_2: 1717241642
-      overworld tilemap natural_20: 675757363
-      overworld tilemap natural_21: 1279667409
-      overworld tilemap natural_22: -926145337
-      overworld tilemap natural_23: 1135269853
-      overworld tilemap natural_24: 1653571817
-      overworld tilemap natural_25: -493352091
-      overworld tilemap natural_26: -1152470325
-      overworld tilemap natural_27: 593850152
-      overworld tilemap natural_28: 1992308621
-      overworld tilemap natural_29: -1460395322
-      overworld tilemap natural_3: -493890350
-      overworld tilemap natural_30: 164502665
-      overworld tilemap natural_31: -960177322
-      overworld tilemap natural_32: 995802415
-      overworld tilemap natural_33: 1041996727
-      overworld tilemap natural_34: -625941861
-      overworld tilemap natural_35: -1220188068
-      overworld tilemap natural_36: -1735513698
-      overworld tilemap natural_37: -1221838823
-      overworld tilemap natural_38: 1685307918
-      overworld tilemap natural_4: -1712742952
-      overworld tilemap natural_5: 381407661
-      overworld tilemap natural_6: 1243163994
-      overworld tilemap natural_7: -74087883
-      overworld tilemap natural_8: 1612351317
-      overworld tilemap natural_9: -928003232
+      um 1_0: 1604673811
+      um 1_1: 1116637791
+      um 1_10: 1074506285
+      um 1_11: -801544025
+      um 1_12: 1217804328
+      um 1_13: 1214693797
+      um 1_14: 1987008518
+      um 1_15: 586099154
+      um 1_16: 432930529
+      um 1_17: -33917415
+      um 1_18: -1615224726
+      um 1_19: 1226660931
+      um 1_2: -2068138308
+      um 1_20: -1894679314
+      um 1_21: -139760635
+      um 1_22: 858399056
+      um 1_23: 1863574734
+      um 1_24: -1404803019
+      um 1_25: 1008271515
+      um 1_26: 1256597529
+      um 1_27: 984018137
+      um 1_28: -906935212
+      um 1_29: 1154801550
+      um 1_3: 1691987510
+      um 1_30: -848762372
+      um 1_31: 523080140
+      um 1_32: -85588276
+      um 1_33: -734747843
+      um 1_34: 2109496724
+      um 1_35: 58688386
+      um 1_4: -482104864
+      um 1_5: 392714893
+      um 1_6: 37306842
+      um 1_7: -631049690
+      um 1_8: -1179556144
+      um 1_9: 2033897341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

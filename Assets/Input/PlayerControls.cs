@@ -62,6 +62,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Swing"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb2a5ea9-4717-4f34-a1cc-6e15e01860ee"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -163,6 +172,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""InteractClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97907f05-f6bc-4c0c-bd07-ac5c91901e4e"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -175,6 +195,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_SwapEnvironment = m_Player.FindAction("SwapEnvironment", throwIfNotFound: true);
         m_Player_InteractE = m_Player.FindAction("InteractE", throwIfNotFound: true);
         m_Player_InteractClick = m_Player.FindAction("InteractClick", throwIfNotFound: true);
+        m_Player_Swing = m_Player.FindAction("Swing", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -245,6 +266,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwapEnvironment;
     private readonly InputAction m_Player_InteractE;
     private readonly InputAction m_Player_InteractClick;
+    private readonly InputAction m_Player_Swing;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -253,6 +275,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @SwapEnvironment => m_Wrapper.m_Player_SwapEnvironment;
         public InputAction @InteractE => m_Wrapper.m_Player_InteractE;
         public InputAction @InteractClick => m_Wrapper.m_Player_InteractClick;
+        public InputAction @Swing => m_Wrapper.m_Player_Swing;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -274,6 +297,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @InteractClick.started += instance.OnInteractClick;
             @InteractClick.performed += instance.OnInteractClick;
             @InteractClick.canceled += instance.OnInteractClick;
+            @Swing.started += instance.OnSwing;
+            @Swing.performed += instance.OnSwing;
+            @Swing.canceled += instance.OnSwing;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -290,6 +316,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @InteractClick.started -= instance.OnInteractClick;
             @InteractClick.performed -= instance.OnInteractClick;
             @InteractClick.canceled -= instance.OnInteractClick;
+            @Swing.started -= instance.OnSwing;
+            @Swing.performed -= instance.OnSwing;
+            @Swing.canceled -= instance.OnSwing;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -313,5 +342,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnSwapEnvironment(InputAction.CallbackContext context);
         void OnInteractE(InputAction.CallbackContext context);
         void OnInteractClick(InputAction.CallbackContext context);
+        void OnSwing(InputAction.CallbackContext context);
     }
 }
