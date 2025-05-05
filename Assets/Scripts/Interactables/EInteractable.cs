@@ -37,8 +37,14 @@ public class EInteractable : MonoBehaviour
         var player = GameObject.FindWithTag("Player")?.transform;
         if (player != null)
         {
+
             float d = Vector2.Distance(player.position, transform.position);
+
             Highlight(d <= highlightRadius);
+        }
+        else
+        {
+            Debug.Log("Thats Wierd");
         }
     }
 
@@ -58,9 +64,11 @@ public class EInteractable : MonoBehaviour
     {
         GameObject exPrefab = Resources.Load<GameObject>("Exclamation");
 
+
         if (on && exclamationHighlight == null) // if its on and an instance doesnt exist already
         {
-            exclamationHighlight = Instantiate(exPrefab, transform.position + Vector3.up * 1f, Quaternion.identity, transform);
+            Vector3 worldPosition = transform.position + Vector3.up * 1f;
+            exclamationHighlight = Instantiate(exPrefab, worldPosition * 1f, Quaternion.identity);
 
         }
         else if (!on && exclamationHighlight != null) // if its off and a instance exists

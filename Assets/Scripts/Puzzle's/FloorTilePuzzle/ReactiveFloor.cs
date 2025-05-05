@@ -9,6 +9,14 @@ public class ReactiveFloor : MonoBehaviour
 {
     public TileBase DeactivatedTile;
     public TileBase ActivatedTile;
+    public bool listeningPuzzle;
+    public List<Vector3Int> requiredTilePositions;
+    private HashSet<Vector3Int> _currentActivatedTiles = new HashSet<Vector3Int>();
+
+    // Success State
+    public Vector3Int successSpot;
+    public TileBase successTile;
+
     private bool _satisfide;
 
     private Rigidbody2D _parentRB;
@@ -27,23 +35,42 @@ public class ReactiveFloor : MonoBehaviour
     public void UpdateSurfaceCheck()
     {
         Vector2 playerPosition = (Vector2)_parentRB.transform.position; // Player location on grid
-        TileBase tile = _currentTilemapFloor.GetTile(_currentTilemapFloor.WorldToCell(playerPosition)); // what tile they are on
+        Vector3Int cellPos = _currentTilemapFloor.WorldToCell(playerPosition);
+        TileBase tile = _currentTilemapFloor.GetTile(cellPos); // what tile they are on
 
         if (tile == DeactivatedTile && tile != null)
         {
             _currentTilemapFloor.SetTile(_currentTilemapFloor.WorldToCell(playerPosition), ActivatedTile);
-            Debug.Log("Swapped Tile");
+            _currentActivatedTiles.Add(cellPos);
 
-            StartCoroutine(FloorCooldown(playerPosition));
+            if (!_satisfide && listeningPuzzle && AllRequiredTilesActivated())
+            {
+                Debug.Log("Puzzle done!");
+                _satisfide = true;
+                _currentTilemapFloor.SetTile(successSpot, successTile);
+            }
+
+
+            StartCoroutine(FloorCooldown(cellPos));
         }
     }
 
 
-    IEnumerator FloorCooldown(Vector2 playerPosition)
+    IEnumerator FloorCooldown(Vector3Int cell)
     {
         yield return new WaitForSeconds(5.0f);
-        _currentTilemapFloor.SetTile(_currentTilemapFloor.WorldToCell(playerPosition), DeactivatedTile);
-        Debug.Log("Swapped Back");
+        _currentTilemapFloor.SetTile(cell, DeactivatedTile);
+        // Debug.Log("Swapped Back");
+    }
+
+    private bool AllRequiredTilesActivated()
+    {
+        foreach (var required in requiredTilePositions)
+        {
+            if (!_currentActivatedTiles.Contains(required))
+                return false;
+        }
+        return true;
     }
 }
 

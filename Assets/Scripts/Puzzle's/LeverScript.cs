@@ -10,16 +10,15 @@ public class LeverScript : EInteractable // Inherits EInteractable and changes w
     protected override void DoInteract() // Changes DoInteract in EInteractable to this, can be used with same logic
     {
         isActive = !isActive;
-        Debug.Log("Lever toggled. State: " + isActive);
         SoundManager.Instance.Play(SoundType.CLICK);
 
         if (isActive)
         {
-            pivot.rotation = Quaternion.Euler(0, 0, 45);
+            pivot.rotation = Quaternion.Euler(0, 0, -90);
         }
         else
         {
-            pivot.rotation = Quaternion.Euler(0, 0, -45);
+            pivot.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }

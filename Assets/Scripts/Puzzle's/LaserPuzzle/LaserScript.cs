@@ -5,23 +5,23 @@ using UnityEngine;
 
 public class LaserScript : MonoBehaviour
 {
-    public int maxReflections = 5;
-    public float maxDistance = 100f;
+    private int _maxReflections = 5;
+    private float _maxDistance = 100f;
     private LineRenderer _lineRenderer;
-    public LayerMask reflectionMask;
     public bool isActive;
-
+    public Transform Barrel;
+    public LayerMask foreground;
 
     void Start()
     {
-        _lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer = Barrel.GetComponent<LineRenderer>();
     }
 
     void Update()
     {
         if (isActive)
         {
-            DrawLaser(transform.position, transform.right);
+            DrawLaser(Barrel.position, Barrel.right);
         }
     }
 
@@ -41,15 +41,18 @@ public class LaserScript : MonoBehaviour
 
         int reflections = 0;
 
-        while (reflections < maxReflections)
+        while (reflections < _maxReflections)
         {
-            RaycastHit2D hit = Physics2D.Raycast(currentPosition, currentDirection, maxDistance, reflectionMask);
+            RaycastHit2D hit = Physics2D.Raycast(currentPosition, currentDirection, _maxDistance, foreground);
 
             if (hit.collider != null)
             {
-                if (hit.collider.name == "laserEndPoint")
+                if (hit.collider.name == "LaserHitPoint")
                 {
-                    Debug.Log("Laser hit end");
+                    SpriteRenderer end = hit.collider.GetComponent<SpriteRenderer>();
+                    end.color = Color.green;
+
+                    break;
                 }
 
                 currentDirection = Vector2.Reflect(currentDirection, hit.normal);
@@ -62,7 +65,7 @@ public class LaserScript : MonoBehaviour
             else
             {
                 _lineRenderer.positionCount++;
-                _lineRenderer.SetPosition(reflections + 1, currentPosition + currentDirection * maxDistance);
+                _lineRenderer.SetPosition(reflections + 1, currentPosition + currentDirection * _maxDistance);
                 break;
             }
         }

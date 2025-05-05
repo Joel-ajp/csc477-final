@@ -78,14 +78,13 @@ public class WalkingSurface : MonoBehaviour
             }
             else
             {
-                Debug.Log("Tile does not have assigned sound: ", tile);
+
                 StartCoroutine(PlayWalkSound());
             }
         }
         else
         {
-            // play last sound
-            Debug.Log("I played!");
+
             StartCoroutine(PlayWalkSound());
         }
     }
@@ -107,11 +106,6 @@ public class WalkingSurface : MonoBehaviour
             }
         }
 
-        Debug.Log("AudioData dictionary populated with the following tiles:");
-        foreach (var entry in audioData)
-        {
-            Debug.Log($"Tile: {entry.Key.name}, Surface: {entry.Value}");
-        }
     }
 
     public void SetSurface(GroundSurfaceState state)
