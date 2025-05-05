@@ -12,6 +12,7 @@ public class LaserScript : MonoBehaviour
     public Transform Barrel;
     public LayerMask foreground;
 
+
     void Start()
     {
         _lineRenderer = Barrel.GetComponent<LineRenderer>();
@@ -49,18 +50,39 @@ public class LaserScript : MonoBehaviour
             {
                 if (hit.collider.name == "LaserHitPoint")
                 {
+
+                    // Draws to the hit point, doesnt reflect
+                    currentPosition = hit.point + currentDirection * skinWidth;
+                    reflections++;
+                    _lineRenderer.positionCount++;
+                    _lineRenderer.SetPosition(reflections, currentPosition);
+
+                    // Success Result, put end logic here
                     SpriteRenderer end = hit.collider.GetComponent<SpriteRenderer>();
                     end.color = Color.green;
-
                     break;
                 }
 
-                currentDirection = Vector2.Reflect(currentDirection, hit.normal);
-                currentPosition = hit.point + currentDirection * skinWidth;
-                reflections++;
+                Mirror hitMirror = hit.collider.GetComponent<Mirror>();
+                if (hitMirror != null)
+                {
+                    currentDirection = Vector2.Reflect(currentDirection, hit.normal);
+                    // Changes the position to the direction it reflects
+                    currentPosition = hit.point + currentDirection * skinWidth;
+                    reflections++;
 
-                _lineRenderer.positionCount++;
-                _lineRenderer.SetPosition(reflections, currentPosition);
+                    _lineRenderer.positionCount++;
+                    _lineRenderer.SetPosition(reflections, currentPosition);
+                }
+                else
+                {
+                    currentPosition = hit.point + currentDirection * skinWidth;
+                    reflections++;
+                    _lineRenderer.positionCount++;
+                    _lineRenderer.SetPosition(reflections, currentPosition);
+
+                    break;
+                }
             }
             else
             {

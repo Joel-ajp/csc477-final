@@ -20,7 +20,7 @@ public class ReactiveFloor : MonoBehaviour
     private bool _satisfide;
 
     private Rigidbody2D _parentRB;
-    public Tilemap _currentTilemapFloor; // { private get; set; } use this once switching is set up
+    public Tilemap _currentTilemapFloor; // What tilemap its listening too.
 
     void Start()
     {
@@ -29,6 +29,7 @@ public class ReactiveFloor : MonoBehaviour
 
     void Update()
     {
+        if (_currentTilemapFloor == null) { return; } // When swap just ignore
         UpdateSurfaceCheck();
     }
 
@@ -45,7 +46,6 @@ public class ReactiveFloor : MonoBehaviour
 
             if (!_satisfide && listeningPuzzle && AllRequiredTilesActivated())
             {
-                Debug.Log("Puzzle done!");
                 _satisfide = true;
                 _currentTilemapFloor.SetTile(successSpot, successTile);
             }
@@ -55,6 +55,12 @@ public class ReactiveFloor : MonoBehaviour
         }
     }
 
+    public void SetCurrentTilemap(Tilemap newTilemap)
+    {
+        _currentTilemapFloor = newTilemap;
+        _currentActivatedTiles.Clear();
+        _satisfide = false;
+    }
 
     IEnumerator FloorCooldown(Vector3Int cell)
     {
