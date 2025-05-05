@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HighScore</name>
+    </assembly>
+    <members>
+        <member name="T:HighScore.HS">
+            <summary>
+            Class used to submit potential high scores
+            </summary>
+        </member>
+        <member name="M:HighScore.HS.SubmitHighScore(UnityEngine.MonoBehaviour,System.String,System.Int32)">
+            <summary>
+            Use this method to submit a score to the server. The server will check to see if this
+            is a high score or not, so just submit the user's score using this method regardless
+            if this is a top tier score or not.
+            </summary>
+            <param name="mb">Use the 'this' pointer for this. This is so I can call StartCoroutine to make a web request</param>
+            <param name="playerName">Name as the player would like it to appear on the scoreboard</param>
+            <param name="playerScore">Player's score</param>
+        </member>
+        <member name="M:HighScore.HS.Init(UnityEngine.MonoBehaviour,System.String)">
+            <summary>
+            Call this when the game starts up. This will make sure your team's game is registered
+            and will register it if not. Make SURE that the name of the game is exactly the same
+            every time this function is called. Changing it will create a new game and I'll have to
+            manually remove the old one. Call this method only once but call it every time game starts.
+            </summary>
+            <param name="mb">Use the 'this' pointer for this. This is so I can call StartCoroutine to make a web request</param>
+            <param name="gameName">Name of the game as you want it to appear on the high score table</param>
+        </member>
+    </members>
+</doc>
