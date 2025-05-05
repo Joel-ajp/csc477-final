@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int startingHealth = 3;
+    [SerializeField] private int coinReward = 1; 
     // Start is called before the first frame update
     private int currentHealth;
     private Knockback knockback;
@@ -25,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
     public void DetectDeath(){
         if (currentHealth <= 0){
             Destroy(gameObject);
+            Coins.Instance.AddCoins(coinReward);
             print("You defeated an enemy");
         }
     }
