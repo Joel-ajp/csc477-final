@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,9 +106,1912 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 280
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c17ae840cf661a3a418946ba7dbf38
+      internalID: -1245836112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 280
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d1b0531014b13ad846287091da99a5
+      internalID: 743890609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 276
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb94173547ce7e4b866eca5e69f8adc
+      internalID: -1291504625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8c0fe53a86c06e796b9dfcb0540354
+      internalID: -976082888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 272
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b8e5d9271a29819b5c9fa1033c62dd
+      internalID: -980120251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 272
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5450944bf8bbd5930936b5de8020f860
+      internalID: 1835210598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 196
+        width: 88
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc401affb1154e2482b638180c67d66
+      internalID: -573557042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 268
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1dade1a23f4181eb6cd15b97b47786
+      internalID: 1953006014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_8
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 264
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938f8e0ada2cadf1e9ddba441fa75569
+      internalID: -2014287409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_9
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 264
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2317b91760a1d98b6a760c2adf30f7f9
+      internalID: 1532630415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3e7c535528ad56f942684c997b183a
+      internalID: 175130722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 196
+        width: 88
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c19259a6966b28109f187de9104be34
+      internalID: -601558320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_12
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 200
+        width: 88
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d1a0e7fabd65d3a81c9f01440ab090
+      internalID: -119664857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 228
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f26c722d306cca1907fe27887f2b62
+      internalID: -238412303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_14
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 212
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7635b10352e1f5ca78c9935afd136841
+      internalID: 2110940370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 212
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348dceefd8f561aaca534a3ce4ce986e
+      internalID: 1389555768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_16
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 212
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e1f3e716ccdc661889224879ff06d2
+      internalID: -420902369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dbc92ba914bf83a9b4dbf336990d491
+      internalID: -463147449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 200
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e7fdcfb923e222bb0799fc721d9eeb
+      internalID: -1179351278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_19
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 200
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ccb2c9b08bfb2ae690513eee94c1ae1
+      internalID: -1801260955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_20
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 184
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7771922b94d0b6702985ab36f05ef237
+      internalID: -1245862745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_21
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 184
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6d74986938916df8d24d7672bbfdb6
+      internalID: -1442776160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 180
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a20a9cde9f2586c49cddf00fe95d669
+      internalID: 1115186413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_23
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 176
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c68eea94d3b8f5738ed90b9cee47576
+      internalID: 1511289711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_24
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 176
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c516983e837b93092099ce10114613
+      internalID: 1729237010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_25
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 176
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a8662b6bcc69236b3c93619e434c70
+      internalID: -279346460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_26
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 100
+        width: 88
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6145718e8ed2050bad8afdd1498fbbf
+      internalID: 1465464490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_27
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 172
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49fae0d07bbf03cfa7e79acd3a856dc
+      internalID: -677595041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_28
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 168
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4222ca4e54c8a4fbbfe7718a89a2a06
+      internalID: -1683676998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_29
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 168
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f392b3696811988b8a727bfe9acb2c
+      internalID: -1268646100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_30
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 136
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d39b10b5769b35b28c85df3609a1081
+      internalID: 725315663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_31
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 100
+        width: 88
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc08e47524b90d1a98992e8089557b9
+      internalID: -1880433648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_32
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 104
+        width: 88
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9815ecfa9c0763ffdb8cb1d37cf239c0
+      internalID: -1580839878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_33
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 132
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c57c01d517e0fd96ba8d4e7f2f753be
+      internalID: -1319455067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd95295fa117f34d9f39f15acef5711
+      internalID: -125144095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_35
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 116
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0222bc46f7d3a4f9c9ef5d70203d8e9b
+      internalID: -255067007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_36
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 116
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c3f048608406a488e79e2e451d66d1
+      internalID: -305312117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_37
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 104
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118e570e16cad18a4989ba104850c6a2
+      internalID: 1991556924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_38
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 104
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b556156fd38d2026b0df1d747ab5173
+      internalID: 1567771645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_39
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 92
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb29970e016c60ca68f291f2b06f545b
+      internalID: -1862243478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_40
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 92
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256458994352923088f5aa5e8d815cf7
+      internalID: -1132662162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 92
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a671cccd8aeb868b81b86136ac6c366
+      internalID: 1907590160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_42
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 92
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3924f81adab09887e99091c07ad05c98
+      internalID: 1924685627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_43
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 92
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd55825840e16263a242f6af6bcbf70
+      internalID: 656199670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_44
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 92
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad48ef7eb186e21b9a3136218d284ff
+      internalID: 1458649103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_45
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 92
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2a0f2c7402d34e9bb377b43733de5f
+      internalID: 980567231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_46
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 92
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09dc42bc18ee7fb9b6a62d45c27cc1d
+      internalID: -694414858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_47
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 88
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f756c9508d35aed42b721853d9129678
+      internalID: -894990748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_48
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 88
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b18316ef0f35e71b4f3d24f30587c8
+      internalID: 795615246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_49
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 88
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae2d3d20fff80cccb8e7a11f9bb01f5
+      internalID: -58624282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_50
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 88
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be9c9b9e4500e016a9e82e3f716e34e
+      internalID: 1255946197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_51
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 88
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a182b9a16b2fb8b9d18e2f06faac5e
+      internalID: -2025380535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_52
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 88
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a37bee360057b02e879302918b92022
+      internalID: 296858858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_53
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 88
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22a11749adfcbdd7bab983549df1656
+      internalID: -1926170753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_54
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 88
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb3bafa63ac0c59bb4808b82c54761e
+      internalID: -1202461168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_55
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 84
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffe4e7124606e489b9eacb0714f850d
+      internalID: 539612426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_56
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 84
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a03f0ebd4d394519a7a4803cfc5af1
+      internalID: 270941456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_57
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 84
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 429ea776c1cd58daf85a046f317baa7c
+      internalID: -303907096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_58
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 84
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0559277ec20fc4f58fa257039292d59
+      internalID: -1600612165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_59
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 4
+        width: 52
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c0e68ae92bb342b991186b29346c7b
+      internalID: 487847880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e211f6f0ec7469d9256b82a8e59eda
+      internalID: 1387801569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_61
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 4
+        width: 52
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad8f6b447500f3eda38a4970cf90be9
+      internalID: 1272685973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_62
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 80
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b330589aad86d3acb9bc147eca6051df
+      internalID: 746346910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_63
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 80
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee580c7d02925d5fa392a4b1f3c7d1e
+      internalID: -1989201599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_64
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 72
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e061fde1d2d16199bf286b3fe6519e
+      internalID: 1651729415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_65
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 76
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c834c168c8bf69974999968dc16194a9
+      internalID: 457301224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_66
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 4
+        width: 52
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af62d2ef828e9a030967c94a96d67b67
+      internalID: -39974349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_67
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 76
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf8a31e413ddae97aa16c9d358f7d41
+      internalID: -860782893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_68
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 76
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6aa5a12e38e061d797ce983735b0239
+      internalID: 661668123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_69
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 72
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf39adf9129bd294ca965478ebdfa511
+      internalID: -536394017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_70
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 72
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19c45a50c7949e77bf9632d28f37441
+      internalID: 901507643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_71
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 72
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90837a8ea48975230947cf4526aea697
+      internalID: 1448445861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_72
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 68
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632fcd8afaab7c623941e219e65c93fb
+      internalID: 1091995928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_73
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 68
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfddb30f793123beeaa0b5a0e3ca83b7
+      internalID: -210470458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_74
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 68
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19242c5551d471e238c3bccf8f62c224
+      internalID: 2056864983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_75
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 68
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e23db501a8a6519ca5b8d4392e40e71
+      internalID: 242683018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_76
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 64
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134662bf458c11fdf83759e2231e11b3
+      internalID: 1614064096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_77
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d0ed3fac82cd2a59c32572cf15ef39
+      internalID: -437146090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_78
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 64
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b649f4090d46693d3aa50956c9690840
+      internalID: 680656460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_79
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 60
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba6b088ef8ff05884afe4ff60b0a0cf6
+      internalID: -1557307644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_80
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 60
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d067812864d4bbd8a9a1af545b7f55f2
+      internalID: 1400424528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_81
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 56
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c444cbe60a5ea393796018cada4a9ec2
+      internalID: -547471054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_82
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b1bf0a20df20e4badf11ae880ecbb8
+      internalID: 1057511373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_83
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 52
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b05e3ffe2165aabae5fcfca7f5b13a
+      internalID: -438679290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_84
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 52
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e1e78740ab5a26dba8a27ddeff3bea
+      internalID: -1914591322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_85
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 48
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde01b62395eb896db7f57ae901380bd
+      internalID: -1393661660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_86
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 44
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b3165772fe0f34bb4397604cdc36c9
+      internalID: 540237237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_87
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 44
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3775a0ead538e420970dfbe68af2796
+      internalID: -1017600214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_88
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 36
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c65a2aa7bd687cd978644c913fe1a3
+      internalID: -281285193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pacing enemy spritesheet 2_89
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 28
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa5d253b4b59ef2499a8672b5312d3f7
+      internalID: -1988642177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +2022,97 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pacing enemy spritesheet 2_0: -1245836112
+      pacing enemy spritesheet 2_1: 743890609
+      pacing enemy spritesheet 2_10: 175130722
+      pacing enemy spritesheet 2_11: -601558320
+      pacing enemy spritesheet 2_12: -119664857
+      pacing enemy spritesheet 2_13: -238412303
+      pacing enemy spritesheet 2_14: 2110940370
+      pacing enemy spritesheet 2_15: 1389555768
+      pacing enemy spritesheet 2_16: -420902369
+      pacing enemy spritesheet 2_17: -463147449
+      pacing enemy spritesheet 2_18: -1179351278
+      pacing enemy spritesheet 2_19: -1801260955
+      pacing enemy spritesheet 2_2: -1291504625
+      pacing enemy spritesheet 2_20: -1245862745
+      pacing enemy spritesheet 2_21: -1442776160
+      pacing enemy spritesheet 2_22: 1115186413
+      pacing enemy spritesheet 2_23: 1511289711
+      pacing enemy spritesheet 2_24: 1729237010
+      pacing enemy spritesheet 2_25: -279346460
+      pacing enemy spritesheet 2_26: 1465464490
+      pacing enemy spritesheet 2_27: -677595041
+      pacing enemy spritesheet 2_28: -1683676998
+      pacing enemy spritesheet 2_29: -1268646100
+      pacing enemy spritesheet 2_3: -976082888
+      pacing enemy spritesheet 2_30: 725315663
+      pacing enemy spritesheet 2_31: -1880433648
+      pacing enemy spritesheet 2_32: -1580839878
+      pacing enemy spritesheet 2_33: -1319455067
+      pacing enemy spritesheet 2_34: -125144095
+      pacing enemy spritesheet 2_35: -255067007
+      pacing enemy spritesheet 2_36: -305312117
+      pacing enemy spritesheet 2_37: 1991556924
+      pacing enemy spritesheet 2_38: 1567771645
+      pacing enemy spritesheet 2_39: -1862243478
+      pacing enemy spritesheet 2_4: -980120251
+      pacing enemy spritesheet 2_40: -1132662162
+      pacing enemy spritesheet 2_41: 1907590160
+      pacing enemy spritesheet 2_42: 1924685627
+      pacing enemy spritesheet 2_43: 656199670
+      pacing enemy spritesheet 2_44: 1458649103
+      pacing enemy spritesheet 2_45: 980567231
+      pacing enemy spritesheet 2_46: -694414858
+      pacing enemy spritesheet 2_47: -894990748
+      pacing enemy spritesheet 2_48: 795615246
+      pacing enemy spritesheet 2_49: -58624282
+      pacing enemy spritesheet 2_5: 1835210598
+      pacing enemy spritesheet 2_50: 1255946197
+      pacing enemy spritesheet 2_51: -2025380535
+      pacing enemy spritesheet 2_52: 296858858
+      pacing enemy spritesheet 2_53: -1926170753
+      pacing enemy spritesheet 2_54: -1202461168
+      pacing enemy spritesheet 2_55: 539612426
+      pacing enemy spritesheet 2_56: 270941456
+      pacing enemy spritesheet 2_57: -303907096
+      pacing enemy spritesheet 2_58: -1600612165
+      pacing enemy spritesheet 2_59: 487847880
+      pacing enemy spritesheet 2_6: -573557042
+      pacing enemy spritesheet 2_60: 1387801569
+      pacing enemy spritesheet 2_61: 1272685973
+      pacing enemy spritesheet 2_62: 746346910
+      pacing enemy spritesheet 2_63: -1989201599
+      pacing enemy spritesheet 2_64: 1651729415
+      pacing enemy spritesheet 2_65: 457301224
+      pacing enemy spritesheet 2_66: -39974349
+      pacing enemy spritesheet 2_67: -860782893
+      pacing enemy spritesheet 2_68: 661668123
+      pacing enemy spritesheet 2_69: -536394017
+      pacing enemy spritesheet 2_7: 1953006014
+      pacing enemy spritesheet 2_70: 901507643
+      pacing enemy spritesheet 2_71: 1448445861
+      pacing enemy spritesheet 2_72: 1091995928
+      pacing enemy spritesheet 2_73: -210470458
+      pacing enemy spritesheet 2_74: 2056864983
+      pacing enemy spritesheet 2_75: 242683018
+      pacing enemy spritesheet 2_76: 1614064096
+      pacing enemy spritesheet 2_77: -437146090
+      pacing enemy spritesheet 2_78: 680656460
+      pacing enemy spritesheet 2_79: -1557307644
+      pacing enemy spritesheet 2_8: -2014287409
+      pacing enemy spritesheet 2_80: 1400424528
+      pacing enemy spritesheet 2_81: -547471054
+      pacing enemy spritesheet 2_82: 1057511373
+      pacing enemy spritesheet 2_83: -438679290
+      pacing enemy spritesheet 2_84: -1914591322
+      pacing enemy spritesheet 2_85: -1393661660
+      pacing enemy spritesheet 2_86: 540237237
+      pacing enemy spritesheet 2_87: -1017600214
+      pacing enemy spritesheet 2_88: -281285193
+      pacing enemy spritesheet 2_89: -1988642177
+      pacing enemy spritesheet 2_9: 1532630415
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
