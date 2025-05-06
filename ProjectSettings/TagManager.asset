@@ -41,15 +41,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Floor
-    uniqueID: 151444683
+  - name: Ground
+    uniqueID: 749827243
     locked: 0
-  - name: Background
-    uniqueID: 2400483175
+  - name: WalkInfront
+    uniqueID: 1506834943
+    locked: 0
+  - name: Solid
+    uniqueID: 1115243065
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: ForeGround
-    uniqueID: 2163396115
+  - name: Player
+    uniqueID: 2980694499
+    locked: 0
+  - name: WalkBehind
+    uniqueID: 2466289947
+    locked: 0
+  - name: Decor
+    uniqueID: 2871987971
     locked: 0
