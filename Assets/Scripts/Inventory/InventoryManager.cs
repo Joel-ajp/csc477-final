@@ -14,7 +14,7 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI dam_red;
 
     //// private variables
-    private int curCrystals = 3;
+    private int curCrystals = 0;
     private static List<int> stat_levels = new List<int> {1,1,1,1};
     //          0 = movement speed
     //          1 = attack speed
