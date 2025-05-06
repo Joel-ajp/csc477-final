@@ -29956,6 +29956,89 @@ Transform:
   - {fileID: 1579370308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1548853779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548853782}
+  - component: {fileID: 1548853781}
+  - component: {fileID: 1548853780}
+  m_Layer: 0
+  m_Name: Footstep
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1548853780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548853779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227fa760b0ef9a844bb46a796d47d3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeactivatedTiles:
+  - {fileID: 11400000, guid: a42cab1a571333b40ae65feec33e0fc2, type: 2}
+  ActivatedTiles:
+  - {fileID: 11400000, guid: b8be6e50baa3e194e96ab24a9776ec59, type: 2}
+  - {fileID: 11400000, guid: 32963715a0135774b925360ace6d096a, type: 2}
+  - {fileID: 11400000, guid: 00bcef10fc863734e883aa076b0981b7, type: 2}
+  _currentTilemapFloor: {fileID: 733521817}
+  swapBack: 1
+  vanishSpeedSeconds: 2
+  listeningPuzzle: 0
+  attachToPlayer: 1
+  requiredTilePositions: []
+  successSpot: {x: 0, y: 0, z: 0}
+  successTile: {fileID: 0}
+--- !u!114 &1548853781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548853779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227fa760b0ef9a844bb46a796d47d3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeactivatedTiles:
+  - {fileID: 11400000, guid: a398302cd34b674488730ce0d55b2bea, type: 2}
+  ActivatedTiles:
+  - {fileID: 11400000, guid: b832cc9902349d245a6cacffb70744e9, type: 2}
+  _currentTilemapFloor: {fileID: 1333947393}
+  swapBack: 1
+  vanishSpeedSeconds: 2
+  listeningPuzzle: 0
+  attachToPlayer: 1
+  requiredTilePositions: []
+  successSpot: {x: 0, y: 0, z: 0}
+  successTile: {fileID: 0}
+--- !u!4 &1548853782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548853779}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.156966, y: -4.516262, z: 0.06289024}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1576564468
 GameObject:
   m_ObjectHideFlags: 0
@@ -38650,3 +38733,4 @@ SceneRoots:
   - {fileID: 1989880674}
   - {fileID: 1547935587}
   - {fileID: 541462673}
+  - {fileID: 1548853782}
