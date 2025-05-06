@@ -38060,7 +38060,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 185188512716105958, guid: 8a681b6f9215c65f79e997afd615756b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178517178664621293, guid: 8a681b6f9215c65f79e997afd615756b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6446360386751870497, guid: 8a681b6f9215c65f79e997afd615756b, type: 3}
       propertyPath: m_Size.x
