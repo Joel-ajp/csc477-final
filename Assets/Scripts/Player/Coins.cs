@@ -5,7 +5,10 @@ public class Coins : MonoBehaviour
 {
     public static Coins Instance { get; private set; }
 
-    [SerializeField] private TMP_Text coinsText;  
+    [SerializeField] private TMP_Text coinsText;
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private TMP_InputField nameInputField;
+    [SerializeField] private Button submitButton;
     private int coins;
 
     private void Awake()
@@ -46,4 +49,5 @@ public class Coins : MonoBehaviour
     {
         coinsText.text = coins.ToString();
     }
+    public int CurrentCoins => coins;
 }
