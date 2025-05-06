@@ -6,9 +6,9 @@ public class Coins : MonoBehaviour
     public static Coins Instance { get; private set; }
 
     [SerializeField] private TMP_Text coinsText;
-    [SerializeField] private GameObject gameOverPanel;
+    // [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_InputField nameInputField;
-    [SerializeField] private Button submitButton;
+    // [SerializeField] private Button submitButton;
     private int coins;
 
     private void Awake()
