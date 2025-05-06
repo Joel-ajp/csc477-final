@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,49 +13,119 @@ public class PlayerMovement : MonoBehaviour
     private const string _vertical = "Vertical";
     private const string _lastHorizontal = "LastHorizontal";
     private const string _lastVertical = "LastVertical";
-     private Vector2 _lastMovement = Vector2.down;
+    private Vector2 _lastMovement = Vector2.down;
     public Vector2 LastMovement => _lastMovement;
+    
+    // Property to store the position that should be set after scene load
+    public static Vector2 NextSpawnPosition { get; set; }
+    private static bool _shouldSetPosition = false;
 
     private void Awake()
     {
-        if (FindObjectsOfType<PlayerMovement>().Length > 1)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
+        
+        // Make sure this object is tagged as Player
+        gameObject.tag = "Player";
+        
         DontDestroyOnLoad(gameObject);
-
         Instance = this;
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        
+        // Register for scene load events to handle position setting
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    private void OnDestroy()
+    {
+        // Unregister to prevent memory leaks
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Always force update camera references on scene load
+        StartCoroutine(ForceUpdateAllCameras());
+        
+        if (_shouldSetPosition)
+        {
+            transform.position = NextSpawnPosition;
+            _shouldSetPosition = false;
+            Debug.Log($"PlayerMovement: Set player position to {NextSpawnPosition} after scene load");
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private IEnumerator ForceUpdateAllCameras()
     {
+        // Wait a couple of frames to ensure all scene objects are initialized
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
         
+        Debug.Log("Attempting to update cameras after scene load");
+        
+        // Try to find cameras by component directly (most reliable)
+        var allVCams = Object.FindObjectsOfType<Cinemachine.CinemachineVirtualCamera>(true);
+        foreach (var vcam in allVCams)
+        {
+            vcam.Follow = transform;
+            vcam.PreviousStateIsValid = false;
+            Debug.Log("Updated camera (by component): " + vcam.name);
+        }
+        
+        // Try both potential camera tag formats as backup
+        UpdateCamerasByTag("VirtualCamera");
+        UpdateCamerasByTag("Virtual Camera");
+        
+        // Find CinemachineBrain and force update
+        var brains = Object.FindObjectsOfType<Cinemachine.CinemachineBrain>(true);
+        foreach (var brain in brains)
+        {
+            brain.enabled = false;
+            brain.enabled = true;
+            Debug.Log("Reset CinemachineBrain: " + brain.name);
+        }
+    }
+    
+    private void UpdateCamerasByTag(string tag)
+    {
+        var vcams = GameObject.FindGameObjectsWithTag(tag);
+        Debug.Log($"Found {vcams.Length} cameras with tag '{tag}'");
+        
+        foreach (var vcamObj in vcams)
+        {
+            var vcam = vcamObj.GetComponent<Cinemachine.CinemachineVirtualCamera>();
+            if (vcam != null)
+            {
+                vcam.Follow = transform;
+                vcam.PreviousStateIsValid = false;
+                Debug.Log($"Set camera {vcamObj.name} to follow player");
+            }
+        }
+    }
+    
+    // Public method to set the next spawn position before loading a new scene
+    public static void SetNextSpawnPosition(Vector2 position)
+    {
+        NextSpawnPosition = position;
+        _shouldSetPosition = true;
+        Debug.Log($"PlayerMovement: Set next spawn position to {position}");
     }
 
     // Update is called once per frame
     void Update()
     {
         _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
-
         _rb.velocity = _movement * _moveSpeed;
-
         _animator.SetFloat(_horizontal, _movement.x);
         _animator.SetFloat(_vertical, _movement.y);
         
         if (_movement != Vector2.zero)
         {
-            _animator.SetFloat(_lastHorizontal, _movement.x);
-            _animator.SetFloat(_lastVertical, _movement.y);
-        }
-            if (_movement != Vector2.zero)
-        {
             _lastMovement = _movement;
-
-            // and also update the “last” floats if you use them for an idle face
             _animator.SetFloat(_lastHorizontal, _movement.x);
             _animator.SetFloat(_lastVertical, _movement.y);
         }
