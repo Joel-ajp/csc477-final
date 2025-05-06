@@ -10,11 +10,11 @@ public class PlayerVariant : MonoBehaviour
     public RuntimeAnimatorController evilController;
 
     private SpriteRenderer _sr;
-    private Animator       _anim;
+    private Animator _anim;
 
     void Awake()
     {
-        _sr   = GetComponent<SpriteRenderer>();
+        _sr = GetComponent<SpriteRenderer>();
         _anim = GetComponent<Animator>();
     }
     public void SetVariant(bool good)
@@ -23,7 +23,6 @@ public class PlayerVariant : MonoBehaviour
         _sr.sprite = good ? goodSprite : evilSprite;
 
         // swap the animation controller
-        _anim.runtimeAnimatorController =
-            good ? goodController : evilController;
+        _anim.runtimeAnimatorController = good ? goodController : evilController;
     }
 }
