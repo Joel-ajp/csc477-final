@@ -10,22 +10,20 @@ public class WalkingSurface : MonoBehaviour
     private Rigidbody2D _parentRB;
 
     // Only set to public currently for testing purposes, intended to be private
-    public Tilemap _currentTilemapFloor;
-    private GroundSurfaceState _currentSurface;
     private SoundType _currentSurfaceSound;
-    private TileBase _currentTile;
     private float _pitchSpeed;
     private bool _walking;
 
+    private Tilemap _currentTilemapFloor;
+    private GameObject _lastFloorObject; // Need to get the object for the related tag
 
     [SerializeField]
     private List<FloorTileData> tileData;
-
     private Dictionary<TileBase, GroundSurfaceState> audioData;
 
     private void Awake()
     {
-        // FIlls teh dictionary to be referencesd.
+        // Fills the dictionary
         PopulateTileSoundDictionary();
     }
 
@@ -40,8 +38,22 @@ public class WalkingSurface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Look for what the active tilemap is
+        GameObject currentFloorObj = GameObject.FindGameObjectWithTag("FloorTilemap");
+        // Checks if it exists and is active, aswell as making sure its not needlessly updating
+        if (currentFloorObj != null && currentFloorObj.activeInHierarchy && currentFloorObj != _lastFloorObject)
+        {
+            Tilemap newTilemap = currentFloorObj.GetComponent<Tilemap>();
+            if (newTilemap != null)
+            {
+                _currentTilemapFloor = newTilemap;
+                _lastFloorObject = currentFloorObj;
+                // Debug.Log($"Active: {currentFloorObj.name}");
+            }
+        }
+
         // This is a roundabout way of doing it, didnt want to mess with movement script yet, this can be improved later
-        if (_parentRB.velocity.magnitude > 0.05f && !_walking)
+        if (_parentRB.velocity.magnitude > 0.05f && !_walking && _currentTilemapFloor != null)
         {
             UpdateSurfaceCheck();
         }
@@ -69,7 +81,6 @@ public class WalkingSurface : MonoBehaviour
         TileBase tile = _currentTilemapFloor.GetTile(_currentTilemapFloor.WorldToCell(playerPosition)); // what tile they are on
         if (tile != null)
         {
-            _currentTile = tile; // updates most recent tile
             if (audioData.ContainsKey(tile))
             {
                 // Set the surface sound and update the surface state
@@ -78,7 +89,6 @@ public class WalkingSurface : MonoBehaviour
             }
             else
             {
-
                 StartCoroutine(PlayWalkSound());
             }
         }
@@ -110,7 +120,6 @@ public class WalkingSurface : MonoBehaviour
 
     public void SetSurface(GroundSurfaceState state)
     {
-        _currentSurface = state;
         // Pitch is currently being used to match speed with animation
         switch (state)
         {
