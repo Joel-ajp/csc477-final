@@ -14,7 +14,7 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI dam_red;
 
     //// private variables
-    private static int curCrystals;
+    private int curCrystals = 3;
     private static List<int> stat_levels = new List<int> {1,1,1,1};
     //          0 = movement speed
     //          1 = attack speed
@@ -29,16 +29,16 @@ public class InventoryManager : MonoBehaviour
         {
             updateStats(i, stat_levels[i]);
         }
-        for (int i = 0; i < curCrystals + 1; i++)
+        for (int i = 0; i < curCrystals; i++)
         {
-            gainedCrystal();
+            crystalIcons[i].enabled = true;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (curCrystals < 0) {curCrystals = 0;}
+        //if (curCrystals < 0) {curCrystals = 0;}
     }
 
     public void gainedCrystal()
