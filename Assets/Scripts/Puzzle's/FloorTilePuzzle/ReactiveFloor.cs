@@ -11,10 +11,12 @@ public class ReactiveFloor : MonoBehaviour
     public List<TileBase> DeactivatedTiles;
     public List<TileBase> ActivatedTiles;
     public Tilemap _currentTilemapFloor; // What tilemap its listening too.
+    public bool swapBack;
     public float vanishSpeedSeconds = 2f;
 
     [Header("Puzzle Stuff")]
     public bool listeningPuzzle;
+    public bool attachToPlayer = true;
     public List<Vector3Int> requiredTilePositions;
     // Success State
     public Vector3Int successSpot;
@@ -26,8 +28,27 @@ public class ReactiveFloor : MonoBehaviour
 
     void Start()
     {
-        _parentRB = GetComponentInParent<Rigidbody2D>();
+        if (attachToPlayer)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                transform.SetParent(player.transform, false);
+                _parentRB = player.GetComponent<Rigidbody2D>();
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Debug.LogWarning("player null");
+            }
+        }
+        else
+        {
+            _parentRB = GetComponentInParent<Rigidbody2D>();
+        }
+
     }
+
 
     void Update()
     {
@@ -54,8 +75,10 @@ public class ReactiveFloor : MonoBehaviour
                 _satisfide = true;
                 _currentTilemapFloor.SetTile(successSpot, successTile);
             }
-
-            StartCoroutine(FloorCooldown(cellPos, originalTile));
+            if (swapBack)
+            {
+                StartCoroutine(FloorCooldown(cellPos, originalTile));
+            }
         }
     }
 
