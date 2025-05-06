@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 59676909}
   - component: {fileID: 59676911}
   - component: {fileID: 59676910}
+  - component: {fileID: 59676912}
   m_Layer: 0
   m_Name: OW_Solid
   m_TagString: Untagged
@@ -522,6 +523,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &59676912
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59676908}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &153762719
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2051,7 @@ GameObject:
   - component: {fileID: 787730902}
   - component: {fileID: 787730904}
   - component: {fileID: 787730903}
+  - component: {fileID: 787730905}
   m_Layer: 0
   m_Name: UW_Solid
   m_TagString: Untagged
@@ -2147,6 +2185,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &787730905
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787730901}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &797723513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,7 +2237,6 @@ GameObject:
   - component: {fileID: 797723517}
   - component: {fileID: 797723516}
   - component: {fileID: 797723515}
-  - component: {fileID: 797723514}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2171,23 +2244,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &797723514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797723513}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1038e93448817470bb4310130451926a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 6
-  livesText: {fileID: 0}
-  gameOverPanel: {fileID: 0}
-  nameInputField: {fileID: 0}
-  submitButton: {fileID: 0}
 --- !u!114 &797723515
 MonoBehaviour:
   m_ObjectHideFlags: 0
