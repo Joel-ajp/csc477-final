@@ -77,8 +77,7 @@ public class EnvironmentManager : MonoBehaviour
 
         FindRichardUI();
 
-        var playerGO = GameObject.FindWithTag("Player");
-        playerVariant = playerGO ? playerGO.GetComponent<PlayerVariant>() : null;
+
 
         
         // Apply the current environment state
@@ -149,6 +148,7 @@ public class EnvironmentManager : MonoBehaviour
             
         Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
         UpdateRichardState();
+      
     }
 
    private void UpdateRichardState(){
