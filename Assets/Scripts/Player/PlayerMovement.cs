@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
         
         // Make sure this object is tagged as Player
         gameObject.tag = "Player";
-        
         DontDestroyOnLoad(gameObject);
         Instance = this;
         _rb = GetComponent<Rigidbody2D>();

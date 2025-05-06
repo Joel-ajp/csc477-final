@@ -72,6 +72,7 @@ public class PlayerLives : MonoBehaviour
 
         // submit the score
         HS.SubmitHighScore(this, playerName, coinScore);
+        print("Game Over");
 
         // cleanup / unpause
         Time.timeScale = 1f;

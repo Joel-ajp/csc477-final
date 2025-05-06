@@ -14215,11 +14215,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: hud (use this one)
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+    - target: {fileID: 1889714134542567839, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+=======
     - target: {fileID: 2441349286858593974, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7663025838880241483, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

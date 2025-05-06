@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +19,9 @@ public class EnvironmentManager : MonoBehaviour
     // Standard naming for environments across scenes
     private const string ENV_A_NAME = "Environment_A";
     private const string ENV_B_NAME = "Environment_B";
+    [SerializeField] private Image richardGood;
+    [SerializeField] private Image richardEvil;
+    [SerializeField] private PlayerVariant playerVariant;
     
     // Input controls
     private PlayerControls controls;
@@ -69,6 +74,12 @@ public class EnvironmentManager : MonoBehaviour
         
         // Find environments in the new scene
         FindEnvironmentsInScene();
+
+        FindRichardUI();
+
+        var playerGO = GameObject.FindWithTag("Player");
+        playerVariant = playerGO ? playerGO.GetComponent<PlayerVariant>() : null;
+
         
         // Apply the current environment state
         ApplyCurrentEnvironmentState();
@@ -108,6 +119,7 @@ public class EnvironmentManager : MonoBehaviour
                 environments[i].SetActive(i == currentIndex);
             }
         }
+        UpdateRichardState();
     }
 
     private void OnSwapEnvironment(InputAction.CallbackContext ctx)
@@ -136,5 +148,22 @@ public class EnvironmentManager : MonoBehaviour
             environments[currentIndex].SetActive(true);
             
         Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
+        UpdateRichardState();
     }
+
+   private void UpdateRichardState(){
+    bool inA = (currentIndex == 0);
+    if (richardGood  != null) richardGood.gameObject.SetActive(inA);
+    if (richardEvil != null) richardEvil.gameObject.SetActive(!inA);
+     playerVariant?.SetVariant(inA);
+    }
+
+    private void FindRichardUI(){
+    var goGood = GameObject.Find("richard");
+    var goEvil = GameObject.Find("richard (evil)");
+
+    if (goGood != null)  richardGood  = goGood.GetComponent<Image>();
+    if (goEvil != null)  richardEvil  = goEvil.GetComponent<Image>();
+    }
+
 }
