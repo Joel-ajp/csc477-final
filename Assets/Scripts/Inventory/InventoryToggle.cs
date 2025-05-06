@@ -18,6 +18,15 @@ public class InventoryToggle : MonoBehaviour
         isOpen = false;
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleInventory();
+        }
+    }
+
+
     public void ToggleInventory()
     {
         isOpen = !isOpen;
