@@ -24,6 +24,24 @@ public class Coins : MonoBehaviour
         UpdateUI();
     }
 
+    public void spendCoins(int amount)
+    {
+        if (amount > coins)
+        {
+            Debug.Log("not enough coins");
+        }
+        else if (amount <= coins)
+        {
+            Debug.Log(amount + " coin(s) have been spent");
+            coins -= amount;
+            // add code here for what to do when a thing is bought
+            // if a crystal was bought then call the 
+            // InventoryManager public function "gainedCrystal" any other
+            // pickup has to be added manually (talk to Gavin)
+        }
+        UpdateUI();
+    }
+
     private void UpdateUI()
     {
         coinsText.text = coins.ToString();
