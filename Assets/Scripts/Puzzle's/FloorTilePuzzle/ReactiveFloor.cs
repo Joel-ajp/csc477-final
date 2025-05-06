@@ -7,20 +7,22 @@ using UnityEngine.Tilemaps;
 
 public class ReactiveFloor : MonoBehaviour
 {
-    public TileBase DeactivatedTile;
-    public TileBase ActivatedTile;
+    [Header("Tile References")]
+    public List<TileBase> DeactivatedTiles;
+    public List<TileBase> ActivatedTiles;
+    public Tilemap _currentTilemapFloor; // What tilemap its listening too.
+    public float vanishSpeedSeconds = 2f;
+
+    [Header("Puzzle Stuff")]
     public bool listeningPuzzle;
     public List<Vector3Int> requiredTilePositions;
-    private HashSet<Vector3Int> _currentActivatedTiles = new HashSet<Vector3Int>();
-
     // Success State
     public Vector3Int successSpot;
     public TileBase successTile;
 
     private bool _satisfide;
-
+    private HashSet<Vector3Int> _currentActivatedTiles = new HashSet<Vector3Int>();
     private Rigidbody2D _parentRB;
-    public Tilemap _currentTilemapFloor; // What tilemap its listening too.
 
     void Start()
     {
@@ -38,10 +40,13 @@ public class ReactiveFloor : MonoBehaviour
         Vector2 playerPosition = (Vector2)_parentRB.transform.position; // Player location on grid
         Vector3Int cellPos = _currentTilemapFloor.WorldToCell(playerPosition);
         TileBase tile = _currentTilemapFloor.GetTile(cellPos); // what tile they are on
-
-        if (tile == DeactivatedTile && tile != null)
+        TileBase originalTile = tile;
+        if (IsDeactivatedTile(tile) && tile != null)
         {
-            _currentTilemapFloor.SetTile(_currentTilemapFloor.WorldToCell(playerPosition), ActivatedTile);
+            TileBase randomActiveTile = GetRandomActivatedTile();
+            if (randomActiveTile == null) return;
+
+            _currentTilemapFloor.SetTile(_currentTilemapFloor.WorldToCell(playerPosition), randomActiveTile);
             _currentActivatedTiles.Add(cellPos);
 
             if (!_satisfide && listeningPuzzle && AllRequiredTilesActivated())
@@ -50,8 +55,7 @@ public class ReactiveFloor : MonoBehaviour
                 _currentTilemapFloor.SetTile(successSpot, successTile);
             }
 
-
-            StartCoroutine(FloorCooldown(cellPos));
+            StartCoroutine(FloorCooldown(cellPos, originalTile));
         }
     }
 
@@ -62,10 +66,10 @@ public class ReactiveFloor : MonoBehaviour
         _satisfide = false;
     }
 
-    IEnumerator FloorCooldown(Vector3Int cell)
+    IEnumerator FloorCooldown(Vector3Int cell, TileBase originalTile)
     {
-        yield return new WaitForSeconds(5.0f);
-        _currentTilemapFloor.SetTile(cell, DeactivatedTile);
+        yield return new WaitForSeconds(vanishSpeedSeconds);
+        _currentTilemapFloor.SetTile(cell, originalTile);
         // Debug.Log("Swapped Back");
     }
 
@@ -77,6 +81,20 @@ public class ReactiveFloor : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    private bool IsDeactivatedTile(TileBase tile)
+    {
+        return DeactivatedTiles.Contains(tile);
+    }
+
+    private TileBase GetRandomActivatedTile()
+    {
+        if (ActivatedTiles.Count == 0)
+        {
+            return null;
+        }
+        return ActivatedTiles[Random.Range(0, ActivatedTiles.Count)];
     }
 }
 
