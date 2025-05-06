@@ -11,6 +11,7 @@ public class LaserScript : MonoBehaviour
     public bool isActive;
     public Transform Barrel;
     public LayerMask foreground;
+    public GameObject crystalPrefab;
 
 
     void Start()
@@ -52,14 +53,16 @@ public class LaserScript : MonoBehaviour
                 {
 
                     // Draws to the hit point, doesnt reflect
-                    currentPosition = hit.point + currentDirection * skinWidth;
-                    reflections++;
-                    _lineRenderer.positionCount++;
-                    _lineRenderer.SetPosition(reflections, currentPosition);
+                    // currentPosition = hit.point + currentDirection * skinWidth;
+                    // reflections++;
+                    // _lineRenderer.positionCount++;
+                    // _lineRenderer.SetPosition(reflections, currentPosition);
+                    _lineRenderer.enabled.Equals(false);
 
                     // Success Result, put end logic here
-                    SpriteRenderer end = hit.collider.GetComponent<SpriteRenderer>();
-                    end.color = Color.green;
+                    isActive = false;
+                    Destroy(hit.collider.gameObject);  // Destroy the hit target
+                    Instantiate(crystalPrefab, hit.point, Quaternion.identity);
                     break;
                 }
 
