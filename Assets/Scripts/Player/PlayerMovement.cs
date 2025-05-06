@@ -78,7 +78,6 @@ public class PlayerMovement : MonoBehaviour
         
         // Try both potential camera tag formats as backup
         UpdateCamerasByTag("VirtualCamera");
-        UpdateCamerasByTag("Virtual Camera");
         
         // Find CinemachineBrain and force update
         var brains = Object.FindObjectsOfType<Cinemachine.CinemachineBrain>(true);

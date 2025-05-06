@@ -126,6 +126,7 @@ public class EnvironmentManager : MonoBehaviour
         // Deactivate current environment
         if (environments[currentIndex] != null)
             environments[currentIndex].SetActive(false);
+            print("Deactivated Environment_" + (currentIndex == 0 ? 'A' : 'B'));
             
         // Switch to next environment
         currentIndex = (currentIndex + 1) % environments.Length;
