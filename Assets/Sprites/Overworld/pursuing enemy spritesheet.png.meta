@@ -126,10 +126,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 308
-        width: 44
-        height: 44
+        x: 6
+        y: 101
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_1
       rect:
         serializedVersion: 2
-        x: 120
-        y: 308
-        width: 44
-        height: 44
+        x: 30
+        y: 101
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_2
       rect:
         serializedVersion: 2
-        x: 220
-        y: 308
-        width: 44
-        height: 44
+        x: 55
+        y: 101
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_3
       rect:
         serializedVersion: 2
-        x: 24
-        y: 212
-        width: 44
-        height: 44
+        x: 6
+        y: 77
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_4
       rect:
         serializedVersion: 2
-        x: 120
-        y: 212
-        width: 44
-        height: 44
+        x: 30
+        y: 77
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_5
       rect:
         serializedVersion: 2
-        x: 220
-        y: 212
-        width: 44
-        height: 44
+        x: 55
+        y: 77
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_6
       rect:
         serializedVersion: 2
-        x: 8
-        y: 116
-        width: 76
-        height: 40
+        x: 2
+        y: 53
+        width: 19
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_7
       rect:
         serializedVersion: 2
-        x: 100
-        y: 116
-        width: 80
-        height: 40
+        x: 25
+        y: 53
+        width: 20
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_8
       rect:
         serializedVersion: 2
-        x: 216
-        y: 116
-        width: 44
-        height: 44
+        x: 3
+        y: 29
+        width: 19
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_9
       rect:
         serializedVersion: 2
-        x: 12
-        y: 20
-        width: 76
-        height: 36
+        x: 27
+        y: 29
+        width: 20
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: pursuing enemy spritesheet_10
       rect:
         serializedVersion: 2
-        x: 120
-        y: 20
-        width: 60
-        height: 32
+        x: 3
+        y: 5
+        width: 19
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,6 +349,27 @@ TextureImporter:
       bones: []
       spriteID: 64833bac2c919e734ae67147a0be34c2
       internalID: 2016776466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pursuing enemy spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 5
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f9e9ba42b2b5140bf0415686850d34
+      internalID: 1128017860
       vertices: []
       indices: 
       edges: []
@@ -367,6 +388,7 @@ TextureImporter:
       pursuing enemy spritesheet_0: 644829222
       pursuing enemy spritesheet_1: -1259979369
       pursuing enemy spritesheet_10: 2016776466
+      pursuing enemy spritesheet_11: 1128017860
       pursuing enemy spritesheet_2: -1372803841
       pursuing enemy spritesheet_3: -314023233
       pursuing enemy spritesheet_4: 725994985
