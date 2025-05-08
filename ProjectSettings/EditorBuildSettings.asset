@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/Start Room.unity
     guid: c356023d0dde6df45b2729d313a7095f
+  - enabled: 1
+    path: Assets/Scenes/Rooms/market.unity
+    guid: f63524ac44d68d44686768d371cb81b8
   m_configObjects: {}
