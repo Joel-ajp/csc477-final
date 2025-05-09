@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 74a352e99f17fbd4a9b3a04bc2d8d09c
+guid: 71ed89754baeb3044ae24fa897e7fe55
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,261 +106,206 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pursuing enemy spritesheet_0
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 101
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ff41735430829c0098cde38b7d3dc79
-      internalID: 644829222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pursuing enemy spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 101
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 096ca1e474c7116dd93815b39274985c
-      internalID: -1259979369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pursuing enemy spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 101
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e473f3d5aeb81900e8fa967b58606583
-      internalID: -1372803841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pursuing enemy spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 77
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 683c77c9935c5301eab0cdaee5a56326
-      internalID: -314023233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pursuing enemy spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 77
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6ecf704657dddef8923654f62262642
-      internalID: 725994985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pursuing enemy spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 77
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16cc0da9a0fd7aa84b8f62fc460c268f
-      internalID: 1681172263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pursuing enemy spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 53
-        width: 19
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc8adc4e1d4662059b7df38aaf340b64
-      internalID: -1779295849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pursuing enemy spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 53
-        width: 20
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12002bfcae5f1dca69b730aff38586e3
-      internalID: 1770004758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pursuing enemy spritesheet_8
+      name: overworld manmade_0
       rect:
         serializedVersion: 2
         x: 3
-        y: 29
-        width: 19
-        height: 10
+        y: 97
+        width: 10
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd4e48164a339d242ab23e3a1c6363fd
-      internalID: 1552075896
+      spriteID: 69a705abed62eb64e83cf97e4eecb9c8
+      internalID: -1930545774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pursuing enemy spritesheet_9
+      name: overworld manmade_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 29
-        width: 20
-        height: 10
+        x: 19
+        y: 97
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c3b2d99d47fd1217947d18abefd3f6c
-      internalID: 110371533
+      spriteID: 2aff27ba0f8038d4dab51d329d317711
+      internalID: -2047054470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pursuing enemy spritesheet_10
+      name: overworld manmade_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 96
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35765db0d8a6f6342882e734546bcb30
+      internalID: -1106426379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overworld manmade_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 48
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a369e455a446da841904703e26ec4ae3
+      internalID: -1935231529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overworld manmade_4
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 80
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af40ea2c86a32aa4a95e30b41b79b3d8
+      internalID: -1306276007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overworld manmade_5
       rect:
         serializedVersion: 2
         x: 3
-        y: 5
-        width: 19
-        height: 9
+        y: 65
+        width: 26
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64833bac2c919e734ae67147a0be34c2
-      internalID: 2016776466
+      spriteID: 26742683d8af4144191d0663410012a9
+      internalID: 438281542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pursuing enemy spritesheet_11
+      name: overworld manmade_6
       rect:
         serializedVersion: 2
-        x: 30
-        y: 5
-        width: 15
-        height: 8
+        x: 34
+        y: 50
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cf1b33e2c814743aa64285cfb8ce6e
+      internalID: 1171413327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overworld manmade_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb46809c1ec0084299ffbbbc58199c6
+      internalID: 1311539371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overworld manmade 1_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 48
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db0377f1776dc446b74adb06de5b649
+      internalID: -534162675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overworld manmade 1_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 80
+        width: 23
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89f9e9ba42b2b5140bf0415686850d34
-      internalID: 1128017860
+      spriteID: c30913b701a5be94bb40a28a636fcdab
+      internalID: 695345501
       vertices: []
       indices: 
       edges: []
@@ -385,18 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pursuing enemy spritesheet_0: 644829222
-      pursuing enemy spritesheet_1: -1259979369
-      pursuing enemy spritesheet_10: 2016776466
-      pursuing enemy spritesheet_11: 1128017860
-      pursuing enemy spritesheet_2: -1372803841
-      pursuing enemy spritesheet_3: -314023233
-      pursuing enemy spritesheet_4: 725994985
-      pursuing enemy spritesheet_5: 1681172263
-      pursuing enemy spritesheet_6: -1779295849
-      pursuing enemy spritesheet_7: 1770004758
-      pursuing enemy spritesheet_8: 1552075896
-      pursuing enemy spritesheet_9: 110371533
+      overworld manmade 1_0: -534162675
+      overworld manmade 1_1: 695345501
+      overworld manmade_0: -1930545774
+      overworld manmade_1: -2047054470
+      overworld manmade_2: -1106426379
+      overworld manmade_3: -1935231529
+      overworld manmade_4: -1306276007
+      overworld manmade_5: 438281542
+      overworld manmade_6: 1171413327
+      overworld manmade_7: 1311539371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
