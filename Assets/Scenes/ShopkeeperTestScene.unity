@@ -31827,7 +31827,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e4dfb65e68373938184c0019cd1085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 541462669}
   activeWeapon: {fileID: 1062427992}
 --- !u!95 &1745182269
 Animator:

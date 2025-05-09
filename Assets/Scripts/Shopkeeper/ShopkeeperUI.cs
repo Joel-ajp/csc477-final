@@ -60,7 +60,6 @@ public class Shopkeeper : MonoBehaviour
             Debug.Log("player shopping");
             playerCanShop = true;
             isOpen = true;
-            keeperUI.SetActive(isOpen);
         }
     }
 
