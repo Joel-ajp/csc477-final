@@ -10173,11 +10173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1939756604874825024, guid: 6c89452d4600e194cbd9091ebf2d457c, type: 3}
       propertyPath: m_Name
-      value: Shop Dialogue
+      value: OW_Shop Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 1939756604874825024, guid: 6c89452d4600e194cbd9091ebf2d457c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10234,11 +10234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1939756604874825024, guid: ad28f10bccd9af14b968b40e71ed880a, type: 3}
       propertyPath: m_Name
-      value: Guard Dialogue
+      value: OW_Guard Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 1939756604874825024, guid: ad28f10bccd9af14b968b40e71ed880a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

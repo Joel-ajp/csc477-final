@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: GuardDialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogueLines:
-  - dialogue: Greetings, Stranger. You'd best turn back. This way isn't for the feint
-      of heart.
-  - dialogue: Glad you're listening to reason. [Response to acceptance]
+  - dialogue: 'Greetings, Stranger. You''d best turn back. This way isn''t for the
+      feint of heart.
+
+      [1/E - "Thanks, I''ll turn back."]
+
+      [2/R - "I''ve
+      never fainted in my life."]'
+  - dialogue: Glad you're listening to reason.
   - dialogue: Well, this armor's too heavy for me to stop you...but don't say I didn't
-      give you fair warning. [Response to refusal]
+      give you fair warning.

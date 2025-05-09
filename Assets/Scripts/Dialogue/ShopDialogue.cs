@@ -9,14 +9,16 @@ public class ShopDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public DialogueObject currentDialogue;
-    public float textSpeed;
-    private int index;
+    public float textSpeed; //scroll speed
+    private int index;  //line of dialogue
+    private bool seenBefore;    //if player has already talked to shopkeeper
 
     // Start is called before the first frame update
     void Start()
     {
         gameObject.SetActive(true);
         index = 0;
+        seenBefore = false;
         //Start the dialogue
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
@@ -24,13 +26,45 @@ public class ShopDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        //If any key pressed
+        if (Input.anyKeyDown)
         {
-            //fast forward text scroll on click
-            if(textComponent.text == currentDialogue.dialogueLines[index].dialogue)
+            //Select dialogue option
+            if (textComponent.text == currentDialogue.dialogueLines[index].dialogue)
             {
-                NextLine();
+                //option 1 (button 1 or e)
+                if ((index == 0 || index == 6) && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))
+                {
+                    index = 1;
+                    NextLine();
+                }
+                //option 2 (button 2 or r)
+                else if ((index == 0 || index == 6) && (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.R)))
+                {
+                    index = seenBefore ? 7 : 2;
+                    NextLine();
+                }
+                //transition to the shop screen
+                else if (index == 1)
+                {
+                    //PLACEHOLDER - TRANSFER TO SHOP
+                    gameObject.SetActive(false);
+                }
+                //continue option 2 text
+                else if (index >= 2 && index <= 5)
+                {
+                    index++;
+                    seenBefore = true;
+                    NextLine();
+                }
+                //deja vu addition if player already chosen this option
+                else if (index == 7)
+                {
+                    index = 2;
+                    NextLine();
+                }
             }
+            //fast forward text scroll
             else
             {
                 StopAllCoroutines();
@@ -54,9 +88,8 @@ public class ShopDialogue : MonoBehaviour
 
     void NextLine()
     {
-        if(index < currentDialogue.dialogueLines.Length - 1)
+        if(index < currentDialogue.dialogueLines.Length)
         {
-            index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
