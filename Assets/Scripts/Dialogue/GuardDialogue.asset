@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GuardDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  dialogueLines:
+  - dialogue: Greetings, Stranger. You'd best turn back. This way isn't for the feint
+      of heart.
+  - dialogue: Glad you're listening to reason. [Response to acceptance]
+  - dialogue: Well, this armor's too heavy for me to stop you...but don't say I didn't
+      give you fair warning. [Response to refusal]
