@@ -6374,7 +6374,7 @@ Transform:
   m_GameObject: {fileID: 541462664}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.28, y: -0.44, z: 0}
+  m_LocalPosition: {x: -1.31, y: -0.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31222,8 +31222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e4dfb65e68373938184c0019cd1085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 541462669}
   activeWeapon: {fileID: 1062427992}
+  attackSpeed: 1
+  swordModel: {fileID: 1745182266}
 --- !u!95 &1745182269
 Animator:
   serializedVersion: 5
