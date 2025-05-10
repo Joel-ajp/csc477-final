@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: UWGuardDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  dialogueLines:
+  - dialogue: 'Woah, Stranger! Meshie asks Stranger to retreat! For Stranger''s own
+      safety!
+
+      [1/E: "Thanks, I''ll go then."]
+
+      [2/R: "Some silly cave
+      doesn''t scare me!".]'
+  - dialogue: Phew, Meshie is very glad!
+  - dialogue: This cave hold many dangers! Even the powerful Meshie is afraid! Please
+      reconsider!!

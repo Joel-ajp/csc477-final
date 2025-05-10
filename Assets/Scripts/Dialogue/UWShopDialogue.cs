@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 
-public class ShopDialogue : MonoBehaviour
+public class UWShopDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public DialogueObject currentDialogue;

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1173212469858686723}
   m_Layer: 0
-  m_Name: Guard Dialogue
+  m_Name: UW_Shop Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 263, y: -82}
+  m_AnchoredPosition: {x: -333, y: -82}
   m_SizeDelta: {x: 302.7885, y: 294.5535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6027796256832573866
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d6011676ce9354a448e39f36ee712ffb, type: 3}
+  m_Sprite: {fileID: 1929297293, guid: da0c27813fd4249449b55aafb18958ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4970385922645201558}
   - component: {fileID: 3017514573749298499}
   - component: {fileID: 7373835035469179803}
-  - component: {fileID: 6034244715045498674}
+  - component: {fileID: 8179977762041213716}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -140,7 +140,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2390701181395355205}
-  - {fileID: 6370638628875982249}
+  - {fileID: 5524144285838516901}
   m_Father: {fileID: 1173212469858686723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6034244715045498674
+--- !u!114 &8179977762041213716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,13 +220,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9206404931406766738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a495eab6252846944a987b923d8a8e03, type: 3}
+  m_Script: {fileID: 11500000, guid: 22e72218b0ac5114e88954da0a3f1444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 4079292250263401816}
-  currentDialogue: {fileID: 11400000, guid: c0ea721a9d01cfe41af2bc0cb3628334, type: 2}
+  textComponent: {fileID: 3196486260660388436}
+  currentDialogue: {fileID: 11400000, guid: cdae7ecd8330898478f3d890c3f813d1, type: 2}
   textSpeed: 0.05
---- !u!1001 &1090565744808818600
+--- !u!1001 &2009390646311878820
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -240,15 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4056028959164274278, guid: 5932558d739f39d409955485525e7f39, type: 3}
       propertyPath: m_text
-      value: Cave Guard
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056028959164274278, guid: 5932558d739f39d409955485525e7f39, type: 3}
-      propertyPath: m_fontSize
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056028959164274278, guid: 5932558d739f39d409955485525e7f39, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 40
+      value: Carl
       objectReference: {fileID: 0}
     - target: {fileID: 5820359659349230004, guid: 5932558d739f39d409955485525e7f39, type: 3}
       propertyPath: m_Name
@@ -351,10 +343,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5932558d739f39d409955485525e7f39, type: 3}
---- !u!114 &4079292250263401816 stripped
+--- !u!114 &3196486260660388436 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4016922194415043312, guid: 5932558d739f39d409955485525e7f39, type: 3}
-  m_PrefabInstance: {fileID: 1090565744808818600}
+  m_PrefabInstance: {fileID: 2009390646311878820}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -362,8 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &6370638628875982249 stripped
+--- !u!224 &5524144285838516901 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6290255239836672513, guid: 5932558d739f39d409955485525e7f39, type: 3}
-  m_PrefabInstance: {fileID: 1090565744808818600}
+  m_PrefabInstance: {fileID: 2009390646311878820}
   m_PrefabAsset: {fileID: 0}

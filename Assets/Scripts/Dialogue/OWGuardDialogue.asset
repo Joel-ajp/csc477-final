@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: GuardDialogue
+  m_Name: OWGuardDialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogueLines:
   - dialogue: 'Greetings, Stranger. You''d best turn back. This place isn''t for
@@ -19,7 +19,7 @@ MonoBehaviour:
       [1/E: "Thanks, I''ll go, then."]
 
       [2/R: "I''ve
-      never fainted in my life.]'
+      never fainted in my life."]'
   - dialogue: Glad you're listening to reason.
   - dialogue: Well, this armor's too heavy for me to stop you. Just don't say I didn't
       give fair warning.

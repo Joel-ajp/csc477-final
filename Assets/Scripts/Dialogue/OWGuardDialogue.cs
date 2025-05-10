@@ -18,7 +18,7 @@ public class DialogueObject : ScriptableObject
     public DialogueLine[] dialogueLines;
 }
 
-public class GuardDialogue : MonoBehaviour
+public class OWGuardDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public DialogueObject currentDialogue;
