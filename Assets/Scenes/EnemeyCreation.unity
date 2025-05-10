@@ -647,7 +647,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -820,7 +820,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -915,6 +915,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 6
   livesText: {fileID: 1933954475}
+  gameOverPanel: {fileID: 0}
+  nameInputField: {fileID: 0}
+  submitButton: {fileID: 0}
 --- !u!114 &805940330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,6 +932,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 6
   livesText: {fileID: 1933954474}
+  gameOverPanel: {fileID: 0}
+  nameInputField: {fileID: 0}
+  submitButton: {fileID: 0}
 --- !u!114 &805940331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,17 +1067,28 @@ MonoBehaviour:
   environments:
   - {fileID: 548490421}
   - {fileID: 1603544727}
+  richardGood: {fileID: 0}
+  richardEvil: {fileID: 0}
+  playerVariant: {fileID: 0}
 --- !u!114 &1133517700 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8225758524225883582, guid: 963983838e2b79b4a85d602a7ab540ac, type: 3}
   m_PrefabInstance: {fileID: 1933954473}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!222 &1133517701
+CanvasRenderer:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_CullTransparentMesh: 1
 --- !u!1 &1198183856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2200564923687064555, guid: 03e641f0254afec52a0e30ecd50019b7, type: 3}
@@ -1310,7 +1327,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1432,7 +1449,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1497,7 +1514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e4dfb65e68373938184c0019cd1085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 805940327}
   activeWeapon: {fileID: 1782376669}
 --- !u!1 &1585745618 stripped
 GameObject:
@@ -1814,7 +1830,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2011,7 +2027,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1933954473}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -2022,11 +2038,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1933954473}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!222 &1933954476
+CanvasRenderer:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_CullTransparentMesh: 1
+--- !u!222 &1933954477
+CanvasRenderer:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_CullTransparentMesh: 1
 --- !u!1 &1962613027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,8 +2115,7 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 0}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 933630730}
+  m_ChildCameras: []
   m_Instructions: []
   m_DefaultBlend:
     m_Style: 1

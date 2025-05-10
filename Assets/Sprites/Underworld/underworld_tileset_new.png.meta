@@ -1411,6 +1411,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: underworld_tileset_new_62
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b22c1515c6f05444999a5f35744665a
+      internalID: 879833946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: underworld_tileset_new_63
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a274ee7f2ce4b4481f3843343c61b0
+      internalID: 575153574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: underworld_tileset_new_64
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad5f9568aac9f54ba6dd6b088ddaec2
+      internalID: -1792260124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1481,6 +1544,9 @@ TextureImporter:
       underworld_tileset_new_6: 2121541853
       underworld_tileset_new_60: 258979162
       underworld_tileset_new_61: -489273790
+      underworld_tileset_new_62: 879833946
+      underworld_tileset_new_63: 575153574
+      underworld_tileset_new_64: -1792260124
       underworld_tileset_new_7: 1590729594
       underworld_tileset_new_8: -67950826
       underworld_tileset_new_9: -1106501796

@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4966,7 +4966,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5008,7 +5008,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 516817784659304622, guid: 8748bb6995861834e915321da425be22, type: 3}
       propertyPath: m_Name
-      value: Click_Interactable_Prefab Variant
+      value: purple shard
       objectReference: {fileID: 0}
     - target: {fileID: 4360149036040477221, guid: 8748bb6995861834e915321da425be22, type: 3}
       propertyPath: m_LocalPosition.x
