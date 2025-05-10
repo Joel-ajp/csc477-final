@@ -60,7 +60,7 @@ public class ShopDialogue : MonoBehaviour
                 //deja vu addition if player already chosen this option
                 else if (index == 7)
                 {
-                    index = 2;
+                    index = 3;
                     NextLine();
                 }
             }
