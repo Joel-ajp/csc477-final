@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 
-public class ShopDialogue : MonoBehaviour
+public class UWGuardDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public DialogueObject currentDialogue;
@@ -24,13 +24,31 @@ public class ShopDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        //If any key pressed
+        if (Input.anyKeyDown)
         {
-            //fast forward text scroll on click
+            //Select dialogue option
             if(textComponent.text == currentDialogue.dialogueLines[index].dialogue)
             {
-                NextLine();
+                //option 1 (button 1 or e)
+                if(index == 0 && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))
+                {
+                    index = 1;
+                    NextLine();
+                }
+                //option 2 (button 2 or r)
+                else if(index == 0 && (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.R)))
+                {
+                    index = 2;
+                    NextLine();
+                }
+                //close dialogue
+                else if(index > 0)
+                {
+                    gameObject.SetActive(false);
+                }
             }
+            //fast forward text scroll
             else
             {
                 StopAllCoroutines();
@@ -54,9 +72,8 @@ public class ShopDialogue : MonoBehaviour
 
     void NextLine()
     {
-        if(index < currentDialogue.dialogueLines.Length - 1)
+        if(index < currentDialogue.dialogueLines.Length)
         {
-            index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }

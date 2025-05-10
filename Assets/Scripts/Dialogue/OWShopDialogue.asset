@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: OWShopDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  dialogueLines:
+  - dialogue: 'G''day, Stranger!
+
+      See anything you like?
+
+      [1/E - "Can
+      you show me your wares?"]
+
+      [2/R - "How have you been?"]'
+  - dialogue: Happy to be of service!
+  - dialogue: Me? To be honest, I'm a bit...unsettled.
+  - dialogue: I have been seeing...cracks? Inconsistencies? Almost like reality itself
+      is starting to fall apart...
+  - dialogue: Not to mention the weird monsters I've been hearing folks whisper about.
+  - dialogue: Can't help but wonder if I'm missing something, and if we're all gonna
+      find out real soon.
+  - dialogue: 'But enough negativity! You''re here for the goods!
+
+      [1/E - "Can
+      you show me your wares?"]
+
+      [2/R - "How have you been?"]'
+  - dialogue: I'm getting deja vu, haha! To be honest, I'm a bit..unsettled.

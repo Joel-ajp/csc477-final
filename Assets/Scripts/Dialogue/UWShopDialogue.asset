@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: UWShopDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  dialogueLines:
+  - dialogue: 'Hi, Stranger! How can I help ya?
+
+      [1/E - "Can you show me your
+      wares?"]
+
+      [2/R - "What is this place?"]'
+  - dialogue: Of course!
+  - dialogue: I'm not sure what you mean.
+  - dialogue: Everything's as it's always been!
+  - dialogue: "Everything's totally fine.\t"
+  - dialogue: Fine, fine...ha...
+  - dialogue: 'Shall we continue business as normal?
+
+      [1/E - "Can you show
+      me your wares?"]
+
+      [2/R - "What is this place?"]'
+  - dialogue: Deja vu...but I'm not sure what you mean.
