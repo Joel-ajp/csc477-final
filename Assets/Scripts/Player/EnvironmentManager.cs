@@ -23,8 +23,16 @@ public class EnvironmentManager : MonoBehaviour
     [SerializeField] private Image richardEvil;
     [SerializeField] private PlayerVariant playerVariant;
     
+    // Animation parameters
+    [SerializeField] private float transformationDuration = 1.5f; // Adjust based on animation length
+    private bool isTransforming = false;
+    private const string TRANSFORMATION_ANIM = "transformation";
+    
     // Input controls
     private PlayerControls controls;
+    
+    // Reference to player's Animator component
+    private Animator playerAnimator;
 
     private void Awake()
     {
@@ -76,9 +84,9 @@ public class EnvironmentManager : MonoBehaviour
         FindEnvironmentsInScene();
 
         FindRichardUI();
-
-
-
+        
+        // Find player references
+        FindPlayerReferences();
         
         // Apply the current environment state
         ApplyCurrentEnvironmentState();
@@ -99,6 +107,17 @@ public class EnvironmentManager : MonoBehaviour
         
         // Log what we found
         Debug.Log($"Found environments in scene: A={envA != null}, B={envB != null}");
+    }
+    
+    private void FindPlayerReferences()
+    {
+        // Find player animator
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        if (player != null)
+            playerAnimator = player.GetComponent<Animator>();
+            
+        Debug.Log($"Found player reference - playerAnimator: {playerAnimator != null}");
     }
     
     private void ApplyCurrentEnvironmentState()
@@ -123,9 +142,9 @@ public class EnvironmentManager : MonoBehaviour
 
     private void OnSwapEnvironment(InputAction.CallbackContext ctx)
     {
-        if (!ctx.performed) return;
+        if (!ctx.performed || isTransforming) return;
         
-        Debug.Log("Swap Environment Pressed");
+        Debug.Log("Swap Environment Initiated");
         
         // Safety check
         if (environments == null || environments.Length < 2)
@@ -134,36 +153,66 @@ public class EnvironmentManager : MonoBehaviour
             return;
         }
         
+        // Start transformation sequence
+        StartCoroutine(PerformEnvironmentTransition());
+    }
+    
+    private IEnumerator PerformEnvironmentTransition()
+    {
+        // Set transforming flag to block input
+        isTransforming = true;
+        
+        // Play transformation animation if animator exists
+        if (playerAnimator != null)
+        {
+            Debug.Log("Playing transformation animation");
+            playerAnimator.SetTrigger(TRANSFORMATION_ANIM);
+            
+            // Wait for animation to complete
+            yield return new WaitForSeconds(transformationDuration);
+        }
+        else
+        {
+            Debug.LogWarning("Cannot play animation - player animator not found");
+        }
+        
         // Deactivate current environment
         if (environments[currentIndex] != null)
+        {
             environments[currentIndex].SetActive(false);
-            print("Deactivated Environment_" + (currentIndex == 0 ? 'A' : 'B'));
+            Debug.Log("Deactivated Environment_" + (currentIndex == 0 ? 'A' : 'B'));
+        }
             
         // Switch to next environment
         currentIndex = (currentIndex + 1) % environments.Length;
         
         // Activate new environment
         if (environments[currentIndex] != null)
+        {
             environments[currentIndex].SetActive(true);
-            
-        Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
+            Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
+        }
+        
         UpdateRichardState();
-      
+        
+        // Allow input again
+        isTransforming = false;
     }
 
-   private void UpdateRichardState(){
-    bool inA = (currentIndex == 0);
-    if (richardGood  != null) richardGood.gameObject.SetActive(inA);
-    if (richardEvil != null) richardEvil.gameObject.SetActive(!inA);
-     playerVariant?.SetVariant(inA);
+    private void UpdateRichardState()
+    {
+        bool inA = (currentIndex == 0);
+        if (richardGood != null) richardGood.gameObject.SetActive(inA);
+        if (richardEvil != null) richardEvil.gameObject.SetActive(!inA);
+        playerVariant?.SetVariant(inA);
     }
 
-    private void FindRichardUI(){
-    var goGood = GameObject.Find("richard");
-    var goEvil = GameObject.Find("richard (evil)");
+    private void FindRichardUI()
+    {
+        var goGood = GameObject.Find("richard");
+        var goEvil = GameObject.Find("richard (evil)");
 
-    if (goGood != null)  richardGood  = goGood.GetComponent<Image>();
-    if (goEvil != null)  richardEvil  = goEvil.GetComponent<Image>();
+        if (goGood != null) richardGood = goGood.GetComponent<Image>();
+        if (goEvil != null) richardEvil = goEvil.GetComponent<Image>();
     }
-
 }

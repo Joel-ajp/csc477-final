@@ -7717,7 +7717,7 @@ Animator:
   m_GameObject: {fileID: 541462664}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cbc0336a5538c1ee793c5ec1ee1902b6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 63ba6ee57dc544048b0bdc8d98f6272f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -31425,6 +31425,7 @@ MonoBehaviour:
   richardGood: {fileID: 2086978550}
   richardEvil: {fileID: 337584493}
   playerVariant: {fileID: 541462675}
+  transformationDuration: 1.5
 --- !u!1 &1116384658
 GameObject:
   m_ObjectHideFlags: 0
@@ -46991,7 +46992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1603544728
 Grid:
   m_ObjectHideFlags: 0
