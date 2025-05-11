@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LaserScript : MonoBehaviour
 {
-    private int _maxReflections = 5;
+    private int _maxReflections = 10;
     private float _maxDistance = 100f;
     private LineRenderer _lineRenderer;
     public bool isActive;
