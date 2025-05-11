@@ -24,15 +24,65 @@ public class EnvironmentManager : MonoBehaviour
     [SerializeField] private PlayerVariant playerVariant;
     
     // Animation parameters
-    [SerializeField] private float transformationDuration = 1.5f; // Adjust based on animation length
+    private float transformationDuration = 1.5f; // Adjust based on animation length
+    private float flashDelay = 1.75f; // When to trigger flash during animation (in seconds)
     private bool isTransforming = false;
     private const string TRANSFORMATION_ANIM = "transformation";
+    
+    // Screen flash effect
+    private Image screenFlash;
+    private float flashDuration = 0.5f;
+    private Color flashColor = Color.red;
     
     // Input controls
     private PlayerControls controls;
     
     // Reference to player's Animator component
     private Animator playerAnimator;
+
+    private IEnumerator PlayScreenFlash()
+    {
+        // Ensure we have a screen flash image
+        if (screenFlash == null)
+        {
+            CreateScreenFlash();
+        }
+        
+        // Flash in
+        float elapsedTime = 0;
+        Color startColor = new Color(flashColor.r, flashColor.g, flashColor.b, 0);
+        while (elapsedTime < flashDuration / 2)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(0, 1, elapsedTime / (flashDuration / 2));
+            screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, alpha);
+            yield return null;
+        }
+        
+        // Ensure we hit peak opacity
+        screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, 1);
+        
+        // Flash out
+        elapsedTime = 0;
+        while (elapsedTime < flashDuration / 2)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(1, 0, elapsedTime / (flashDuration / 2));
+            screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, alpha);
+            yield return null;
+        }
+        
+        // Ensure we end fully transparent
+        screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, 0);
+    }
+    
+    private void OnValidate()
+    {
+        // Keep timing values in valid ranges
+        transformationDuration = Mathf.Max(0.1f, transformationDuration);
+        flashDelay = Mathf.Clamp(flashDelay, 0, transformationDuration);
+        flashDuration = Mathf.Max(0.1f, flashDuration);
+    }
 
     private void Awake()
     {
@@ -49,8 +99,46 @@ public class EnvironmentManager : MonoBehaviour
         // Initialize controls
         controls = new PlayerControls();
         
+        // Create screen flash if not assigned
+        if (screenFlash == null)
+        {
+            CreateScreenFlash();
+        }
+        
         // Register for scene changes
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    private void CreateScreenFlash()
+    {
+        // Create a canvas for the flash if needed
+        Canvas canvas = FindObjectOfType<Canvas>();
+        if (canvas == null)
+        {
+            GameObject canvasObj = new GameObject("FlashCanvas");
+            canvas = canvasObj.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 999; // Ensure it's on top
+            canvasObj.AddComponent<CanvasScaler>();
+            canvasObj.AddComponent<GraphicRaycaster>();
+            DontDestroyOnLoad(canvasObj);
+        }
+        
+        // Create flash image
+        GameObject flashObj = new GameObject("ScreenFlash");
+        flashObj.transform.SetParent(canvas.transform, false);
+        
+        // Set up RectTransform to cover screen
+        RectTransform rectTransform = flashObj.AddComponent<RectTransform>();
+        rectTransform.anchorMin = Vector2.zero;
+        rectTransform.anchorMax = Vector2.one;
+        rectTransform.sizeDelta = Vector2.zero;
+        
+        // Add and configure Image component
+        screenFlash = flashObj.AddComponent<Image>();
+        screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, 0); // Start transparent
+        
+        DontDestroyOnLoad(flashObj);
     }
 
     private void OnEnable()
@@ -168,12 +256,19 @@ public class EnvironmentManager : MonoBehaviour
             Debug.Log("Playing transformation animation");
             playerAnimator.SetTrigger(TRANSFORMATION_ANIM);
             
-            // Wait for animation to complete
-            yield return new WaitForSeconds(transformationDuration);
+            // Wait until the point where we want to show the flash
+            yield return new WaitForSeconds(flashDelay);
+            
+            // Play screen flash effect
+            StartCoroutine(PlayScreenFlash());
+            
+            // Wait for remaining animation time
+            yield return new WaitForSeconds(transformationDuration - flashDelay);
         }
         else
         {
             Debug.LogWarning("Cannot play animation - player animator not found");
+            yield return new WaitForSeconds(transformationDuration);
         }
         
         // Deactivate current environment
