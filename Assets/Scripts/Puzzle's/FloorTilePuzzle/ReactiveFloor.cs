@@ -10,6 +10,7 @@ public class ReactiveFloor : MonoBehaviour
     [Header("Tile References")]
     public List<TileBase> DeactivatedTiles;
     public List<TileBase> ActivatedTiles;
+    public bool swapSound;
     public Tilemap _currentTilemapFloor; // What tilemap its listening too.
     public bool swapBack;
     public float vanishSpeedSeconds = 2f;
@@ -18,13 +19,16 @@ public class ReactiveFloor : MonoBehaviour
     public bool listeningPuzzle;
     public bool attachToPlayer = true;
     public List<Vector3Int> requiredTilePositions;
+    public Transform crystalSpawnPoint;
+    public GameObject crystalReward;
     // Success State
-    public Vector3Int successSpot;
-    public TileBase successTile;
+    // public Vector3Int successSpot;
+    // public TileBase successTile;
 
     private bool _satisfide;
     private HashSet<Vector3Int> _currentActivatedTiles = new HashSet<Vector3Int>();
     private Rigidbody2D _parentRB;
+    private bool cancelCooldowns = false;
 
     void Start()
     {
@@ -66,20 +70,36 @@ public class ReactiveFloor : MonoBehaviour
         {
             TileBase randomActiveTile = GetRandomActivatedTile();
             if (randomActiveTile == null) return;
+            if (swapSound) SoundManager.Instance.Play(SoundType.POP);
 
             _currentTilemapFloor.SetTile(_currentTilemapFloor.WorldToCell(playerPosition), randomActiveTile);
             _currentActivatedTiles.Add(cellPos);
 
             if (!_satisfide && listeningPuzzle && AllRequiredTilesActivated())
             {
+                cancelCooldowns = true; // Stops the corutines once all states are satisfied
                 _satisfide = true;
-                _currentTilemapFloor.SetTile(successSpot, successTile);
+                SoundManager.Instance.Play(SoundType.SUCCESS);
+                CreateCrystal();
+
             }
-            if (swapBack)
+            if (swapBack && !_satisfide) // Prevents it from starting new if coruntine exists
             {
                 StartCoroutine(FloorCooldown(cellPos, originalTile));
             }
         }
+    }
+
+    public void CreateCrystal()
+    {
+        if (crystalReward == null || crystalSpawnPoint == null)
+        {
+            Debug.LogWarning("Missing crystal spawn stuff");
+            return;
+        }
+
+        GameObject spawnedCrystal = Instantiate(crystalReward, crystalSpawnPoint.position, Quaternion.identity);
+        spawnedCrystal.transform.SetParent(crystalSpawnPoint.transform, true); // This is to set it in other worlds
     }
 
     public void SetCurrentTilemap(Tilemap newTilemap)
@@ -92,6 +112,8 @@ public class ReactiveFloor : MonoBehaviour
     IEnumerator FloorCooldown(Vector3Int cell, TileBase originalTile)
     {
         yield return new WaitForSeconds(vanishSpeedSeconds);
+        if (cancelCooldowns) yield break;
+        _currentActivatedTiles.Remove(cell); // Remove from the listened list
         _currentTilemapFloor.SetTile(cell, originalTile);
         // Debug.Log("Swapped Back");
     }

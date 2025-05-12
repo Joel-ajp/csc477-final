@@ -17,6 +17,9 @@ public enum SoundType
 
     // Interaction
     CLICK,
+    POP,
+    SUCCESS,
+    DING
 
 }
 
@@ -77,7 +80,7 @@ public class SoundManager : MonoBehaviour
 
     public float mainVolume = 1.0f;
     private Dictionary<SoundType, SoundCollection> sounds;
-    private AudioSource audioSrc;
+    // private AudioSource audioSrc; Not using a audio source anymore. Making new audio instances to prevent overlap
 
     public static SoundManager Instance { get; private set; }
 
@@ -85,7 +88,7 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        audioSrc = GetComponent<AudioSource>();
+        // audioSrc = GetComponent<AudioSource>();
         sounds = new Dictionary<SoundType, SoundCollection> {
         //  #################################################
         //                     Movement
@@ -118,29 +121,50 @@ public class SoundManager : MonoBehaviour
             { SoundType.CLICK, new SoundCollection(
                 "Interaction/Click"
             )},
+            { SoundType.POP, new SoundCollection(
+                "Interaction/Pop"
+            )},
+            { SoundType.SUCCESS, new SoundCollection(
+                "Interaction/Success"
+            )},
+            { SoundType.DING, new SoundCollection(
+                "Interaction/Ding"
+            )},
         };
     }
 
 
-    public void Play(SoundType type, float pitch = -1f, AudioSource overrideSource = null)
+    public void Play(SoundType type, float pitch = -1f)
     {
+
+
         if (sounds.ContainsKey(type))
         {
-            var source = overrideSource ?? audioSrc;
-            audioSrc.volume = Random.Range(0.70f, 1.0f) * mainVolume;
+            GameObject parent = GameObject.Find("tempAudio"); // Make a gameObject that all temp objects are made under
+            if (parent == null)
+            {
+                parent = new GameObject("tempAudio");
+            }
+
+            GameObject tempAudioObject = new GameObject($"tempAudioObject_{type}");
+            tempAudioObject.transform.parent = parent.transform; // set location
+            var speaker = tempAudioObject.AddComponent<AudioSource>();
+
+            speaker.volume = Random.Range(0.70f, 1.0f) * mainVolume;
             // Randomizes pitch if it isnt specified.
             if (pitch == -1f)
             {
-                audioSrc.pitch = Random.Range(0.70f, 1.0f);
+                speaker.pitch = Random.Range(0.70f, 1.0f);
             }
             else
             {
-                audioSrc.pitch = pitch;
+                speaker.pitch = pitch;
             }
 
             // Setting to 1 since it needs to sink to the animation better
-            audioSrc.clip = sounds[type].GetRandClip();
-            audioSrc.Play();
+            speaker.clip = sounds[type].GetRandClip();
+            speaker.Play();
+            Destroy(tempAudioObject, speaker.clip.length / Mathf.Abs(speaker.pitch)); // Math to only exist for the length of the audio clip
         }
     }
 }

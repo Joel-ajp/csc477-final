@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;       // ← for TMP_Text / TextMeshProUGUI
 using HighScore;
-using UnityEngine.UI;  
+using UnityEngine.UI;
 
 public class PlayerLives : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class PlayerLives : MonoBehaviour
     public int lives = 6;
 
     [Header("UI References")]
-    [SerializeField] private TextMeshProUGUI livesText;  
+    [SerializeField] private TextMeshProUGUI livesText;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_InputField nameInputField;
     [SerializeField] private Button submitButton;
@@ -58,7 +58,7 @@ public class PlayerLives : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
-        private void OnSubmitScore()
+    private void OnSubmitScore()
     {
         // get name (or default)
         string playerName = nameInputField.text.Trim();
