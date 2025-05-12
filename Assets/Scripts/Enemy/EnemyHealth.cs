@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int startingHealth = 3;
-    [SerializeField] private int coinReward = 1; 
+    [SerializeField] private int coinReward = 1;
+    public int CurrentHealth => currentHealth; 
     // Start is called before the first frame update
     private int currentHealth;
     private Knockback knockback;

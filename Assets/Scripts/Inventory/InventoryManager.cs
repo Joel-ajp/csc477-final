@@ -27,7 +27,7 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            updateStats(i, stat_levels[i]);
+            setStats(i, stat_levels[i]);
         }
         for (int i = 0; i < curCrystals; i++)
         {
@@ -53,7 +53,40 @@ public class InventoryManager : MonoBehaviour
         curCrystals--;
     }
 
-    public void updateStats(int stat_index, int level)
+    public void updateStat(int stat_index)
+    {
+        // stat_index has 4 options :
+        //          0 = movement speed
+        //          1 = attack speed
+        //          2 = attack damage
+        //          3 = damage reduction
+
+        switch (stat_index)
+        {
+            case 0: // movement speed
+                stat_levels[stat_index] = stat_levels[stat_index] + 1;
+                move.text = stat_levels[stat_index].ToString();
+                break;
+            case 1: // attack speed
+                stat_levels[stat_index] = stat_levels[stat_index] + 1;
+                a_sp.text = stat_levels[stat_index].ToString();
+                break;
+            case 2: // attack damage
+                stat_levels[stat_index] = stat_levels[stat_index] + 1;
+                a_dam.text = stat_levels[stat_index].ToString();
+                break;
+            case 3: // damage reduction
+                stat_levels[stat_index] = stat_levels[stat_index] + 1;
+                dam_red.text = stat_levels[stat_index].ToString();
+                break;
+            default:
+                Debug.Log("Did not enter a correct stat type");
+                break;
+        }
+
+    }
+
+    public void setStats(int stat_index, int level)
     {
         // stat_index has 4 options :
         //          0 = movement speed

@@ -32,8 +32,6 @@ public class PlayerLives : MonoBehaviour
         lives--;
         Debug.Log($"Life lost! Remaining: {lives}");
 
-        Destroy(collision.gameObject);
-
         // update the text field immediately
         UpdateLivesUI();
 

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Sword : MonoBehaviour
 {
-    [SerializeField] private readonly PlayerMovement playerMovement;
+    [SerializeField] private PlayerMovement playerMovement;
 
     private Animator _animator;
     private PlayerControls  _controls;
