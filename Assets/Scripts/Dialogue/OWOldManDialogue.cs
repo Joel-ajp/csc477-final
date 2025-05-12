@@ -11,14 +11,14 @@ public class OWOldManDialogue : MonoBehaviour
     public DialogueObject currentDialogue;
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
-    private bool seenBefore;    //if player has already talked to shopkeeper
+    private bool necklaceTaken;    //if player has already talked to shopkeeper
 
     // Start is called before the first frame update
     void Start()
     {
         gameObject.SetActive(true);
         index = 0;
-        seenBefore = false;
+        necklaceTaken = false;
         //Start the dialogue
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
@@ -33,34 +33,41 @@ public class OWOldManDialogue : MonoBehaviour
             if (textComponent.text == currentDialogue.dialogueLines[index].dialogue)
             {
                 //option 1 (button 1 or e)
-                if ((index == 0 || index == 6) && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))
+                if ((index == 0) && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))
                 {
                     index = 1;
                     NextLine();
                 }
-                //option 2 (button 2 or r)
-                else if ((index == 0 || index == 6) && (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.R)))
-                {
-                    index = seenBefore ? 7 : 2;
-                    NextLine();
-                }
-                //transition to the shop screen
+                //continue option 1 text
                 else if (index == 1)
                 {
-                    //PLACEHOLDER - TRANSFER TO SHOP
+                    index++;
+                    NextLine();
+                }
+                //option 2 (button 2 or r)
+                else if ((index == 0 || index == 2) && (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.R)))
+                {
+                    index = necklaceTaken ? 9 : 3;
+                    NextLine();
+                }
+                //exit state
+                else if (index == 2 || index > 7)
+                {
                     gameObject.SetActive(false);
                 }
                 //continue option 2 text
-                else if (index >= 2 && index <= 5)
+                else if (index >= 3 && index < 7)
                 {
                     index++;
-                    seenBefore = true;
                     NextLine();
                 }
-                //deja vu addition if player already chosen this option
+                //finish option 2 text and add shard to inv
                 else if (index == 7)
                 {
-                    index = 3;
+                    index++;
+                    necklaceTaken = true;
+                    //add shard to inventory - PLACEHOLDER
+
                     NextLine();
                 }
             }
