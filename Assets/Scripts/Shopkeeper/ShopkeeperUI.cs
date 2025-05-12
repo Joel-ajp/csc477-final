@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class Shopkeeper : MonoBehaviour
 {
+    [Header("Stuff for the UI")]
     public GameObject keeperUI;
     public GameObject overworld;
     public GameObject underworld;
     public Image overKeep;
     public Image underKeep;
 
+    [Header("Reference Variables")]
     public List<ShopItem> shopItems;
+
 
     private bool playerCanShop;
     private bool isOpen;
@@ -35,6 +38,7 @@ public class Shopkeeper : MonoBehaviour
 
         if (isOpen)
         {
+            UpdateHighlight();
             ShopNavigation();
         }
 
@@ -53,7 +57,7 @@ public class Shopkeeper : MonoBehaviour
 
     void ShopNavigation()
     {
-        int tempIndex = 0;
+        int tempIndex;
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             tempIndex = Mathf.Min(index + 1, shopItems.Count - 1);
@@ -92,6 +96,7 @@ public class Shopkeeper : MonoBehaviour
     public void ToggleShop()
     {
         isOpen = !isOpen;
+        index = 0;
         keeperUI.SetActive(isOpen);
         if (isOpen)
             UpdateHighlight();
@@ -99,7 +104,7 @@ public class Shopkeeper : MonoBehaviour
 
     public void purchaseItem()
     {
-        shopItems[index].purchaseItem();
+        shopItems[index].tryPurchase();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -120,6 +125,7 @@ public class Shopkeeper : MonoBehaviour
             Debug.Log("player done shopping");
             playerCanShop = false;
             isOpen = false;
+            index = 0;
             keeperUI.SetActive(false);
         }
     }
