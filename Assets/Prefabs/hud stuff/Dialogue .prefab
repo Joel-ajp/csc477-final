@@ -563,7 +563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: (Press any key to skip)
+  m_text: (ESC to leave; any key to fastforward)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4f1fd39e1564234eb9ed3de251106ce, type: 2}
   m_sharedMaterial: {fileID: -1230929867705335093, guid: e4f1fd39e1564234eb9ed3de251106ce, type: 2}
