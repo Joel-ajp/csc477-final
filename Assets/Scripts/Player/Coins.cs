@@ -7,7 +7,12 @@ public class Coins : MonoBehaviour
 
     [SerializeField] private TMP_Text coinsText;
     
-    private int coins;
+    public int coins;
+
+    public void Start()
+    {
+        UpdateUI();
+    }
 
     private void Awake()
     {
@@ -35,10 +40,6 @@ public class Coins : MonoBehaviour
         {
             Debug.Log(amount + " coin(s) have been spent");
             coins -= amount;
-            // add code here for what to do when a thing is bought
-            // if a crystal was bought then call the 
-            // InventoryManager public function "gainedCrystal" any other
-            // pickup has to be added manually (talk to Gavin)
         }
         UpdateUI();
     }

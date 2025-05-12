@@ -12,6 +12,7 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI a_sp;
     public TextMeshProUGUI a_dam;
     public TextMeshProUGUI dam_red;
+    public GameObject player;
 
     //// private variables
     private int curCrystals = 0;
@@ -33,6 +34,8 @@ public class InventoryManager : MonoBehaviour
         {
             crystalIcons[i].enabled = true;
         }
+
+        player.GetComponent<PlayerStats>().updateStats(stat_levels);
     }
 
     // Update is called once per frame
@@ -84,6 +87,7 @@ public class InventoryManager : MonoBehaviour
                 break;
         }
 
+        player.GetComponent<PlayerStats>().updateStats(stat_levels);
     }
 
     public void setStats(int stat_index, int level)
