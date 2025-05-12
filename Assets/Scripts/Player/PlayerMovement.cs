@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private const string _lastVertical = "LastVertical";
     private Vector2 _lastMovement = Vector2.down;
     public Vector2 LastMovement => _lastMovement;
+    public GameObject player;
     
     // Property to store the position that should be set after scene load
     public static Vector2 NextSpawnPosition { get; set; }
@@ -117,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
-        _rb.velocity = _movement * _moveSpeed;
+        _rb.velocity = _movement * (_moveSpeed + player.GetComponent<PlayerStats>().movement_speed);
         _animator.SetFloat(_horizontal, _movement.x);
         _animator.SetFloat(_vertical, _movement.y);
         
