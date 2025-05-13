@@ -38,13 +38,17 @@ public class InventoryManager : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
 
         _player.GetComponent<PlayerStats>().updateStats(stat_levels);
+
         lives = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLives>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (curCrystals < 0) {curCrystals = 0;}
+        if (curCrystals == 4)
+        {
+            _player.GetComponent<PlayerLives>().kill();
+        }
     }
 
     public void gainedCrystal()

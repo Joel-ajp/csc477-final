@@ -49,6 +49,11 @@ public class PlayerLives : MonoBehaviour
         }
     }
 
+    public void kill()
+    {
+        lives = 0;
+    }
+
     public void UpdateLivesUI()
     {
         // prefix “x” is cosmetic: matches your inspector snapshot
