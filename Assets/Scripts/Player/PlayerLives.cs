@@ -52,6 +52,7 @@ public class PlayerLives : MonoBehaviour
     private void OnGameOver()
     {
         // stop the action
+        SoundManager.Instance.Play(SoundType.GAME_OVER);
         Time.timeScale = 0f;
 
         // show input panel

@@ -10,44 +10,45 @@ public class EnvironmentManager : MonoBehaviour
 {
     // Singleton instance
     public static EnvironmentManager Instance { get; private set; }
-    
+
     // Environment tracking
     public GameObject[] environments;
     private int currentIndex = 0;
     public int CurrentEnvironmentIndex => currentIndex;
-    
+
     // Standard naming for environments across scenes
     private const string ENV_A_NAME = "Environment_A";
     private const string ENV_B_NAME = "Environment_B";
     [SerializeField] private Image richardGood;
     [SerializeField] private Image richardEvil;
     [SerializeField] private PlayerVariant playerVariant;
-    
+
     // Animation parameters
     private float transformationDuration = 1.5f; // Adjust based on animation length
     private float flashDelay = 1.75f; // When to trigger flash during animation (in seconds)
     private bool isTransforming = false;
     private const string TRANSFORMATION_ANIM = "transformation";
-    
+
     // Screen flash effect
     private Image screenFlash;
     private float flashDuration = 0.5f;
     private Color flashColor = Color.red;
-    
+
     // Input controls
     private PlayerControls controls;
-    
+
     // Reference to player's Animator component
     private Animator playerAnimator;
 
     private IEnumerator PlayScreenFlash()
     {
         // Ensure we have a screen flash image
+
         if (screenFlash == null)
         {
             CreateScreenFlash();
         }
-        
+
         // Flash in
         float elapsedTime = 0;
         Color startColor = new Color(flashColor.r, flashColor.g, flashColor.b, 0);
@@ -58,10 +59,10 @@ public class EnvironmentManager : MonoBehaviour
             screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, alpha);
             yield return null;
         }
-        
+
         // Ensure we hit peak opacity
         screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, 1);
-        
+
         // Flash out
         elapsedTime = 0;
         while (elapsedTime < flashDuration / 2)
@@ -71,11 +72,11 @@ public class EnvironmentManager : MonoBehaviour
             screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, alpha);
             yield return null;
         }
-        
+
         // Ensure we end fully transparent
         screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, 0);
     }
-    
+
     private void OnValidate()
     {
         // Keep timing values in valid ranges
@@ -92,23 +93,23 @@ public class EnvironmentManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        
+
         // Initialize controls
         controls = new PlayerControls();
-        
+
         // Create screen flash if not assigned
         if (screenFlash == null)
         {
             CreateScreenFlash();
         }
-        
+
         // Register for scene changes
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    
+
     private void CreateScreenFlash()
     {
         // Create a canvas for the flash if needed
@@ -123,21 +124,21 @@ public class EnvironmentManager : MonoBehaviour
             canvasObj.AddComponent<GraphicRaycaster>();
             DontDestroyOnLoad(canvasObj);
         }
-        
+
         // Create flash image
         GameObject flashObj = new GameObject("ScreenFlash");
         flashObj.transform.SetParent(canvas.transform, false);
-        
+
         // Set up RectTransform to cover screen
         RectTransform rectTransform = flashObj.AddComponent<RectTransform>();
         rectTransform.anchorMin = Vector2.zero;
         rectTransform.anchorMax = Vector2.one;
         rectTransform.sizeDelta = Vector2.zero;
-        
+
         // Add and configure Image component
         screenFlash = flashObj.AddComponent<Image>();
         screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, 0); // Start transparent
-        
+
         DontDestroyOnLoad(flashObj);
     }
 
@@ -152,7 +153,7 @@ public class EnvironmentManager : MonoBehaviour
         controls.Player.SwapEnvironment.performed -= OnSwapEnvironment;
         controls.Player.Disable();
     }
-    
+
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -162,52 +163,52 @@ public class EnvironmentManager : MonoBehaviour
     {
         StartCoroutine(SetupEnvironmentsAfterSceneLoad());
     }
-    
+
     private IEnumerator SetupEnvironmentsAfterSceneLoad()
     {
         // Wait to ensure all objects are initialized
         yield return new WaitForEndOfFrame();
-        
+
         // Find environments in the new scene
         FindEnvironmentsInScene();
 
         FindRichardUI();
-        
+
         // Find player references
         FindPlayerReferences();
-        
+
         // Apply the current environment state
         ApplyCurrentEnvironmentState();
-        
+
         Debug.Log($"Applied environment state in new scene: Environment_{(currentIndex == 0 ? 'A' : 'B')} active");
     }
-    
+
     private void FindEnvironmentsInScene()
     {
         // Find Environment_A and Environment_B in the current scene
         GameObject envA = GameObject.Find(ENV_A_NAME);
         GameObject envB = GameObject.Find(ENV_B_NAME);
-        
+
         // Store references in our array
         environments = new GameObject[2];
         environments[0] = envA;
         environments[1] = envB;
-        
+
         // Log what we found
         Debug.Log($"Found environments in scene: A={envA != null}, B={envB != null}");
     }
-    
+
     private void FindPlayerReferences()
     {
         // Find player animator
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        
+
         if (player != null)
             playerAnimator = player.GetComponent<Animator>();
-            
+
         Debug.Log($"Found player reference - playerAnimator: {playerAnimator != null}");
     }
-    
+
     private void ApplyCurrentEnvironmentState()
     {
         // Safety check
@@ -216,7 +217,7 @@ public class EnvironmentManager : MonoBehaviour
             Debug.LogWarning("Cannot apply environment state - environments not found");
             return;
         }
-        
+
         // Activate the current environment, deactivate the other
         for (int i = 0; i < environments.Length; i++)
         {
@@ -231,37 +232,39 @@ public class EnvironmentManager : MonoBehaviour
     private void OnSwapEnvironment(InputAction.CallbackContext ctx)
     {
         if (!ctx.performed || isTransforming) return;
-        
+
         Debug.Log("Swap Environment Initiated");
-        
+
         // Safety check
         if (environments == null || environments.Length < 2)
         {
             Debug.LogWarning("Cannot swap environments - environments not found");
             return;
         }
-        
+
         // Start transformation sequence
         StartCoroutine(PerformEnvironmentTransition());
     }
-    
+
     private IEnumerator PerformEnvironmentTransition()
     {
         // Set transforming flag to block input
         isTransforming = true;
-        
+
+
         // Play transformation animation if animator exists
         if (playerAnimator != null)
         {
+            SoundManager.Instance.Play(SoundType.TRANSPORT);
             Debug.Log("Playing transformation animation");
             playerAnimator.SetTrigger(TRANSFORMATION_ANIM);
-            
+
             // Wait until the point where we want to show the flash
             yield return new WaitForSeconds(flashDelay);
-            
+
             // Play screen flash effect
             StartCoroutine(PlayScreenFlash());
-            
+
             // Wait for remaining animation time
             yield return new WaitForSeconds(transformationDuration - flashDelay);
         }
@@ -270,26 +273,26 @@ public class EnvironmentManager : MonoBehaviour
             Debug.LogWarning("Cannot play animation - player animator not found");
             yield return new WaitForSeconds(transformationDuration);
         }
-        
+
         // Deactivate current environment
         if (environments[currentIndex] != null)
         {
             environments[currentIndex].SetActive(false);
             Debug.Log("Deactivated Environment_" + (currentIndex == 0 ? 'A' : 'B'));
         }
-            
+
         // Switch to next environment
         currentIndex = (currentIndex + 1) % environments.Length;
-        
+
         // Activate new environment
         if (environments[currentIndex] != null)
         {
             environments[currentIndex].SetActive(true);
             Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
         }
-        
+
         UpdateRichardState();
-        
+
         // Allow input again
         isTransforming = false;
     }

@@ -6,8 +6,8 @@ public class Sword : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
 
     private Animator _animator;
-    private PlayerControls  _controls;
-    [SerializeField]  private ActiveWeapon activeWeapon;
+    private PlayerControls _controls;
+    [SerializeField] private ActiveWeapon activeWeapon;
 
     public PlayerStats stats;
 
@@ -21,46 +21,47 @@ public class Sword : MonoBehaviour
         _animator = GetComponent<Animator>();
         _controls = new PlayerControls();
         activeWeapon = GetComponentInParent<ActiveWeapon>();
-        
+
     }
 
-   private void Update()
-{
-    Vector2 dir = playerMovement.LastMovement;
-    if (dir == Vector2.zero)
-        return;
-
-    // moving up or down or left or right
-    if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+    private void Update()
     {
-       
-        // Face left or right flip the y
-        if (dir.x < 0f)
+        Vector2 dir = playerMovement.LastMovement;
+        if (dir == Vector2.zero)
+            return;
+
+        // moving up or down or left or right
+        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
         {
-            // moving left
-            activeWeapon.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+
+            // Face left or right flip the y
+            if (dir.x < 0f)
+            {
+                // moving left
+                activeWeapon.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            }
+            else
+            {
+                // moving right
+                activeWeapon.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            }
         }
         else
         {
-            // moving right
-            activeWeapon.transform.localRotation = Quaternion.Euler(0f,   0f, 0f);
+            // Face up or down flip the z
+            if (dir.y > 0)
+            {
+                activeWeapon.transform.localRotation = Quaternion.Euler(0, 0, 90f);
+                activeWeapon.transform.localPosition = new Vector3(0, .1f, 0);
+            }
+            else
+            {
+                activeWeapon.transform.localRotation = Quaternion.Euler(0, 0, -90f);
+                activeWeapon.transform.localPosition = new Vector3(0, -.1f, 0);
+            }
+
         }
     }
-    else
-    {
-        // Face up or down flip the z
-        if (dir.y > 0){
-    activeWeapon.transform.localRotation = Quaternion.Euler(0,0,90f);
-    activeWeapon.transform.localPosition = new Vector3(0,  .1f, 0);
-}
-else
-{
-    activeWeapon.transform.localRotation = Quaternion.Euler(0,0,-90f);
-    activeWeapon.transform.localPosition = new Vector3(0, -.1f, 0);
-}
-
-    }
-}
 
 
     private void OnEnable()
@@ -78,6 +79,7 @@ else
 
     private void Attack()
     {
+        SoundManager.Instance.Play(SoundType.SWORD_SWING);
         _animator.speed = 1.0f + (stats.attack_speed - 1) * 0.1f;
         _animator.SetTrigger("Attack");
     }

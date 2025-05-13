@@ -76,6 +76,7 @@ public class ShopItem : MonoBehaviour
 
     public void purchaseItem()
     {
+        SoundManager.Instance.Play(SoundType.SHOP_PURCHASE);
         if (type == "stat")
         {
             Debug.Log($"Upgraded stat {stat} for {price} coins!");

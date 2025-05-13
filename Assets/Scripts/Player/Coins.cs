@@ -6,7 +6,7 @@ public class Coins : MonoBehaviour
     public static Coins Instance { get; private set; }
 
     [SerializeField] private TMP_Text coinsText;
-    
+
     public int coins;
 
     public void Start()
