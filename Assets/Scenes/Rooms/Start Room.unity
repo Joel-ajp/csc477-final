@@ -45687,6 +45687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547935587}
   - component: {fileID: 1547935588}
+  - component: {fileID: 1547935589}
   m_Layer: 0
   m_Name: GameOver
   m_TagString: Untagged
@@ -45725,6 +45726,18 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1429811942}
   nameInputField: {fileID: 1606321731}
   submitButton: {fileID: 1491155958}
+--- !u!114 &1547935589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547935586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ecfc4160ed62c4699ac2abce37369e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1548853779
 GameObject:
   m_ObjectHideFlags: 0
@@ -54048,7 +54061,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1944226041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1547935589}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main Menu rahhh
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1944226041
 MonoBehaviour:
   m_ObjectHideFlags: 0

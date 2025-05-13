@@ -16,7 +16,7 @@ public class InventoryManager : MonoBehaviour
     private PlayerLives lives;
 
     //// private variables
-    private int curCrystals = 0;
+    public int curCrystals = 0;
     private static List<int> stat_levels = new List<int> { 1, 1, 1, 1 };
     //          0 = movement speed
     //          1 = attack speed
@@ -45,7 +45,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (curCrystals == 4)
+        if (curCrystals >= 4)
         {
             _player.GetComponent<PlayerLives>().kill();
         }

@@ -23,6 +23,18 @@ public class PlayerLives : MonoBehaviour
         gameOverPanel.SetActive(false);
     }
 
+    void Update()
+    {
+        if (lives <= 0)
+        {
+            Debug.Log("Game Over");
+            OnGameOver();
+            int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 10;
+            submitScoreObject.SetCoinScore(coinScore);
+            Destroy(gameObject);
+        }
+    }
+
     public void gainHearts()
     {
         lives += 1;
