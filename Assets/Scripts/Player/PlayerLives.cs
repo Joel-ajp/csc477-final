@@ -19,7 +19,6 @@ public class PlayerLives : MonoBehaviour
         // initialize the display at start
         HS.Init(this, "Fractured");
         UpdateLivesUI();
-        submitButton.onClick.AddListener(OnSubmitScore);
 
         // hide the panel until game over
         gameOverPanel.SetActive(false);
@@ -43,13 +42,13 @@ public class PlayerLives : MonoBehaviour
         }
     }
 
-    private void UpdateLivesUI()
+    public void UpdateLivesUI()
     {
         // prefix “x” is cosmetic: matches your inspector snapshot
         livesText.text = $"x{lives}";
     }
 
-    private void OnGameOver()
+    public void OnGameOver()
     {
         // stop the action
         SoundManager.Instance.Play(SoundType.GAME_OVER);
@@ -59,23 +58,5 @@ public class PlayerLives : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
-    private void OnSubmitScore()
-    {
-        // get name (or default)
-        string playerName = nameInputField.text.Trim();
-        if (string.IsNullOrEmpty(playerName))
-            playerName = "Anonymous";
 
-        // pull coin total from your singleton
-        int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 0;
-
-        // submit the score
-        HS.SubmitHighScore(this, playerName, coinScore);
-        print("Game Over");
-
-        // cleanup / unpause
-        Time.timeScale = 1f;
-        gameOverPanel.SetActive(false);
-        Destroy(gameObject);
-    }
 }
