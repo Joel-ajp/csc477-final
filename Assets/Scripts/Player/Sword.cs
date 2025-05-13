@@ -9,6 +9,8 @@ public class Sword : MonoBehaviour
     private PlayerControls  _controls;
     [SerializeField]  private ActiveWeapon activeWeapon;
 
+    //public GameObject player;
+
 
     private void Awake()
     {
@@ -57,9 +59,6 @@ else
 }
 
 
-
-
-
     private void OnEnable()
     {
         //from youtube tutorial
@@ -75,6 +74,7 @@ else
 
     private void Attack()
     {
+        //_animator.speed = 1.0f + (player.GetComponent<PlayerStats>().attack_speed - 1) * 0.05f;
         _animator.SetTrigger("Attack");
     }
 

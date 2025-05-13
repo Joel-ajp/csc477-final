@@ -7673,6 +7673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 886273417}
+  coins: 0
 --- !u!114 &541462666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7740,6 +7741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311907bcceddd474fb3b0f65eaf45d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 541462664}
 --- !u!70 &541462670
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -31425,7 +31427,6 @@ MonoBehaviour:
   richardGood: {fileID: 2086978550}
   richardEvil: {fileID: 337584493}
   playerVariant: {fileID: 541462675}
-  transformationDuration: 1.5
 --- !u!1 &1116384658
 GameObject:
   m_ObjectHideFlags: 0
@@ -46075,14 +46076,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8be6e50baa3e194e96ab24a9776ec59, type: 2}
   - {fileID: 11400000, guid: 32963715a0135774b925360ace6d096a, type: 2}
   - {fileID: 11400000, guid: 00bcef10fc863734e883aa076b0981b7, type: 2}
+  swapSound: 0
   _currentTilemapFloor: {fileID: 733521817}
   swapBack: 1
   vanishSpeedSeconds: 2
   listeningPuzzle: 0
   attachToPlayer: 1
   requiredTilePositions: []
-  successSpot: {x: 0, y: 0, z: 0}
-  successTile: {fileID: 0}
+  crystalSpawnPoint: {fileID: 0}
+  crystalReward: {fileID: 0}
 --- !u!114 &1548853781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46099,14 +46101,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a398302cd34b674488730ce0d55b2bea, type: 2}
   ActivatedTiles:
   - {fileID: 11400000, guid: b832cc9902349d245a6cacffb70744e9, type: 2}
+  swapSound: 0
   _currentTilemapFloor: {fileID: 1333947393}
   swapBack: 1
   vanishSpeedSeconds: 2
   listeningPuzzle: 0
   attachToPlayer: 1
   requiredTilePositions: []
-  successSpot: {x: 0, y: 0, z: 0}
-  successTile: {fileID: 0}
+  crystalSpawnPoint: {fileID: 0}
+  crystalReward: {fileID: 0}
 --- !u!4 &1548853782
 Transform:
   m_ObjectHideFlags: 0
@@ -46196,6 +46199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
+  player: {fileID: 541462664}
 --- !u!60 &1576564472
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -47387,7 +47391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e4dfb65e68373938184c0019cd1085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 541462669}
   activeWeapon: {fileID: 1062427992}
+  player: {fileID: 541462664}
 --- !u!95 &1745182269
 Animator:
   serializedVersion: 5
