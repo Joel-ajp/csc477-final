@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/BossRoom.unity
     guid: 0102120a450851b499e36b2bba3a8092
+  - enabled: 1
+    path: Assets/Scenes/Rooms/shack.unity
+    guid: 7a5e6a7bc2ec3af45a995b917878add7
+  - enabled: 1
+    path: Assets/Scenes/Rooms/forest edge.unity
+    guid: 89a8285181ca0e744b2e8316513b5733
+  - enabled: 1
+    path: Assets/Scenes/Rooms/forest clearing.unity
+    guid: 73e6f4c8da57adc43bd900ab2be30be5
   m_configObjects: {}
