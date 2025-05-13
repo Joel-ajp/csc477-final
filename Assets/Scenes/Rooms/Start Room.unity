@@ -54087,7 +54087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1989880672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54396,7 +54396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2058521115
 BoxCollider2D:
   m_ObjectHideFlags: 0
