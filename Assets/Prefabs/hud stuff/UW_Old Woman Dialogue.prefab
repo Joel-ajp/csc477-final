@@ -97,7 +97,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 844da72235463cc4696233e440cdb483, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31d0aa7faa8361a4cab1a1692b6ee6f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 3196486260660388436}
   currentDialogue: {fileID: 11400000, guid: cc3df91d2fbde524ea862b469ef4203e, type: 2}
-  textSpeed: 0
+  textSpeed: 0.05
 --- !u!1001 &2009390646311878820
 PrefabInstance:
   m_ObjectHideFlags: 0
