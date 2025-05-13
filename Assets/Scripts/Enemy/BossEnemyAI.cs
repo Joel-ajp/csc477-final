@@ -4,8 +4,11 @@ using UnityEngine;
 public class BossEnemyAI : MonoBehaviour
 {
     private enum State { Follow, Charging, Teleporting }
+    [SerializeField] private GameObject shardPrefab;
+     private bool shardDropped = false;
     private State currentState = State.Follow;
     private bool hasEnteredPhaseTwo = false;
+    [SerializeField] private Transform shardSpawnPoint;
 
     [Header("References")]
     [SerializeField] private Transform player;
@@ -63,6 +66,14 @@ public class BossEnemyAI : MonoBehaviour
 
     private void Update()
     {
+          if (!shardDropped && health.CurrentHealth <= 0)
+        {
+            DropShard();
+            shardDropped = true;
+            Destroy(gameObject);
+            return;
+        }
+
         // Phase-2 trigger
         if (!hasEnteredPhaseTwo && health.CurrentHealth <= phaseTwoHealthThreshold)
         {
@@ -72,6 +83,7 @@ public class BossEnemyAI : MonoBehaviour
             StartCoroutine(TeleportPhase());
             return;
         }
+
 
         if (currentState == State.Follow)
         {
@@ -185,4 +197,18 @@ public class BossEnemyAI : MonoBehaviour
     //         anim.SetFloat(_lastVertical, dir.y);
     //     }
     // }
+     private void DropShard()
+    {
+        if (shardPrefab == null)
+        {
+            Debug.LogWarning($"[{name}] No shard prefab assigned!");
+            return;
+        }
+
+        Vector3 spawnPos = shardSpawnPoint != null
+            ? shardSpawnPoint.position
+            : transform.position;
+
+        Instantiate(shardPrefab, spawnPos, Quaternion.identity);
+    }
 }
