@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: UWOldWomanDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  dialogueLines:
+  - dialogue: 'Good evening, Stranger!
+
+      [1/E: "Who are you?"]
+
+      [2/R:
+      "You''re not from around here, are you?"]'
+  - dialogue: Well, dear, the folks in town call me "Mrs. Becky"...
+  - dialogue: '...but my husband Mark just calls me "Beck."
+
+      [1/E: "Goodbye."]
+
+      [2/R:
+      "You''re not from around here, are you?"]'
+  - dialogue: '''Not from around here?'' Why, I was born and raised in this town,
+      and I''ve tended this farm since I was big enough to toddle!'
+  - dialogue: ...well, hm, now that you mention it...
+  - dialogue: Something does seem...unfamiliar about this place. I can't put my finger
+      on it...
+  - dialogue: Ah well, I'm sure it's just my old mind playing tricks, the practical
+      joker.
+  - dialogue: Say, have you seen Mark, dear? He went to fix one of the fences, but
+      that was hours ago.
+  - dialogue: If he doesn't come back soon I'll have to go looking for him.

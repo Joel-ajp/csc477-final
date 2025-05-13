@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
-public class OWOldManDialogue : MonoBehaviour
+public class UWOldWomanDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public DialogueObject currentDialogue;
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
-    private bool necklaceTaken;    //if player has already talked to shopkeeper
+    private bool alreadyMet;    //if player has already talked to shopkeeper
 
     // Start is called before the first frame update
     void Start()
     {
         gameObject.SetActive(true);
         index = 0;
-        necklaceTaken = false;
+        alreadyMet = false;
         //Start the dialogue
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
@@ -53,27 +54,19 @@ public class OWOldManDialogue : MonoBehaviour
                 //option 2 (button 2 or r)
                 else if ((index == 0 || index == 2) && (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.R)))
                 {
-                    index = necklaceTaken ? 9 : 3;
+                    index = alreadyMet ? 9 : 3;
                     NextLine();
                 }
                 //exit state
-                else if (index == 2 || index > 7)
+                else if (index == 2 || index > 6)
                 {
                     gameObject.SetActive(false);
                 }
                 //continue option 2 text
-                else if (index >= 3 && index < 7)
+                else if (index >= 3 && index <= 6)
                 {
                     index++;
-                    NextLine();
-                }
-                //finish option 2 text and add shard to inv
-                else if (index == 7)
-                {
-                    index++;
-                    necklaceTaken = true;
-                    //add shard to inventory - PLACEHOLDER
-
+                    alreadyMet = true;
                     NextLine();
                 }
             }

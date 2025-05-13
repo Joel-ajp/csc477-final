@@ -40,8 +40,14 @@ public class OWGuardDialogue : MonoBehaviour
         //If any key pressed
         if (Input.anyKeyDown)
         {
+            //exit state is escape pressed
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                StopAllCoroutines();
+                gameObject.SetActive(false);
+            }
             //Select dialogue option
-            if(textComponent.text == currentDialogue.dialogueLines[index].dialogue)
+            else if (textComponent.text == currentDialogue.dialogueLines[index].dialogue)
             {
                 //option 1 (button 1 or e)
                 if(index == 0 && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))

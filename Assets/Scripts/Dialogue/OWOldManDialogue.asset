@@ -20,7 +20,7 @@ MonoBehaviour:
       [2/R: "Why
       are you wearing such a fancy necklace for farmwork?"]'
   - dialogue: The folks in town call me "Old Man Marcus"...
-  - dialogue: '...but my wife Becky jus'' calls me "Mark."
+  - dialogue: '...but my wife Beck jus'' calls me "Mark."
 
       [1/E: "Goodbye."]
 
@@ -28,8 +28,8 @@ MonoBehaviour:
       "Why are you wearing such a fancy necklace for farmwork?"]'
   - dialogue: Ah, this? Why I just found it workin' in the fields earlier-
   - dialogue: Wait, no, that's not right...
-  - dialogue: Maybe ol' Becky gave it to me? Ah well, my memory failin' me ain't
-      nothing new.
+  - dialogue: Maybe ol' Beck gave it to me? Ah well, my memory failin' me ain't nothing
+      new.
   - dialogue: For all I know, it just appeared here one day without me noticing,
       heh!
   - dialogue: You have got a point, though...oughtta get rid of this 'fore it gets
