@@ -439,7 +439,6 @@ MonoBehaviour:
   a_sp: {fileID: 7405976160127985692}
   a_dam: {fileID: 9083092450711644033}
   dam_red: {fileID: 4603439819881042294}
-  player: {fileID: 0}
 --- !u!114 &6159148860666274767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3774,7 +3773,7 @@ GameObject:
   - component: {fileID: 951634925062666414}
   m_Layer: 5
   m_Name: player info
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

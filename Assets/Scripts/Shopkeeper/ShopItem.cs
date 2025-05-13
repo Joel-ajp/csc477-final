@@ -12,7 +12,8 @@ public class ShopItem : MonoBehaviour
     public string itemName;
     public Sprite icon;
     public UnityEngine.UI.Image displaySprite;
-    public TextMeshProUGUI displayText;
+    public TextMeshProUGUI displayName;
+    public TextMeshProUGUI displayCost;
     public Color normalColor = Color.white;
     public Color highlightColor = Color.yellow;
     private bool flashin;
@@ -23,15 +24,17 @@ public class ShopItem : MonoBehaviour
     public int stat = 0;
 
     [Header("Reference Variables")]
-    public GameObject inventory;
-    public GameObject coins;
+    private InventoryManager inventory;
+    private Coins coins;
 
 
     void Start()
     {
-        displayText.text = itemName + " $" + price;
         displaySprite.sprite = icon;
         flashin = false;
+
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryManager>();
+        coins = GameObject.FindGameObjectWithTag("UI").GetComponent<Coins>();
     }
 
     // Update is called once per frame
@@ -39,18 +42,32 @@ public class ShopItem : MonoBehaviour
     {
         if (!flashin)
         {
-            displaySprite.color = active ? highlightColor : normalColor;
+            if (active)
+            {
+                displaySprite.color = highlightColor;
+                updateText();
+            }
+            else
+            {
+                displaySprite.color = normalColor;
+            }
         }
+    }
+
+    public void updateText()
+    {
+        displayName.text = itemName;
+        displayCost.text = " $" + price;
     }
 
     public void tryPurchase()
     {
-        int curCoins = coins.GetComponent<Coins>().CurrentCoins;
+        int curCoins = coins.CurrentCoins;
         if (price <= curCoins)
         {
             purchaseItem();
             flash(Color.green);
-            coins.GetComponent<Coins>().spendCoins(price);
+            coins.spendCoins(price);
         }
         else
         {
@@ -79,7 +96,7 @@ public class ShopItem : MonoBehaviour
         if (type == "stat")
         {
             Debug.Log($"Upgraded stat {stat} for {price} coins!");
-            inventory.GetComponent<InventoryManager>().updateStat(stat);
+            inventory.updateStat(stat);
         }
         else
         {

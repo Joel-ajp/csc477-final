@@ -12,12 +12,14 @@ public class OWShopDialogue : MonoBehaviour
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
     private bool seenBefore;    //if player has already talked to shopkeeper
+    private Shopkeeper keeperui;
 
     // Start is called before the first frame update
     void Start()
     {
         seenBefore = false;
         gameObject.SetActive(false);
+        keeperui = GetComponent<Shopkeeper>();
     }
 
     //Start dialogue
@@ -58,6 +60,7 @@ public class OWShopDialogue : MonoBehaviour
                 else if (index == 1)
                 {
                     //PLACEHOLDER - TRANSFER TO SHOP
+                    keeperui.ToggleShop();
                     gameObject.SetActive(false);
                 }
                 //continue option 2 text
