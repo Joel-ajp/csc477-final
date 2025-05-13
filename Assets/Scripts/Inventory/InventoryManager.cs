@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI a_dam;
     public TextMeshProUGUI dam_red;
     private GameObject _player;
+    private PlayerLives lives;
 
     //// private variables
     private int curCrystals = 0;
@@ -37,6 +38,7 @@ public class InventoryManager : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
 
         _player.GetComponent<PlayerStats>().updateStats(stat_levels);
+        lives = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLives>();
     }
 
     // Update is called once per frame
@@ -80,6 +82,7 @@ public class InventoryManager : MonoBehaviour
                 a_dam.text = stat_levels[stat_index].ToString();
                 break;
             case 3: // damage reduction
+                lives.gainHearts();
                 stat_levels[stat_index] = stat_levels[stat_index] + 1;
                 dam_red.text = stat_levels[stat_index].ToString();
                 break;

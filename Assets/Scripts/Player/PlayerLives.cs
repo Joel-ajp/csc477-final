@@ -25,6 +25,12 @@ public class PlayerLives : MonoBehaviour
         gameOverPanel.SetActive(false);
     }
 
+    public void gainHearts()
+    {
+        lives += 1;
+        UpdateLivesUI();
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Enemy")) return;

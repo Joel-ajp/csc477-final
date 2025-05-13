@@ -33,8 +33,8 @@ public class ShopItem : MonoBehaviour
         displaySprite.sprite = icon;
         flashin = false;
 
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryManager>();
-        coins = GameObject.FindGameObjectWithTag("UI").GetComponent<Coins>();
+        inventory = GameObject.FindGameObjectWithTag("UI").GetComponent<InventoryManager>();
+        coins = GameObject.FindGameObjectWithTag("Player").GetComponent<Coins>();
     }
 
     // Update is called once per frame
@@ -98,6 +98,12 @@ public class ShopItem : MonoBehaviour
         {
             Debug.Log($"Upgraded stat {stat} for {price} coins!");
             inventory.updateStat(stat);
+        }
+        else if (type == "crystal")
+        {
+            Debug.Log($"Purchased {itemName} for {price} coins!");
+            inventory.gainedCrystal();
+            Destroy(this);
         }
         else
         {

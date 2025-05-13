@@ -39,7 +39,8 @@ public class Coins : MonoBehaviour
         else if (amount <= coins)
         {
             Debug.Log(amount + " coin(s) have been spent");
-            coins -= amount;
+            coins = coins - amount;
+            UpdateUI();
         }
         UpdateUI();
     }
