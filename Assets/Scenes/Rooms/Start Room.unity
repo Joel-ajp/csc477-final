@@ -45490,7 +45490,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1491155959}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1547935588}
+        m_TargetAssemblyTypeName: SubmitScore, Assembly-CSharp
+        m_MethodName: OnSubmitScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1491155959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45672,6 +45684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547935587}
+  - component: {fileID: 1547935588}
   m_Layer: 0
   m_Name: GameOver
   m_TagString: Untagged
@@ -45695,6 +45708,21 @@ Transform:
   - {fileID: 1579370308}
   m_Father: {fileID: 886273420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1547935588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547935586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43a40155d9b48a71be3be08b618c9bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 1429811942}
+  nameInputField: {fileID: 1606321731}
+  submitButton: {fileID: 1491155958}
 --- !u!1 &1548853779
 GameObject:
   m_ObjectHideFlags: 0

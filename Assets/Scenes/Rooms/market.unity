@@ -17494,7 +17494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: Fork in Road
-  spawnPosition: {x: 0, y: 10}
+  spawnPosition: {x: 0, y: 5}
 --- !u!60 &1224329305
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21164,7 +21164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: Fork in Road
-  spawnPosition: {x: 0, y: 10}
+  spawnPosition: {x: 0, y: 5}
 --- !u!1 &1693715271
 GameObject:
   m_ObjectHideFlags: 0
