@@ -24760,6 +24760,31 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3113048310399651757, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113048310399651757, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113048310399651757, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113048310399651757, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113048310399651757, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384789619964536378, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_text
+      value: "WASD \t- Move\nTab \t- Inventory\nE \t- Interact\nP \t- Attack\nSpace
+        \t- Shift"
+      objectReference: {fileID: 0}
     - target: {fileID: 7663025838880241483, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_IsActive
       value: 0
