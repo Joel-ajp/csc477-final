@@ -8281,6 +8281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 598146360}
+  coins: 0
 --- !u!114 &548909086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8331,6 +8332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311907bcceddd474fb3b0f65eaf45d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!70 &548909089
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13883,6 +13885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
+  player: {fileID: 0}
 --- !u!60 &843077104
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22296,6 +22299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
+  player: {fileID: 0}
 --- !u!114 &1262592959
 MonoBehaviour:
   m_ObjectHideFlags: 0
