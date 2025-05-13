@@ -16621,6 +16621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UW_Shop Dialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 1939756604874825024, guid: 907e3eddb68298046b914594f1dacc2b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9206404931406766738, guid: 907e3eddb68298046b914594f1dacc2b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -17924,6 +17928,10 @@ PrefabInstance:
     - target: {fileID: 1939756604874825024, guid: 6c89452d4600e194cbd9091ebf2d457c, type: 3}
       propertyPath: m_Name
       value: OW_Shop Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939756604874825024, guid: 6c89452d4600e194cbd9091ebf2d457c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9206404931406766738, guid: 6c89452d4600e194cbd9091ebf2d457c, type: 3}
       propertyPath: m_IsActive
