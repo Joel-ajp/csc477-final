@@ -16,10 +16,14 @@ public class UWShopDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(true);
-        index = 0;
         seenBefore = false;
-        //Start the dialogue
+        gameObject.SetActive(false);
+    }
+
+    //Start dialogue
+    void OnEnable()
+    {
+        index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
     }
