@@ -12,11 +12,11 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI a_sp;
     public TextMeshProUGUI a_dam;
     public TextMeshProUGUI dam_red;
-    public GameObject player;
+    private GameObject _player;
 
     //// private variables
     private int curCrystals = 0;
-    private static List<int> stat_levels = new List<int> {1,1,1,1};
+    private static List<int> stat_levels = new List<int> { 1, 1, 1, 1 };
     //          0 = movement speed
     //          1 = attack speed
     //          2 = attack damage
@@ -34,8 +34,9 @@ public class InventoryManager : MonoBehaviour
         {
             crystalIcons[i].enabled = true;
         }
+        _player = GameObject.FindGameObjectWithTag("Player");
 
-        player.GetComponent<PlayerStats>().updateStats(stat_levels);
+        _player.GetComponent<PlayerStats>().updateStats(stat_levels);
     }
 
     // Update is called once per frame
@@ -87,7 +88,7 @@ public class InventoryManager : MonoBehaviour
                 break;
         }
 
-        player.GetComponent<PlayerStats>().updateStats(stat_levels);
+        _player.GetComponent<PlayerStats>().updateStats(stat_levels);
     }
 
     public void setStats(int stat_index, int level)

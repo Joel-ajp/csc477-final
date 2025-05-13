@@ -11,7 +11,7 @@ public class CrystalInteraction : EInteractable
         _inventoryManager = FindObjectOfType<InventoryManager>();
         if (_inventoryManager == null)
         {
-            Debug.LogError("uhh why is it null?");
+            //Debug.LogError("uhh why is it null?");
         }
     }
 

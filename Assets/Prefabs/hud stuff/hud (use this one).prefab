@@ -439,6 +439,7 @@ MonoBehaviour:
   a_sp: {fileID: 7405976160127985692}
   a_dam: {fileID: 9083092450711644033}
   dam_red: {fileID: 4603439819881042294}
+  player: {fileID: 0}
 --- !u!114 &6159148860666274767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2128,8 +2129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -390, y: 200}
-  m_SizeDelta: {x: 775, y: 391.4182}
+  m_AnchoredPosition: {x: -417.77, y: 225.67389}
+  m_SizeDelta: {x: 835.55, y: 442.766}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8233297027936935687
 CanvasRenderer:
@@ -2152,16 +2153,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5176471, g: 0, b: 0.8039216, a: 1}
+  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 776535939, guid: 60845ecb0e8ab4989b7801e7cd6e611b, type: 3}
+  m_Sprite: {fileID: -1777838731, guid: 32d5530fa520feb4a9aa043197e6dec2, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3853,6 +3854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 477712932119201963}
+  coins: 0
 --- !u!1 &8657251505214709350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3888,7 +3890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -80, y: 375}
+  m_AnchoredPosition: {x: -80, y: 417}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &800003223671126874

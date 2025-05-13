@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _lastMovement = Vector2.down;
     public Vector2 LastMovement => _lastMovement;
     public GameObject player;
+    //private float speedModifier;
     
     // Property to store the position that should be set after scene load
     public static Vector2 NextSpawnPosition { get; set; }
@@ -117,8 +118,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //speedModifier = Mathf.Max(1, (player.GetComponent<PlayerStats>().movement_speed - 1) * 0.2f);
+
+
         _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
-        _rb.velocity = _movement * (_moveSpeed + player.GetComponent<PlayerStats>().movement_speed);
+        _rb.velocity = _movement * (_moveSpeed); //speedModifier);
         _animator.SetFloat(_horizontal, _movement.x);
         _animator.SetFloat(_vertical, _movement.y);
         
