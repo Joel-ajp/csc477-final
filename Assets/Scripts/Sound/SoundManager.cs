@@ -19,7 +19,15 @@ public enum SoundType
     CLICK,
     POP,
     SUCCESS,
-    DING
+    DING,
+    SWORD_SWING,
+    HIT_SOUND,
+    KILL_SOUND,
+    SHOP_PURCHASE,
+    GAME_OVER,
+    VICTORY,
+    TRANSPORT
+
 
 }
 
@@ -130,6 +138,28 @@ public class SoundManager : MonoBehaviour
             { SoundType.DING, new SoundCollection(
                 "Interaction/Ding"
             )},
+            { SoundType.SWORD_SWING, new SoundCollection(
+                "Interaction/Click"
+            )},
+            { SoundType.HIT_SOUND, new SoundCollection(
+                "Interaction/Click"
+            )},
+            { SoundType.KILL_SOUND, new SoundCollection(
+                "Interaction/Click"
+            )},
+            { SoundType.SHOP_PURCHASE, new SoundCollection(
+                "Interaction/Click"
+            )},
+            { SoundType.GAME_OVER, new SoundCollection(
+                "Interaction/Click"
+            )},
+            { SoundType.VICTORY, new SoundCollection(
+                "Interaction/Click"
+            )},
+            { SoundType.TRANSPORT, new SoundCollection(
+                "Interaction/Click"
+            )},
+
         };
     }
 
