@@ -13,12 +13,11 @@ public class PlayerLives : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_InputField nameInputField;
     [SerializeField] private Button submitButton;
+    [SerializeField] private SubmitScore submitScoreObject;
 
     void Start()
     {
-        // initialize the display at start
-        HS.Init(this, "Fractured");
-        UpdateLivesUI();
+        // initialize the display at start        UpdateLivesUI();
 
         // hide the panel until game over
         gameOverPanel.SetActive(false);
@@ -44,6 +43,8 @@ public class PlayerLives : MonoBehaviour
         {
             Debug.Log("Game Over");
             OnGameOver();
+            int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 10;
+            submitScoreObject.SetCoinScore(coinScore);
             Destroy(gameObject);
         }
     }

@@ -7560,6 +7560,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1429811942}
   nameInputField: {fileID: 1606321731}
   submitButton: {fileID: 1491155958}
+  submitScoreObject: {fileID: 1547935588}
 --- !u!114 &541462667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7577,6 +7578,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1429811942}
   nameInputField: {fileID: 1606321731}
   submitButton: {fileID: 1491155958}
+  submitScoreObject: {fileID: 1547935588}
 --- !u!95 &541462668
 Animator:
   serializedVersion: 5
