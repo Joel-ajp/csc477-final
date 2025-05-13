@@ -15,12 +15,18 @@ public class PlayerMovement : MonoBehaviour
     private const string _lastVertical = "LastVertical";
     private Vector2 _lastMovement = Vector2.down;
     public Vector2 LastMovement => _lastMovement;
-    public GameObject player;
-    //private float speedModifier;
+    public PlayerStats stats;
+    private float speedModifier;
     
     // Property to store the position that should be set after scene load
     public static Vector2 NextSpawnPosition { get; set; }
     private static bool _shouldSetPosition = false;
+
+
+    private void Start()
+    {
+        stats = GetComponent<PlayerStats>();
+    }
 
     private void Awake()
     {
@@ -118,11 +124,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //speedModifier = Mathf.Max(1, (player.GetComponent<PlayerStats>().movement_speed - 1) * 0.2f);
+        speedModifier = (stats.movement_speed - 1) * 0.2f;
 
 
         _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
-        _rb.velocity = _movement * (_moveSpeed); //speedModifier);
+        _rb.velocity = _movement * (_moveSpeed + speedModifier);
         _animator.SetFloat(_horizontal, _movement.x);
         _animator.SetFloat(_vertical, _movement.y);
         
