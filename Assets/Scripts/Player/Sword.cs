@@ -9,8 +9,12 @@ public class Sword : MonoBehaviour
     private PlayerControls  _controls;
     [SerializeField]  private ActiveWeapon activeWeapon;
 
-    //public GameObject player;
+    public PlayerStats stats;
 
+    private void Start()
+    {
+        stats = GetComponentInParent<PlayerStats>();
+    }
 
     private void Awake()
     {
@@ -74,7 +78,7 @@ else
 
     private void Attack()
     {
-        //_animator.speed = 1.0f + (player.GetComponent<PlayerStats>().attack_speed - 1) * 0.05f;
+        _animator.speed = 1.0f + (stats.attack_speed - 1) * 0.1f;
         _animator.SetTrigger("Attack");
     }
 
