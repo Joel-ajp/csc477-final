@@ -9,6 +9,7 @@ public class OWOldManDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public DialogueObject currentDialogue;
+    public InventoryManager invMan;
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
     private bool necklaceTaken;    //if player has already talked to shopkeeper
@@ -16,10 +17,14 @@ public class OWOldManDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(true);
-        index = 0;
         necklaceTaken = false;
-        //Start the dialogue
+        gameObject.SetActive(false);
+    }
+
+    //Start dialogue
+    void OnEnable()
+    {
+        index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
     }
@@ -72,6 +77,7 @@ public class OWOldManDialogue : MonoBehaviour
                 {
                     index++;
                     necklaceTaken = true;
+                    invMan.gainedCrystal();
                     //add shard to inventory - PLACEHOLDER
 
                     NextLine();

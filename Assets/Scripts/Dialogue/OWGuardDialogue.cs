@@ -28,9 +28,13 @@ public class OWGuardDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
+    //Start dialogue
+    void OnEnable()
+    {
         index = 0;
-        //Start the dialogue
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
     }
