@@ -17,7 +17,7 @@ public class PlayerLives : MonoBehaviour
 
     void Start()
     {
-        // initialize the display at start        UpdateLivesUI();
+        UpdateLivesUI();
 
         // hide the panel until game over
         gameOverPanel.SetActive(false);

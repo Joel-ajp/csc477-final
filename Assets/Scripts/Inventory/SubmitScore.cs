@@ -14,7 +14,7 @@ public class SubmitScore : MonoBehaviour
 
     private void Awake()
     {
-        HS.Init(this, "Fractured3");
+        HS.Init(this, "Fractured");
         submitButton.onClick.AddListener(OnSubmitScore);
     }
 
