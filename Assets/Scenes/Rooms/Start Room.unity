@@ -7518,7 +7518,6 @@ GameObject:
   - component: {fileID: 541462669}
   - component: {fileID: 541462668}
   - component: {fileID: 541462667}
-  - component: {fileID: 541462666}
   - component: {fileID: 541462665}
   - component: {fileID: 541462675}
   - component: {fileID: 541462676}
@@ -7543,24 +7542,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinsText: {fileID: 886273417}
   coins: 0
---- !u!114 &541462666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541462664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1038e93448817470bb4310130451926a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 6
-  livesText: {fileID: 886273419}
-  gameOverPanel: {fileID: 1429811942}
-  nameInputField: {fileID: 1606321731}
-  submitButton: {fileID: 1491155958}
-  submitScoreObject: {fileID: 1547935588}
 --- !u!114 &541462667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24743,6 +24724,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 974732333867440953, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: lives
+      value: 
+      objectReference: {fileID: 541462667}
+    - target: {fileID: 974732333867440953, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 541462664}
@@ -24905,17 +24890,6 @@ MonoBehaviour:
 --- !u!114 &886273418 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7832705425087865304, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
-  m_PrefabInstance: {fileID: 886273416}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &886273419 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 670940943087049918, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
   m_PrefabInstance: {fileID: 886273416}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
