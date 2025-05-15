@@ -7697,12 +7697,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1233637076, guid: 79542b5d74318c54389b7a09ee047326, type: 3}
+  m_Sprite: {fileID: 1059380791, guid: 0c95efbb57ad6d34fb173caaa6c779a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.94285715, y: 1.0285715}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7738,8 +7738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee98647c52ae53be8966efe58a91346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goodSprite: {fileID: -1233637076, guid: 79542b5d74318c54389b7a09ee047326, type: 3}
-  evilSprite: {fileID: -57689119, guid: c3a73275860088e409aaec73cfbaf7a0, type: 3}
+  goodSprite: {fileID: 1059380791, guid: 0c95efbb57ad6d34fb173caaa6c779a8, type: 3}
+  evilSprite: {fileID: 804591067, guid: 7adfcf9de26fb57408912e035f4dff73, type: 3}
   goodController: {fileID: 9100000, guid: cbc0336a5538c1ee793c5ec1ee1902b6, type: 2}
   evilController: {fileID: 9100000, guid: 63ba6ee57dc544048b0bdc8d98f6272f, type: 2}
 --- !u!114 &541462676
@@ -53759,13 +53759,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 541462669}
+  projectilePrefab: {fileID: 8693650494261911239, guid: 0cd4ec947f856479695572ef3ec1b9b2, type: 3}
   rightOffset: {x: 0.665, y: 0.312}
   upOffset: {x: 0.02, y: 1.156}
   leftOffset: {x: -0.631, y: 0.29}
   downOffset: {x: 0.041, y: -0.271}
-  projectilePrefab: {fileID: 8693650494261911239, guid: 0cd4ec947f856479695572ef3ec1b9b2, type: 3}
   projectileSpeed: 10
   lifeTime: 5
+  magazineSize: 5
+  reloadDuration: 2
 --- !u!95 &1820723163
 Animator:
   serializedVersion: 5
