@@ -114,11 +114,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 66
+        y: 172
         width: 44
-        height: 48
+        height: 50
       alignment: 9
-      pivot: {x: 0.49560162, y: 0.036341667}
+      pivot: {x: 0.47212294, y: 0.04207611}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -135,11 +135,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 49
-        y: 62
+        y: 170
         width: 45
         height: 50
       alignment: 9
-      pivot: {x: 0.4569936, y: 0.03940605}
+      pivot: {x: 0.4727429, y: 0.037987366}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -156,11 +156,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 98
-        y: 61
+        y: 169
         width: 45
         height: 54
       alignment: 9
-      pivot: {x: 0.49139863, y: 0.026934234}
+      pivot: {x: 0.46365696, y: 0.026781717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -177,11 +177,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 151
-        y: 59
+        y: 167
         width: 46
         height: 54
       alignment: 9
-      pivot: {x: 0.52103525, y: 0.030518143}
+      pivot: {x: 0.48666814, y: 0.026781717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: boss sheet_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 11
-        width: 45
-        height: 50
+        x: 208
+        y: 170
+        width: 44
+        height: 48
       alignment: 9
-      pivot: {x: 0.5086013, y: 0.043276537}
+      pivot: {x: 0.5046463, y: 0.074103676}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: boss sheet_5
       rect:
         serializedVersion: 2
-        x: 48
-        y: 11
+        x: 1
+        y: 120
         width: 45
         height: 48
       alignment: 9
-      pivot: {x: 0.5043004, y: 0.036341846}
+      pivot: {x: 0.50454295, y: 0.07836231}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: boss sheet_6
       rect:
         serializedVersion: 2
-        x: 101
-        y: 11
-        width: 42
+        x: 48
+        y: 119
+        width: 45
         height: 48
       alignment: 9
-      pivot: {x: 0.49999964, y: 0.01618292}
+      pivot: {x: 0.48182866, y: 0.09539827}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: boss sheet_7
       rect:
         serializedVersion: 2
-        x: 150
-        y: 8
-        width: 44
-        height: 46
+        x: 101
+        y: 119
+        width: 42
+        height: 48
       alignment: 9
-      pivot: {x: 0.5219917, y: 0.003561559}
+      pivot: {x: 0.5243365, y: 0.0528086}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,6 +273,237 @@ TextureImporter:
       bones: []
       spriteID: e6f73eb4896a33c4aa4eceb1c1d381e3
       internalID: -1803557264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_8
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 116
+        width: 44
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47676954, y: 0.0333655}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc411269219f43b47a097cbdd7d9dc96
+      internalID: -1087833120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_9
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 116
+        width: 44
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4349542, y: 0.03577264}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c21cb18fa133443a499ca6f854343d
+      internalID: 797781283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_10
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 66
+        width: 35
+        height: 47
+      alignment: 9
+      pivot: {x: 0.52336353, y: 0.047643133}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be9061aafca7f14189ac475efc45ad6
+      internalID: -42289742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_11
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 65
+        width: 36
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4148208, y: 0.044290543}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe1712a2ec690c4788d405c43e688cc
+      internalID: 1669099483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_12
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 63
+        width: 36
+        height: 49
+      alignment: 9
+      pivot: {x: 0.4204996, y: 0.05776246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e85c602b0e14140949d180f54c21c0
+      internalID: -1230032712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_13
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 62
+        width: 44
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4814162, y: 0.040031433}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdf85109fcc91d499420964b9b0c866
+      internalID: -1224682980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_14
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 62
+        width: 44
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5092933, y: 0.06984409}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01705eea3007f8042b271e331036060e
+      internalID: -1239852736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11
+        width: 35
+        height: 52
+      alignment: 9
+      pivot: {x: 0.57593155, y: 0.04789404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9572d466068c447b740722b34b00c8
+      internalID: -320684709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_16
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 11
+        width: 36
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5000003, y: 0.04789404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec3ae064f6f7c64f997f3daaf226403
+      internalID: 1067164143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_17
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 9
+        width: 37
+        height: 52
+      alignment: 9
+      pivot: {x: 0.52762586, y: 0.040031597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c29cc350e24bc4098cd60369e43664
+      internalID: 901288956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss sheet_18
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 11
+        width: 44
+        height: 48
+      alignment: 9
+      pivot: {x: 0.48606214, y: 0.04003163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8371e64c4a1e8ef4ca8d76abedfaf9c0
+      internalID: -705602370
       vertices: []
       indices: 
       edges: []
@@ -290,12 +521,23 @@ TextureImporter:
     nameFileIdTable:
       boss sheet_0: 1519641927
       boss sheet_1: 2139723577
+      boss sheet_10: -42289742
+      boss sheet_11: 1669099483
+      boss sheet_12: -1230032712
+      boss sheet_13: -1224682980
+      boss sheet_14: -1239852736
+      boss sheet_15: -320684709
+      boss sheet_16: 1067164143
+      boss sheet_17: 901288956
+      boss sheet_18: -705602370
       boss sheet_2: 1950311946
       boss sheet_3: -1585687049
       boss sheet_4: -245502245
       boss sheet_5: 816519020
       boss sheet_6: 42125715
       boss sheet_7: -1803557264
+      boss sheet_8: -1087833120
+      boss sheet_9: 797781283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
