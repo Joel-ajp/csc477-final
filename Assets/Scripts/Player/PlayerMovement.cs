@@ -22,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
     public static Vector2 NextSpawnPosition { get; set; }
     private static bool _shouldSetPosition = false;
 
+    // Added flag to control whether player movement is enabled
+    private bool _movementEnabled = true;
+    
+    // Public property to check if movement is enabled
+    public bool MovementEnabled => _movementEnabled;
 
     private void Start()
     {
@@ -95,12 +100,12 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Reset CinemachineBrain: " + brain.name);
         }
     }
-    
+   
     private void UpdateCamerasByTag(string tag)
     {
         var vcams = GameObject.FindGameObjectsWithTag(tag);
         Debug.Log($"Found {vcams.Length} cameras with tag '{tag}'");
-        
+
         foreach (var vcamObj in vcams)
         {
             var vcam = vcamObj.GetComponent<Cinemachine.CinemachineVirtualCamera>();
@@ -121,22 +126,58 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log($"PlayerMovement: Set next spawn position to {position}");
     }
 
+    // Enable player movement
+    public void EnableMovement()
+    {
+        _movementEnabled = true;
+        Debug.Log("Player movement enabled");
+    }
+
+    // Disable player movement
+    public void DisableMovement()
+    {
+        _movementEnabled = false;
+        // Immediately stop any current movement
+        if (_rb != null)
+        {
+            _rb.velocity = Vector2.zero;
+        }
+        // Reset animator parameters to idle state
+        if (_animator != null)
+        {
+            _animator.SetFloat(_horizontal, 0);
+            _animator.SetFloat(_vertical, 0);
+        }
+        Debug.Log("Player movement disabled");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        speedModifier = (stats.movement_speed - 1) * 0.2f;
-
-
-        _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
-        _rb.velocity = _movement * (_moveSpeed + speedModifier);
-        _animator.SetFloat(_horizontal, _movement.x);
-        _animator.SetFloat(_vertical, _movement.y);
-        
-        if (_movement != Vector2.zero)
+        // Only process movement if it's enabled
+        if (_movementEnabled)
         {
-            _lastMovement = _movement;
-            _animator.SetFloat(_lastHorizontal, _movement.x);
-            _animator.SetFloat(_lastVertical, _movement.y);
+            speedModifier = (stats.movement_speed - 1) * 0.2f;
+
+            _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
+            _rb.velocity = _movement * (_moveSpeed + speedModifier);
+            _animator.SetFloat(_horizontal, _movement.x);
+            _animator.SetFloat(_vertical, _movement.y);
+            
+            if (_movement != Vector2.zero)
+            {
+                _lastMovement = _movement;
+                _animator.SetFloat(_lastHorizontal, _movement.x);
+                _animator.SetFloat(_lastVertical, _movement.y);
+            }
+        }
+        else
+        {
+            // Ensure velocity is zero when movement is disabled
+            if (_rb.velocity != Vector2.zero)
+            {
+                _rb.velocity = Vector2.zero;
+            }
         }
     }
 }

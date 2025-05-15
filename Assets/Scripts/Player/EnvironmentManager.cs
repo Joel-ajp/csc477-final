@@ -22,6 +22,7 @@ public class EnvironmentManager : MonoBehaviour
     [SerializeField] private Image richardGood;
     [SerializeField] private Image richardEvil;
     [SerializeField] private PlayerVariant playerVariant;
+    [SerializeField] private PlayerMovement playerMovement;
 
     // Animation parameters
     private float transformationDuration = 1.5f; // Adjust based on animation length
@@ -250,7 +251,7 @@ public class EnvironmentManager : MonoBehaviour
     {
         // Set transforming flag to block input
         isTransforming = true;
-
+        playerMovement.DisableMovement();
 
         // Play transformation animation if animator exists
         if (playerAnimator != null)
@@ -294,6 +295,7 @@ public class EnvironmentManager : MonoBehaviour
         UpdateRichardState();
 
         // Allow input again
+        playerMovement.EnableMovement();
         isTransforming = false;
     }
 

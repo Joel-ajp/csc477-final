@@ -31131,6 +31131,7 @@ MonoBehaviour:
   richardGood: {fileID: 2086978550}
   richardEvil: {fileID: 337584493}
   playerVariant: {fileID: 541462675}
+  playerMovement: {fileID: 541462669}
 --- !u!1 &1116384658
 GameObject:
   m_ObjectHideFlags: 0
@@ -45871,7 +45872,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  stats: {fileID: 0}
 --- !u!60 &1576564472
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -47027,9 +47027,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e4dfb65e68373938184c0019cd1085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 541462669}
-  activeWeapon: {fileID: 1062427992}
-  stats: {fileID: 0}
 --- !u!95 &1745182269
 Animator:
   serializedVersion: 5
