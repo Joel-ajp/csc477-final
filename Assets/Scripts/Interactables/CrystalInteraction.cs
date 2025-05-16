@@ -5,6 +5,7 @@ using UnityEngine;
 public class CrystalInteraction : EInteractable
 {
     private InventoryManager _inventoryManager;
+    //public string color;
     // Start is called before the first frame update
     void Start()
     {
