@@ -415,12 +415,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23e972811fdd410987166261ca2e842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: A Speed
-  icon: {fileID: 21300000, guid: 66778239f1d020f489b1612568449c50, type: 3}
-  displaySprite: {fileID: 3590345189088833966}
+  itemName: Attack Speed
+  icon: {fileID: 21300000, guid: 3e1737fa93b0f704eb333d34f6d4cb03, type: 3}
+  displaySprite: {fileID: 702874164778744854}
   displayName: {fileID: 6315184723224030999}
   displayCost: {fileID: 6230952087528162945}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  normalColor: {r: 0.51886785, g: 0.57230383, b: 1, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   type: stat
   price: 75
@@ -600,6 +600,81 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: fb0806eb2fa442042ba21d3a615bf27b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2485055151110734456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1084073634516774341}
+  - component: {fileID: 5802202076810620518}
+  - component: {fileID: 8336777541786265527}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1084073634516774341
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485055151110734456}
+  m_LocalRotation: {x: -0.049303178, y: 0.061032895, z: -0.7130268, w: 0.6967332}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalScale: {x: 1.4773, y: 1.4773, z: 1.4773}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6277307500443919175}
+  m_LocalEulerAnglesHint: {x: 1.051, y: 8.939, z: -91.242}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -529, y: 215}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5802202076810620518
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485055151110734456}
+  m_CullTransparentMesh: 1
+--- !u!114 &8336777541786265527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485055151110734456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 371981308, guid: bd7d35eaf4fd2b44fa9d845cef9c8776, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -927,12 +1002,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23e972811fdd410987166261ca2e842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: A Damage
-  icon: {fileID: 21300000, guid: 66778239f1d020f489b1612568449c50, type: 3}
+  itemName: Attack Damage
+  icon: {fileID: 21300000, guid: 761dbb97c8324a240a6178489ac2cd5c, type: 3}
   displaySprite: {fileID: 1058372833610958335}
   displayName: {fileID: 6315184723224030999}
   displayCost: {fileID: 6230952087528162945}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  normalColor: {r: 1, g: 0.084905505, b: 0.084905505, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   type: stat
   price: 75
@@ -1829,6 +1904,7 @@ RectTransform:
   - {fileID: 1027146397336554671}
   - {fileID: 2144742264731674174}
   - {fileID: 4130895850289194633}
+  - {fileID: 1084073634516774341}
   m_Father: {fileID: 3117238771736183323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1864,7 +1940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -261166642, guid: ed9a4ce8be7cdbf4b9ee1c50b58b58af, type: 3}
+  m_Sprite: {fileID: -442873791, guid: bd7d35eaf4fd2b44fa9d845cef9c8776, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2000,11 +2076,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Defense
-  icon: {fileID: 21300000, guid: 66778239f1d020f489b1612568449c50, type: 3}
+  icon: {fileID: 21300000, guid: fb0806eb2fa442042ba21d3a615bf27b, type: 3}
   displaySprite: {fileID: 8890624698467693249}
   displayName: {fileID: 6315184723224030999}
   displayCost: {fileID: 6230952087528162945}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  normalColor: {r: 1, g: 0.5943395, b: 0.8082893, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   type: stat
   price: 75
@@ -2342,12 +2418,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23e972811fdd410987166261ca2e842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: M Speed
-  icon: {fileID: 21300000, guid: 66778239f1d020f489b1612568449c50, type: 3}
-  displaySprite: {fileID: 4745587062249166117}
+  itemName: Movement Speed
+  icon: {fileID: 21300000, guid: 50bf5dfa9d558954aac0485ee933ca51, type: 3}
+  displaySprite: {fileID: 1858629138832446821}
   displayName: {fileID: 6315184723224030999}
   displayCost: {fileID: 6230952087528162945}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  normalColor: {r: 0.7313607, g: 1, b: 0.48742133, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   type: stat
   price: 75
