@@ -24763,11 +24763,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3113048310399651757, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3113048310399651757, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3113048310399651757, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_LocalScale.z
@@ -24775,7 +24775,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4857010767199912408, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_text
-      value: 'H Bonus :'
+      value: 'Health B:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857010767199912408, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_fontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857010767199912408, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5384789619964536378, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_text
@@ -24789,6 +24797,10 @@ PrefabInstance:
     - target: {fileID: 8183481859949197553, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657251505214709350, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8695555248035657362, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_Pivot.x
@@ -45686,7 +45698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1547935587
 Transform:
   m_ObjectHideFlags: 0
