@@ -6,6 +6,7 @@ public class Bow : MonoBehaviour
 {
   
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private Animator playerAnimator;
     [SerializeField] private GameObject projectilePrefab;
 
     [SerializeField] private Vector2 rightOffset;
@@ -91,6 +92,7 @@ public class Bow : MonoBehaviour
 
         _shotsRemaining--;
         Debug.Log($"[Bow] Fired! {_shotsRemaining}/{magazineSize} arrows left.");
+
         Shoot();
 
         if (_shotsRemaining <= 0)
@@ -101,6 +103,7 @@ public class Bow : MonoBehaviour
     {
         GameObject proj = Instantiate(projectilePrefab, transform.position, transform.rotation);
         Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
+
         //we can change the hard corded projectile speed to the shop bought one
         //also for lifetime they stay on the screen longer which can be adjusted by a stat
         rb.velocity = proj.transform.right * projectileSpeed;

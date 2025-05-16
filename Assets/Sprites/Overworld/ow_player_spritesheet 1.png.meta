@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 70
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,12 +113,12 @@ TextureImporter:
       name: ow_player_spritesheet 1_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 177
-        width: 66
-        height: 72
-      alignment: 9
-      pivot: {x: 0.49362987, y: 0.062061522}
+        x: 1
+        y: 59
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: ow_player_spritesheet 1_1
       rect:
         serializedVersion: 2
-        x: 72
-        y: 177
-        width: 66
-        height: 69
-      alignment: 9
-      pivot: {x: 0.47451943, y: 0.06739298}
+        x: 24
+        y: 59
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: ow_player_spritesheet 1_2
       rect:
         serializedVersion: 2
-        x: 141
-        y: 177
-        width: 66
-        height: 69
-      alignment: 9
-      pivot: {x: 0.5191098, y: 0.07957923}
+        x: 49
+        y: 58
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: ow_player_spritesheet 1_3
       rect:
         serializedVersion: 2
-        x: 6
-        y: 102
-        width: 60
-        height: 69
-      alignment: 9
-      pivot: {x: 0.49299258, y: 0.067393094}
+        x: 72
+        y: 58
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: ow_player_spritesheet 1_4
       rect:
         serializedVersion: 2
-        x: 72
-        y: 102
-        width: 60
-        height: 66
-      alignment: 9
-      pivot: {x: 0.5140134, y: 0.07320936}
+        x: 1
+        y: 36
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: ow_player_spritesheet 1_5
       rect:
         serializedVersion: 2
-        x: 141
-        y: 102
-        width: 60
-        height: 66
-      alignment: 9
-      pivot: {x: 0.52102077, y: 0.07957909}
+        x: 25
+        y: 36
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: ow_player_spritesheet 1_6
       rect:
         serializedVersion: 2
-        x: 9
-        y: 27
-        width: 66
-        height: 69
-      alignment: 9
-      pivot: {x: 0.51274014, y: 0.049114227}
+        x: 46
+        y: 35
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: ow_player_spritesheet 1_7
       rect:
         serializedVersion: 2
-        x: 78
-        y: 30
-        width: 66
-        height: 66
-      alignment: 9
-      pivot: {x: 0.5445899, y: 0.07320936}
+        x: 70
+        y: 34
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: ow_player_spritesheet 1_8
       rect:
         serializedVersion: 2
-        x: 150
-        y: 30
-        width: 66
-        height: 66
-      alignment: 9
-      pivot: {x: 0.48088977, y: 0.047729433}
+        x: 2
+        y: 13
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,6 +294,48 @@ TextureImporter:
       bones: []
       spriteID: 40070a87d68b4374384d3d4988a7cf5c
       internalID: 1213344070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ow_player_spritesheet 1_9
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 13
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c94a7ddb1685a540b15be72807cf6d0
+      internalID: 1206890739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ow_player_spritesheet 1_10
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 13
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b14df1157408d345ba77a823e2b6aa4
+      internalID: -469791765
       vertices: []
       indices: 
       edges: []
@@ -311,6 +353,7 @@ TextureImporter:
     nameFileIdTable:
       ow_player_spritesheet 1_0: -1233637076
       ow_player_spritesheet 1_1: -1491521812
+      ow_player_spritesheet 1_10: -469791765
       ow_player_spritesheet 1_2: 1893870395
       ow_player_spritesheet 1_3: -176745359
       ow_player_spritesheet 1_4: -1455480642
@@ -318,6 +361,7 @@ TextureImporter:
       ow_player_spritesheet 1_6: 21720125
       ow_player_spritesheet 1_7: 977049954
       ow_player_spritesheet 1_8: 1213344070
+      ow_player_spritesheet 1_9: 1206890739
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
