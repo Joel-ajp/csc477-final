@@ -25,7 +25,9 @@ public class Shopkeeper : MonoBehaviour
     private bool playerCanShop;
     private bool isOpen;
     private int index = 0;
+    private int columns = 3;
     private GameObject player;
+    private PlayerStats stats;
 
     void Start()
     {
@@ -34,6 +36,7 @@ public class Shopkeeper : MonoBehaviour
         keeperUI.SetActive(false);
         UpdateHighlight();
         player = GameObject.FindGameObjectWithTag("Player");
+        stats = player.GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -65,7 +68,6 @@ public class Shopkeeper : MonoBehaviour
 
     void GetPlayerStats()
     {
-        PlayerStats stats = player.GetComponent<PlayerStats>();
         MS.text = "lvl " + stats.movement_speed.ToString();
         AS.text = "lvl " + stats.attack_speed.ToString();
         AD.text = "lvl " + stats.attack_damage.ToString();
@@ -74,30 +76,38 @@ public class Shopkeeper : MonoBehaviour
 
     void ShopNavigation()
     {
-        int tempIndex;
+        int tempIndex = index;
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            tempIndex = Mathf.Min(index + 1, shopItems.Count - 1);
-            if (shopItems[tempIndex] != null)
-            {
-                index = tempIndex;
-            }
-            UpdateHighlight();
+            tempIndex = index + 1;
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            tempIndex = Mathf.Max(index - 1, 0);
-            if (shopItems[tempIndex] != null)
-            {
-                index = tempIndex;
-            }
+            tempIndex = index - 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            tempIndex = index + columns;
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            tempIndex = index - columns;
+        }
+
+        // Clamp index within bounds and check for null
+        if (tempIndex >= 0 && tempIndex < shopItems.Count && shopItems[tempIndex] != null)
+        {
+            index = tempIndex;
             UpdateHighlight();
         }
-        else if (Input.GetKeyDown(KeyCode.Return))
+
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             purchaseItem();
         }
     }
+
 
     void UpdateHighlight()
     {
