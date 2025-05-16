@@ -20,7 +20,7 @@ public enum SoundType
     POP,
     SUCCESS,
     DING,
-    SWORD_SWING,
+    FIREBALL_CAST,
     HIT_SOUND,
     KILL_SOUND,
     SHOP_PURCHASE,
@@ -138,7 +138,7 @@ public class SoundManager : MonoBehaviour
             { SoundType.DING, new SoundCollection(
                 "Interaction/Ding"
             )},
-            { SoundType.SWORD_SWING, new SoundCollection(
+            { SoundType.FIREBALL_CAST, new SoundCollection(
                 "Interaction/Click"
             )},
             { SoundType.HIT_SOUND, new SoundCollection(
