@@ -2,85 +2,89 @@ using UnityEngine;
 using TMPro;       // ← for TMP_Text / TextMeshProUGUI
 using HighScore;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerLives : MonoBehaviour
 {
-    [Header("Lives data")]
     public int lives = 6;
-
-    [Header("UI References")]
+    [SerializeField] private float flashDuration = 0.2f;
     [SerializeField] private TextMeshProUGUI livesText;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_InputField nameInputField;
     [SerializeField] private Button submitButton;
     [SerializeField] private SubmitScore submitScoreObject;
 
+    private SpriteRenderer spriteRenderer;
+    private Color defaultColor;
+
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        defaultColor = spriteRenderer.color;
+    }
+
     void Start()
     {
         UpdateLivesUI();
-
-        // hide the panel until game over
         gameOverPanel.SetActive(false);
     }
 
     void Update()
     {
-        if (lives <= 0)
-        {
-            Debug.Log("Game Over");
-            OnGameOver();
-            int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 10;
-            submitScoreObject.SetCoinScore(coinScore);
-            Destroy(gameObject);
-        }
-    }
-
-    public void gainHearts()
-    {
-        lives += 1;
-        UpdateLivesUI();
+        // You can leave Update clean if you only handle death in the coroutine
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Enemy")) return;
+        StartCoroutine(FlashAndDamage());
+    }
 
+    private IEnumerator FlashAndDamage()
+    {
+        // flash red
+        spriteRenderer.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.material.color = defaultColor;
+
+        // apply damage
         lives--;
         Debug.Log($"Life lost! Remaining: {lives}");
-
-        // update the text field immediately
         UpdateLivesUI();
 
+        // if dead, game over
         if (lives <= 0)
         {
-            Debug.Log("Game Over");
-            OnGameOver();
-            int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 10;
-            submitScoreObject.SetCoinScore(coinScore);
-            Destroy(gameObject);
+            HandleGameOver();
         }
     }
 
-    public void kill()
+    public void gainHearts()
     {
-        lives = 0;
+        lives++;
+        UpdateLivesUI();
     }
 
-    public void UpdateLivesUI()
+    private void UpdateLivesUI()
     {
-        // prefix “x” is cosmetic: matches your inspector snapshot
         livesText.text = $"x{lives}";
     }
 
-    public void OnGameOver()
+    private void HandleGameOver()
     {
-        // stop the action
+        Debug.Log("Game Over");
         SoundManager.Instance.Play(SoundType.GAME_OVER);
         Time.timeScale = 0f;
-
-        // show input panel
         gameOverPanel.SetActive(true);
+
+        // pass the coin score into your submit object
+        int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 0;
+        submitScoreObject.SetCoinScore(coinScore);
+
+        // destroy player sprite so it disappears
+        Destroy(gameObject);
     }
 
-
+    // for testing via Inspector
+    public void kill() => lives = 0;
 }

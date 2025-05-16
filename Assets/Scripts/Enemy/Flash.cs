@@ -12,8 +12,8 @@ public class Flash : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        defaultColor   = spriteRenderer.color;
-        enemyHealth    = GetComponent<EnemyHealth>();
+        defaultColor =  spriteRenderer.material.color ;
+        enemyHealth = GetComponent<EnemyHealth>();
 
         if (spriteRenderer == null)
             Debug.LogError($"[{name}] Flash needs a SpriteRenderer!");
@@ -24,13 +24,13 @@ public class Flash : MonoBehaviour
     public IEnumerator FlashRoutine()
     {
         // 1) flash white
-        spriteRenderer.color = Color.red;
+        spriteRenderer.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
 
         // 2) wait
         yield return new WaitForSeconds(flashDuration);
 
         // 3) restore and then check for death
-        spriteRenderer.color = defaultColor;
+        spriteRenderer.material.color = defaultColor;
         enemyHealth.DetectDeath();
     }
 }
