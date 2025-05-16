@@ -7570,7 +7570,7 @@ Animator:
   m_GameObject: {fileID: 541462664}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 63ba6ee57dc544048b0bdc8d98f6272f, type: 2}
+  m_Controller: {fileID: 9100000, guid: cbc0336a5538c1ee793c5ec1ee1902b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7697,7 +7697,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1059380791, guid: 0c95efbb57ad6d34fb173caaa6c779a8, type: 3}
+  m_Sprite: {fileID: -1233637076, guid: 79542b5d74318c54389b7a09ee047326, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -53707,7 +53707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 541462669}
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 541462668}
   projectilePrefab: {fileID: 8693650494261911239, guid: 0cd4ec947f856479695572ef3ec1b9b2, type: 3}
   rightOffset: {x: 0.665, y: 0.312}
   upOffset: {x: 0.02, y: 1.156}
