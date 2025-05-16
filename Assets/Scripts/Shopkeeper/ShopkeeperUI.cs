@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Shopkeeper : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class Shopkeeper : MonoBehaviour
     public GameObject underworld;
     public Image overKeep;
     public Image underKeep;
+    public TextMeshProUGUI MS;
+    public TextMeshProUGUI AS;
+    public TextMeshProUGUI AD;
+    public TextMeshProUGUI HB;
 
     [Header("Reference Variables")]
     public List<ShopItem> shopItems;
@@ -20,6 +25,7 @@ public class Shopkeeper : MonoBehaviour
     private bool playerCanShop;
     private bool isOpen;
     private int index = 0;
+    private GameObject player;
 
     void Start()
     {
@@ -27,17 +33,19 @@ public class Shopkeeper : MonoBehaviour
         isOpen = false;
         keeperUI.SetActive(false);
         UpdateHighlight();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        if (playerCanShop && Input.GetKeyDown(KeyCode.E))
+        if (playerCanShop && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape)))
         {
             ToggleShop();
         }
 
         if (isOpen)
         {
+            GetPlayerStats();
             UpdateHighlight();
             ShopNavigation();
         }
@@ -53,6 +61,15 @@ public class Shopkeeper : MonoBehaviour
             overKeep.enabled = false;
             underKeep.enabled = true;
         }
+    }
+
+    void GetPlayerStats()
+    {
+        PlayerStats stats = player.GetComponent<PlayerStats>();
+        MS.text = "lvl " + stats.movement_speed.ToString();
+        AS.text = "lvl " + stats.attack_speed.ToString();
+        AD.text = "lvl " + stats.attack_damage.ToString();
+        HB.text = "lvl " + stats.defense.ToString();
     }
 
     void ShopNavigation()

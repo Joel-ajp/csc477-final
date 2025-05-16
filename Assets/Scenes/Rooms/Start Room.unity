@@ -7555,7 +7555,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 6
+  flashDuration: 0.2
   livesText: {fileID: 886273418}
+  livesText2: {fileID: 886273419}
   gameOverPanel: {fileID: 1429811942}
   nameInputField: {fileID: 1606321731}
   submitButton: {fileID: 1491155958}
@@ -24771,6 +24773,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4857010767199912408, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_text
+      value: 'H Bonus :'
+      objectReference: {fileID: 0}
     - target: {fileID: 5384789619964536378, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_text
       value: "WASD \t- Move\nTab \t- Inventory\nE \t- Interact\nP \t- Attack\nSpace
@@ -24890,6 +24896,17 @@ MonoBehaviour:
 --- !u!114 &886273418 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7832705425087865304, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+  m_PrefabInstance: {fileID: 886273416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &886273419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 670940943087049918, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
   m_PrefabInstance: {fileID: 886273416}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

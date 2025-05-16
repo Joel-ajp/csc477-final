@@ -9,6 +9,7 @@ public class PlayerLives : MonoBehaviour
     public int lives = 6;
     [SerializeField] private float flashDuration = 0.2f;
     [SerializeField] private TextMeshProUGUI livesText;
+    [SerializeField] private TextMeshProUGUI livesText2;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_InputField nameInputField;
     [SerializeField] private Button submitButton;
@@ -68,6 +69,7 @@ public class PlayerLives : MonoBehaviour
     private void UpdateLivesUI()
     {
         livesText.text = $"x{lives}";
+        livesText2.text = $"x{lives}";
     }
 
     private void HandleGameOver()

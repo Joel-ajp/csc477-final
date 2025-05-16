@@ -9,16 +9,17 @@ public class ShopItem : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("Stuff for the UI")]
-    public string itemName;
-    public Sprite icon;
     public UnityEngine.UI.Image displaySprite;
     public TextMeshProUGUI displayName;
+    public TextMeshProUGUI displayDesc;
     public TextMeshProUGUI displayCost;
     public Color normalColor = Color.white;
     public Color highlightColor = Color.yellow;
     private bool flashin;
 
     [Header("Item info")]
+    public string itemName;
+    public string itemDesc;
     public string type;
     public int price;
     public int stat = 0;
@@ -30,7 +31,6 @@ public class ShopItem : MonoBehaviour
 
     void Start()
     {
-        displaySprite.sprite = icon;
         flashin = false;
 
         inventory = GameObject.FindGameObjectWithTag("UI").GetComponent<InventoryManager>();
@@ -57,6 +57,7 @@ public class ShopItem : MonoBehaviour
     public void updateText()
     {
         displayName.text = itemName;
+        displayDesc.text = itemDesc;
         displayCost.text = " $" + price;
     }
 
