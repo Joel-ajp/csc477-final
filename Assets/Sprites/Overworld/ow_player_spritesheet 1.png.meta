@@ -239,9 +239,9 @@ TextureImporter:
       name: ow_player_spritesheet 1_6
       rect:
         serializedVersion: 2
-        x: 46
+        x: 47
         y: 35
-        width: 22
+        width: 21
         height: 23
       alignment: 7
       pivot: {x: 0.5, y: 0}
