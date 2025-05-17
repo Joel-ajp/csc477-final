@@ -1668,14 +1668,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displaySprite: {fileID: 4364155583562310377}
   displayName: {fileID: 7926575422840446776}
-  displayDesc: {fileID: 0}
+  displayDesc: {fileID: 9082319514077843063}
   displayCost: {fileID: 7369245997344136509}
   normalColor: {r: 0.4627451, g: 1, b: 0.45490196, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   itemName: Slick Boots
-  itemDesc: 
+  itemDesc: Boosts your movement speed
   type: stat
-  price: 75
+  price: 150
   stat: 0
 --- !u!1 &4007382715147325304
 GameObject:
@@ -2260,14 +2260,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displaySprite: {fileID: 5544254106661507314}
   displayName: {fileID: 7926575422840446776}
-  displayDesc: {fileID: 0}
+  displayDesc: {fileID: 9082319514077843063}
   displayCost: {fileID: 7369245997344136509}
   normalColor: {r: 1, g: 0.6745098, b: 0.88235295, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   itemName: Heart Candy
-  itemDesc: 
+  itemDesc: Increases your max health
   type: stat
-  price: 75
+  price: 150
   stat: 3
 --- !u!1 &4987574749776535299
 GameObject:
@@ -2396,14 +2396,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displaySprite: {fileID: 5975389269681826522}
   displayName: {fileID: 7926575422840446776}
-  displayDesc: {fileID: 0}
+  displayDesc: {fileID: 9082319514077843063}
   displayCost: {fileID: 7369245997344136509}
   normalColor: {r: 0.49411765, g: 1, b: 0.9490196, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   itemName: Combo Gloves
-  itemDesc: 
+  itemDesc: Increases your attack speed
   type: stat
-  price: 75
+  price: 150
   stat: 1
 --- !u!1 &6070888687738784822
 GameObject:
@@ -4369,14 +4369,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displaySprite: {fileID: 3868349821235127271}
   displayName: {fileID: 7926575422840446776}
-  displayDesc: {fileID: 0}
+  displayDesc: {fileID: 9082319514077843063}
   displayCost: {fileID: 7369245997344136509}
   normalColor: {r: 1, g: 0.23137255, b: 0.23137255, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   itemName: Spiked Pommel
-  itemDesc: 
+  itemDesc: Enhances your attack damage
   type: stat
-  price: 75
+  price: 150
   stat: 2
 --- !u!1 &9073720324828869660
 GameObject:
