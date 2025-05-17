@@ -11,6 +11,7 @@ public class Shopkeeper : MonoBehaviour
     public GameObject keeperUI;
     public GameObject overworld;
     public GameObject underworld;
+    public GameObject dialogue;
     public Image overKeep;
     public Image underKeep;
     public TextMeshProUGUI MS;
@@ -21,8 +22,6 @@ public class Shopkeeper : MonoBehaviour
     [Header("Reference Variables")]
     public List<ShopItem> shopItems;
 
-
-    private bool playerCanShop;
     private bool isOpen;
     private int index = 0;
     private int columns = 3;
@@ -31,7 +30,6 @@ public class Shopkeeper : MonoBehaviour
 
     void Start()
     {
-        playerCanShop = false;
         isOpen = false;
         keeperUI.SetActive(false);
         UpdateHighlight();
@@ -41,8 +39,14 @@ public class Shopkeeper : MonoBehaviour
 
     void Update()
     {
-        if (playerCanShop && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape)))
+        if (!isOpen && Input.GetKeyDown(KeyCode.E))
         {
+            //open dialogue
+            dialogue.SetActive(true);
+        }
+        else if (isOpen && Input.GetKeyDown(KeyCode.Escape))
+        {
+            //close shop
             ToggleShop();
         }
 
@@ -132,29 +136,6 @@ public class Shopkeeper : MonoBehaviour
     public void purchaseItem()
     {
         shopItems[index].tryPurchase();
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("player shopping");
-            playerCanShop = true;
-            isOpen = true;
-            UpdateHighlight();
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            Debug.Log("player done shopping");
-            playerCanShop = false;
-            isOpen = false;
-            index = 0;
-            keeperUI.SetActive(false);
-        }
     }
 }
 
