@@ -25,16 +25,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140293268954661359}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: -5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5587031085132345204}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -532, y: 209}
+  m_AnchoredPosition: {x: 527, y: -292}
   m_SizeDelta: {x: 35.308, y: 31.777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7030609171329809582
@@ -100,16 +100,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441597952703677216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4714, y: 1.4714, z: 1.4714}
+  m_LocalScale: {x: 4.6573787, y: 4.6573787, z: 2.3286893}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2328031802612739662}
+  m_Father: {fileID: 9191518238172571345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -217.3, y: -193.4}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4659585103701743744
@@ -190,7 +190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -700, y: 160}
+  m_AnchoredPosition: {x: -700, y: -75}
   m_SizeDelta: {x: 1000, y: 711.9634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &221389386454033627
@@ -601,14 +601,14 @@ RectTransform:
   m_GameObject: {fileID: 2036255012296420736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.492941, y: 1.492941, z: 1.492941}
+  m_LocalScale: {x: 4.6573787, y: 4.6573787, z: 2.3286893}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7355862208586568401}
+  m_Father: {fileID: 3650340313331079512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220.48122, y: -207.1}
+  m_AnchoredPosition: {x: 695.72656, y: 696.06915}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6612156471595834066
@@ -761,7 +761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: 75}
+  m_AnchoredPosition: {x: -220, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3691076121954514488
@@ -824,7 +824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 700, y: 0}
+  m_AnchoredPosition: {x: 700, y: -75}
   m_SizeDelta: {x: 1000, y: 711.9634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1162766792322978922
@@ -1166,7 +1166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7355862208586568401
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1174,18 +1174,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2943168190642605044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.1196, y: 3.1196, z: 1.5598}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5982018073221503931}
   - {fileID: 2285279038910162662}
-  m_Father: {fileID: 3705308476214593952}
+  m_Father: {fileID: 3650340313331079512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 300}
+  m_AnchoredPosition: {x: 687.81335, y: 537.80566}
   m_SizeDelta: {x: 141, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5686914906689907768
@@ -1541,8 +1540,8 @@ RectTransform:
   - {fileID: 4883319748476382861}
   - {fileID: 5587031085132345204}
   - {fileID: 3215474866044410497}
-  - {fileID: 2328031802612739662}
-  - {fileID: 7355862208586568401}
+  - {fileID: 9191518238172571345}
+  - {fileID: 3650340313331079512}
   - {fileID: 7159043882095978411}
   - {fileID: 4346288676796407963}
   - {fileID: 7762587655786415508}
@@ -1667,13 +1666,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23e972811fdd410987166261ca2e842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Slick Boots
-  icon: {fileID: 0}
   displaySprite: {fileID: 4364155583562310377}
   displayName: {fileID: 7926575422840446776}
+  displayDesc: {fileID: 0}
   displayCost: {fileID: 7369245997344136509}
   normalColor: {r: 0.4627451, g: 1, b: 0.45490196, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  itemName: Slick Boots
+  itemDesc: 
   type: stat
   price: 75
   stat: 0
@@ -1702,18 +1702,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4007382715147325304}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.1652703, y: 3.1652703, z: 1.5826352}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7801176125663610658}
-  - {fileID: 8735848431865418288}
-  m_Father: {fileID: 3705308476214593952}
+  m_Father: {fileID: 9191518238172571345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 300}
+  m_AnchoredPosition: {x: -7.913208, y: -158.26361}
   m_SizeDelta: {x: 141, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6044830510608209433
@@ -2172,6 +2171,43 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4425035220048346613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9191518238172571345}
+  m_Layer: 0
+  m_Name: UnderMarket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9191518238172571345
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425035220048346613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8735848431865418288}
+  - {fileID: 2328031802612739662}
+  m_Father: {fileID: 3705308476214593952}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 7.913208, y: 350}
+  m_SizeDelta: {x: 465.73785, y: 465.73788}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4468129521671318258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,13 +2258,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23e972811fdd410987166261ca2e842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Heart Candy
-  icon: {fileID: 0}
   displaySprite: {fileID: 5544254106661507314}
   displayName: {fileID: 7926575422840446776}
+  displayDesc: {fileID: 0}
   displayCost: {fileID: 7369245997344136509}
   normalColor: {r: 1, g: 0.6745098, b: 0.88235295, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  itemName: Heart Candy
+  itemDesc: 
   type: stat
   price: 75
   stat: 3
@@ -2357,13 +2394,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23e972811fdd410987166261ca2e842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Combo Gloves
-  icon: {fileID: 0}
   displaySprite: {fileID: 5975389269681826522}
   displayName: {fileID: 7926575422840446776}
+  displayDesc: {fileID: 0}
   displayCost: {fileID: 7369245997344136509}
   normalColor: {r: 0.49411765, g: 1, b: 0.9490196, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  itemName: Combo Gloves
+  itemDesc: 
   type: stat
   price: 75
   stat: 1
@@ -3089,7 +3127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4346288676796407963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3451,7 +3489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 1000, y: 711.9634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3812735761874096727
@@ -3740,7 +3778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: 75}
+  m_AnchoredPosition: {x: -220, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6090625986764377567
@@ -4167,6 +4205,43 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &8739568519878701208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3650340313331079512}
+  m_Layer: 0
+  m_Name: OverMarket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3650340313331079512
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8739568519878701208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5982018073221503931}
+  - {fileID: 7355862208586568401}
+  m_Father: {fileID: 3705308476214593952}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -687.8133, y: -346.06915}
+  m_SizeDelta: {x: 465.73788, y: 465.73788}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8744773439170445382
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,13 +4367,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23e972811fdd410987166261ca2e842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Spiked Pommel
-  icon: {fileID: 0}
   displaySprite: {fileID: 3868349821235127271}
   displayName: {fileID: 7926575422840446776}
+  displayDesc: {fileID: 0}
   displayCost: {fileID: 7369245997344136509}
   normalColor: {r: 1, g: 0.23137255, b: 0.23137255, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  itemName: Spiked Pommel
+  itemDesc: 
   type: stat
   price: 75
   stat: 2

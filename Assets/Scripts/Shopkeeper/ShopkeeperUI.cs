@@ -12,8 +12,8 @@ public class Shopkeeper : MonoBehaviour
     public GameObject overworld;
     public GameObject underworld;
     public GameObject dialogue;
-    public Image overKeep;
-    public Image underKeep;
+    public GameObject overKeep;
+    public GameObject underKeep;
     public TextMeshProUGUI MS;
     public TextMeshProUGUI AS;
     public TextMeshProUGUI AD;
@@ -60,13 +60,13 @@ public class Shopkeeper : MonoBehaviour
         // Check environment
         if (overworld.activeInHierarchy)
         {
-            overKeep.enabled = true;
-            underKeep.enabled = false;
+            overKeep.SetActive(true);
+            underKeep.SetActive(false);
         }
         else if (underworld.activeInHierarchy)
         {
-            overKeep.enabled = false;
-            underKeep.enabled = true;
+            overKeep.SetActive(false);
+            underKeep.SetActive(true);
         }
     }
 
