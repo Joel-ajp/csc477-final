@@ -5115,3 +5115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightRadius: 1.5
+  color: 4

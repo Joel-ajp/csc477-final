@@ -82,7 +82,7 @@ public class OWOldManDialogue : MonoBehaviour
                 {
                     index++;
                     necklaceTaken = true;
-                    invMan.gainedCrystal();
+                    invMan.gainedCrystal(crystalColor.YELLOW);
                     //add shard to inventory - PLACEHOLDER
 
                     NextLine();

@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: orange shart
       objectReference: {fileID: 0}
+    - target: {fileID: 2650250259726643423, guid: 44bba1e10ac21304e87a8c196698a160, type: 3}
+      propertyPath: color
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3152135462998730153, guid: 44bba1e10ac21304e87a8c196698a160, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

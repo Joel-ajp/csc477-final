@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6535012898576946577, guid: 140e5d8d45718da47b9c8d543d44ac89, type: 3}
+      propertyPath: color
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7955176569618381420, guid: 140e5d8d45718da47b9c8d543d44ac89, type: 3}
       propertyPath: m_Name
       value: pink shard

@@ -3,17 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Properties;
 
 public class InventoryManager : MonoBehaviour
 {
     //// public variables
-    public Image[] crystalIcons;
+    [Header("Crystal Inventory Icons")]
+    public GameObject red;
+    public GameObject orange;
+    public GameObject yellow;
+    public GameObject green;
+    public GameObject purple;
+    public GameObject pink;
+
+    [Header("UI Stuff")]
     public TextMeshProUGUI move;
     public TextMeshProUGUI a_sp;
     public TextMeshProUGUI a_dam;
     public TextMeshProUGUI dam_red;
     private GameObject _player;
     private PlayerLives lives;
+    public Dictionary<crystalColor, GameObject> crystalIcons = new Dictionary<crystalColor, GameObject>();
+    private static List<crystalColor> heldCrystals = new List<crystalColor>{};
 
     //// private variables
     public int curCrystals = 0;
@@ -27,41 +38,49 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // set the dictionary values for reference
+        crystalIcons[crystalColor.RED] = red;
+        crystalIcons[crystalColor.ORANGE] = orange;
+        crystalIcons[crystalColor.YELLOW] = yellow;
+        crystalIcons[crystalColor.GREEN] = green;
+        crystalIcons[crystalColor.PURPLE] = purple;
+        crystalIcons[crystalColor.PINK] = pink;
+
         for (int i = 0; i < 4; i++)
         {
             setStats(i, stat_levels[i]);
         }
-        for (int i = 0; i < curCrystals; i++)
+        foreach (var c in heldCrystals)
         {
-            crystalIcons[i].enabled = true;
+            gainedCrystal(c);
         }
+
         _player = GameObject.FindGameObjectWithTag("Player");
-
         _player.GetComponent<PlayerStats>().updateStats(stat_levels);
-
         lives = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLives>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (curCrystals >= 4)
+        /*if (curCrystals >= 4)
         {
             _player.GetComponent<PlayerLives>().kill();
-        }
+        }*/
     }
 
-    public void gainedCrystal()
+    public void gainedCrystal(crystalColor color)
     {
-        crystalIcons[curCrystals].enabled = true;
+        crystalIcons[color].SetActive(true);
+        heldCrystals.Add(color);
         curCrystals++;
     }
 
-    public void lostCrystal()
+    /*public void lostCrystal(crystalColor color)
     {
-        crystalIcons[curCrystals].enabled = false;
+        crystalIcons[color].enabled = false;
         curCrystals--;
-    }
+    }*/
 
     public void updateStat(int stat_index)
     {

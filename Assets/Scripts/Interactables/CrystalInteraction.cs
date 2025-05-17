@@ -2,9 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum crystalColor
+{
+    RED,
+    YELLOW,
+    GREEN,
+    ORANGE,
+    PURPLE,
+    PINK
+}
 public class CrystalInteraction : EInteractable
 {
     private InventoryManager _inventoryManager;
+    public crystalColor color;
     //public string color;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +37,7 @@ public class CrystalInteraction : EInteractable
     {
         if (_inventoryManager != null)
         {
-            _inventoryManager.gainedCrystal(); // Add to Inventory
+            _inventoryManager.gainedCrystal(color); // Add to Inventory
         }
         SoundManager.Instance.Play(SoundType.DING);
         Destroy(gameObject);

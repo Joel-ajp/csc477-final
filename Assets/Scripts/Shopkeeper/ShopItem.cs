@@ -103,7 +103,7 @@ public class ShopItem : MonoBehaviour
         else if (type == "crystal")
         {
             Debug.Log($"Purchased {itemName} for {price} coins!");
-            inventory.gainedCrystal();
+            //inventory.gainedCrystal();
             Destroy(this);
         }
         else

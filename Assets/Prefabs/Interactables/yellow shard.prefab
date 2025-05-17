@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: highlightRadius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6063043155514691161, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
+      propertyPath: color
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6583549832601197359, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
