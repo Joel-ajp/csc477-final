@@ -9,17 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: dcb7e26c1039a114d910db93156320ff, type: 3}
   m_Name: OWGuardDialogue
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  m_EditorClassIdentifier: 
   dialogueLines:
-  - dialogue: 'Greetings, Stranger. You''d best turn back. This place isn''t for
-      the feint of heart.
+  - dialogue: '
+
+      Greetings, Stranger. You''d best turn back. This place isn''t
+      for the feint of heart.
 
       [1/E: "Thanks, I''ll go, then."]
 
-      [2/R: "I''ve
-      never fainted in my life."]'
+      [2/R:
+      "I''ve never fainted in my life."]'
   - dialogue: Glad you're listening to reason.
   - dialogue: Well, this armor's too heavy for me to stop you. Just don't say I didn't
       give fair warning.

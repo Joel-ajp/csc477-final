@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: dcb7e26c1039a114d910db93156320ff, type: 3}
   m_Name: UWShopDialogue
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  m_EditorClassIdentifier: 
   dialogueLines:
   - dialogue: 'Hi, Stranger! How can I help ya?
 
@@ -22,7 +22,7 @@ MonoBehaviour:
   - dialogue: Of course!
   - dialogue: I'm not sure what you mean.
   - dialogue: Everything's as it's always been!
-  - dialogue: "Everything's totally fine.\t"
+  - dialogue: Everything's totally fine.
   - dialogue: Fine, fine...ha...
   - dialogue: 'Shall we continue business as normal?
 

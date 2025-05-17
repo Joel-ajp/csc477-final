@@ -8,18 +8,21 @@ using UnityEngine.InputSystem;
 public class OWShopDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    public DialogueObject currentDialogue;
+    public DialogueObject _currentDialogue;
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
     private bool seenBefore;    //if player has already talked to shopkeeper
-    private Shopkeeper keeperui;
+    public Shopkeeper keeperui;
 
     // Start is called before the first frame update
     void Start()
     {
         seenBefore = false;
-        gameObject.SetActive(false);
-        keeperui = GetComponent<Shopkeeper>();
+    }
+
+    void Awake() // At the start load the required Dialogue
+    {
+        _currentDialogue = Resources.Load<DialogueObject>("Dialogue/OWShopDialogue");
     }
 
     //Start dialogue
@@ -42,7 +45,7 @@ public class OWShopDialogue : MonoBehaviour
                 gameObject.SetActive(false);
             }
             //Select dialogue option
-            else if (textComponent.text == currentDialogue.dialogueLines[index].dialogue)
+            else if (textComponent.text == _currentDialogue.dialogueLines[index].dialogue)
             {
                 //option 1 (button 1 or e)
                 if ((index == 0 || index == 6) && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))
@@ -59,7 +62,7 @@ public class OWShopDialogue : MonoBehaviour
                 //transition to the shop screen
                 else if (index == 1)
                 {
-                    //PLACEHOLDER - TRANSFER TO SHOP
+                    //TRANSFER TO SHOP
                     keeperui.ToggleShop();
                     gameObject.SetActive(false);
                 }
@@ -81,7 +84,7 @@ public class OWShopDialogue : MonoBehaviour
             else
             {
                 StopAllCoroutines();
-                textComponent.text = currentDialogue.dialogueLines[index].dialogue;
+                textComponent.text = _currentDialogue.dialogueLines[index].dialogue;
             }
         }
     }
@@ -92,7 +95,7 @@ public class OWShopDialogue : MonoBehaviour
         textComponent.text = string.Empty;
 
         //type 1 letter at a time
-        foreach (char c in currentDialogue.dialogueLines[index].dialogue.ToCharArray())
+        foreach (char c in _currentDialogue.dialogueLines[index].dialogue.ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -101,7 +104,7 @@ public class OWShopDialogue : MonoBehaviour
 
     void NextLine()
     {
-        if(index < currentDialogue.dialogueLines.Length)
+        if (index < _currentDialogue.dialogueLines.Length)
         {
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());

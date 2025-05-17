@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class OWOldManDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    public DialogueObject currentDialogue;
+    public DialogueObject _currentDialogue;
     public InventoryManager invMan;
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
@@ -18,7 +18,11 @@ public class OWOldManDialogue : MonoBehaviour
     void Start()
     {
         necklaceTaken = false;
-        gameObject.SetActive(false);
+    }
+
+    void Awake() // At the start load the required Dialogue
+    {
+        _currentDialogue = Resources.Load<DialogueObject>("Dialogue/OWOldManDialogue");
     }
 
     //Start dialogue
@@ -41,7 +45,7 @@ public class OWOldManDialogue : MonoBehaviour
                 gameObject.SetActive(false);
             }
             //Select dialogue option
-            else if (textComponent.text == currentDialogue.dialogueLines[index].dialogue)
+            else if (textComponent.text == _currentDialogue.dialogueLines[index].dialogue)
             {
                 //option 1 (button 1 or e)
                 if ((index == 0) && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))
@@ -87,7 +91,7 @@ public class OWOldManDialogue : MonoBehaviour
             else
             {
                 StopAllCoroutines();
-                textComponent.text = currentDialogue.dialogueLines[index].dialogue;
+                textComponent.text = _currentDialogue.dialogueLines[index].dialogue;
             }
         }
     }
@@ -98,7 +102,7 @@ public class OWOldManDialogue : MonoBehaviour
         textComponent.text = string.Empty;
 
         //type 1 letter at a time
-        foreach (char c in currentDialogue.dialogueLines[index].dialogue.ToCharArray())
+        foreach (char c in _currentDialogue.dialogueLines[index].dialogue.ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -107,7 +111,7 @@ public class OWOldManDialogue : MonoBehaviour
 
     void NextLine()
     {
-        if(index < currentDialogue.dialogueLines.Length)
+        if (index < _currentDialogue.dialogueLines.Length)
         {
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
