@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Bow : MonoBehaviour
@@ -22,6 +23,13 @@ public class Bow : MonoBehaviour
     [SerializeField] private float manaPerShot = 20f;
     [SerializeField] private float manaRegenRate = 10f; // Mana regained per second
     [SerializeField] private float manaRegenDelay = 1f; // Delay before mana starts regenerating after shooting
+    
+    // UI References
+    [Header("UI References")]
+    [SerializeField] private RectTransform manaBarRect;
+    [Header("Mana Bar Settings")]
+    [SerializeField] private float manaBarFullRight = 13.9f;
+    [SerializeField] private float manaBarEmptyRight = 162f;
     
     private bool _isAttacking = false;
     private bool _canRegenMana = true;
@@ -50,6 +58,7 @@ public class Bow : MonoBehaviour
     {
         UpdateFacing();
         RegenMana();
+        UpdateManaBar();
     }
     
     private void UpdateFacing()
@@ -76,6 +85,24 @@ public class Bow : MonoBehaviour
                 ApplyFacing(-90f, downOffset);
             }
         }
+    }
+    
+    private void UpdateManaBar()
+    {
+        if (manaBarRect == null) return;
+        
+        // Calculate the right edge position based on current mana percentage
+        float manaPercentage = currentMana / maxMana;
+        float rightEdge = Mathf.Lerp(manaBarEmptyRight, manaBarFullRight, manaPercentage);
+        
+        // Update the right edge of the mana bar rect transform
+        Vector2 offsetMin = manaBarRect.offsetMin; // Left and bottom edges
+        Vector2 offsetMax = manaBarRect.offsetMax; // Right and top edges
+        
+        // Only update the right edge (offsetMax.x is negative when shrinking from the right)
+        offsetMax.x = -rightEdge;
+        
+        manaBarRect.offsetMax = offsetMax;
     }
     
     private void RegenMana()

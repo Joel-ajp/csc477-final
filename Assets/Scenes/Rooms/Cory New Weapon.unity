@@ -24770,6 +24770,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1981022806529990760, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -168.09996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981022806529990760, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -77.95002
+      objectReference: {fileID: 0}
     - target: {fileID: 2117811454093336501, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -32027,6 +32035,11 @@ Transform:
   - {fileID: 278977501}
   m_Father: {fileID: 1116384659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1316917255 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1981022806529990760, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+  m_PrefabInstance: {fileID: 886273416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1319332651
 GameObject:
   m_ObjectHideFlags: 0
@@ -53939,6 +53952,9 @@ MonoBehaviour:
   manaPerShot: 20
   manaRegenRate: 10
   manaRegenDelay: 1
+  manaBarRect: {fileID: 1316917255}
+  manaBarFullRight: 13.9
+  manaBarEmptyRight: 162
 --- !u!95 &1820723163
 Animator:
   serializedVersion: 5
