@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 public class UWOldWomanDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    public DialogueObject currentDialogue;
+    private DialogueObject _currentDialogue;
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
     private bool seenBefore;    //if player has already talked to shopkeeper
@@ -18,7 +18,7 @@ public class UWOldWomanDialogue : MonoBehaviour
     void Start()
     {
         seenBefore = false;
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 
     //Start dialogue
@@ -27,6 +27,11 @@ public class UWOldWomanDialogue : MonoBehaviour
         index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
+    }
+
+    void Awake() // At the start load the required Dialogue
+    {
+        _currentDialogue = Resources.Load<DialogueObject>("Dialogue/UWOldWomanDialogue");
     }
 
     private void Update()
@@ -41,7 +46,7 @@ public class UWOldWomanDialogue : MonoBehaviour
                 gameObject.SetActive(false);
             }
             //Select dialogue option
-            else if (textComponent.text == currentDialogue.dialogueLines[index].dialogue)
+            else if (textComponent.text == _currentDialogue.dialogueLines[index].dialogue)
             {
                 //option 1 (button 1 or e)
                 if ((index == 0) && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))
@@ -78,7 +83,7 @@ public class UWOldWomanDialogue : MonoBehaviour
             else
             {
                 StopAllCoroutines();
-                textComponent.text = currentDialogue.dialogueLines[index].dialogue;
+                textComponent.text = _currentDialogue.dialogueLines[index].dialogue;
             }
         }
     }
@@ -89,7 +94,7 @@ public class UWOldWomanDialogue : MonoBehaviour
         textComponent.text = string.Empty;
 
         //type 1 letter at a time
-        foreach (char c in currentDialogue.dialogueLines[index].dialogue.ToCharArray())
+        foreach (char c in _currentDialogue.dialogueLines[index].dialogue.ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -98,7 +103,7 @@ public class UWOldWomanDialogue : MonoBehaviour
 
     void NextLine()
     {
-        if(index < currentDialogue.dialogueLines.Length)
+        if (index < _currentDialogue.dialogueLines.Length)
         {
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());

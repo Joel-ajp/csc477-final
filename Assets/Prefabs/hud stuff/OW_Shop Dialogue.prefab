@@ -224,8 +224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 3196486260660388436}
-  currentDialogue: {fileID: 11400000, guid: 231bc3643ac42494faef7763b03a2f59, type: 2}
+  _currentDialogue: {fileID: 11400000, guid: d5881500a98e17a4fb0c4c1139a231cb, type: 2}
   textSpeed: 0.05
+  keeperui: {fileID: 0}
 --- !u!1001 &2009390646311878820
 PrefabInstance:
   m_ObjectHideFlags: 0

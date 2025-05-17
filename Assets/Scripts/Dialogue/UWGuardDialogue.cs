@@ -8,14 +8,14 @@ using UnityEngine.InputSystem;
 public class UWGuardDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    public DialogueObject currentDialogue;
+    private DialogueObject _currentDialogue;
     public float textSpeed;
     private int index;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 
     //Start dialogue
@@ -24,6 +24,11 @@ public class UWGuardDialogue : MonoBehaviour
         index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
+    }
+
+    void Awake() // At the start load the required Dialogue
+    {
+        _currentDialogue = Resources.Load<DialogueObject>("Dialogue/UWGuardDialogue");
     }
 
     private void Update()
@@ -38,22 +43,22 @@ public class UWGuardDialogue : MonoBehaviour
                 gameObject.SetActive(false);
             }
             //Select dialogue option
-            else if (textComponent.text == currentDialogue.dialogueLines[index].dialogue)
+            else if (textComponent.text == _currentDialogue.dialogueLines[index].dialogue)
             {
                 //option 1 (button 1 or e)
-                if(index == 0 && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))
+                if (index == 0 && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.E)))
                 {
                     index = 1;
                     NextLine();
                 }
                 //option 2 (button 2 or r)
-                else if(index == 0 && (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.R)))
+                else if (index == 0 && (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.R)))
                 {
                     index = 2;
                     NextLine();
                 }
                 //close dialogue
-                else if(index > 0)
+                else if (index > 0)
                 {
                     gameObject.SetActive(false);
                 }
@@ -62,7 +67,7 @@ public class UWGuardDialogue : MonoBehaviour
             else
             {
                 StopAllCoroutines();
-                textComponent.text = currentDialogue.dialogueLines[index].dialogue;
+                textComponent.text = _currentDialogue.dialogueLines[index].dialogue;
             }
         }
     }
@@ -73,7 +78,7 @@ public class UWGuardDialogue : MonoBehaviour
         textComponent.text = string.Empty;
 
         //type 1 letter at a time
-        foreach (char c in currentDialogue.dialogueLines[index].dialogue.ToCharArray())
+        foreach (char c in _currentDialogue.dialogueLines[index].dialogue.ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -82,7 +87,7 @@ public class UWGuardDialogue : MonoBehaviour
 
     void NextLine()
     {
-        if(index < currentDialogue.dialogueLines.Length)
+        if (index < _currentDialogue.dialogueLines.Length)
         {
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());

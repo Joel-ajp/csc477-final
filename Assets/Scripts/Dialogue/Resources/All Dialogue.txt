@@ -1,0 +1,124 @@
+OW - SHOP
+
+G'day, Stranger!
+See anything you like?
+[1/E - "Can you show me your wares?"]
+[2/R - "How have you been?"]
+
+Happy to be of service!
+
+Me? To be honest, I'm a bit...unsettled.
+
+I have been seeing...cracks? Inconsistencies? Almost like reality itself is starting to fall apart...
+
+Not to mention the weird monsters I've been hearing folks whisper about.
+
+Can't help but wonder if I'm missing something, and if we're all gonna find out real soon.
+
+But enough negativity! You're here for the goods!
+[1/E - "Can you show me your wares?"]
+[2/R - "How have you been?"]
+
+I'm getting deja vu, haha! To be honest, I'm a bit..unsettled.
+
++++++++++++++
+
+OW - GUARD
+
+Greetings, Stranger. You'd best turn back. This place isn't for the feint of heart.
+[1/E: "Thanks, I'll go, then."]
+[2/R: "I've never fainted in my life."]
+
+Glad you're listening to reason.
+
+Well, this armor's too heavy for me to stop you. Just don't say I didn't give fair warning.
+
+++++++++++++
+
+OW - OLD MAN
+
+Evenin', Stranger.
+[1/E: "Who are you?"]
+[2/R: "Why are you wearing such a fancy necklace for farmwork?"]
+
+The folks in town call me "Old Man Marcus"...
+
+...but my wife Beck jus' calls me "Mark."
+[1/E: "Goodbye."]
+[2/R: "Why are you wearing such a fancy necklace for farmwork?"]
+
+Ah, this? Why I just found it workin' in the fields earlier-
+
+Wait, no, that's not right...
+
+Maybe ol' Beck gave it to me? Ah well, my memory failin' me ain't nothing new.
+
+For all I know, it just appeared here one day without me noticing, heh!
+
+You have got a point, though...oughtta get rid of this 'fore it gets caught on the fence or somethin' while I'm doin' my repairs.
+
+How 'bout you take it? You seem like an upstanding fellow who'll take good care of it. Here.
+
+Necklace? What necklace?
+
+========================================
+
+UW - SHOP
+
+Hi, Stranger! How can I help ya?
+[1/E - "Can you show me your wares?"]
+[2/R - "What is this place?"]
+
+Of course!
+
+I'm not sure what you mean.
+
+Everything's as it's always been!
+
+Everything's totally fine.
+
+Fine, fine...ha...
+
+Shall we continue business as normal?
+[1/E - "Can you show me your wares?"]
+[2/R - "What is this place?"]
+
+Deja vu...but I'm not sure what you mean.
+
+++++++++++++++++
+
+UW - GUARD
+
+Woah, Stranger! Meshie asks Stranger to retreat! For Stranger's own safety!
+[1/E: "Thanks, I'll go then."]
+[2/R: "Some silly cave doesn't scare me!".]
+
+Phew, Meshie is very glad!
+
+This cave hold many dangers! Even the powerful Meshie is afraid! Please reconsider!!
+
+++++++++++++++++
+
+UW - OLD WOMAN
+
+Good evening, Stranger!
+[1/E: "Who are you?"]
+[2/R: "You're not from around here, are you?"]
+
+Well, dear, the folks in town call me "Mrs. Becky"...
+
+...but my husband Mark just calls me "Beck."
+[1/E: "Goodbye."]
+[2/R: "You're not from around here, are you?"]
+
+'Not from around here?' Why, I was born and raised in this town, and I've tended this farm since I was big enough to toddle!
+
+...well, hm, now that you mention it...
+
+Something does seem...unfamiliar about this place. I can't put my finger on it...
+
+Ah well, I'm sure it's just my old mind playing tricks, the practical joker.
+
+Say, have you seen Mark, dear? He went to fix one of the fences, but that was hours ago.
+
+If he doesn't come back soon I'll have to go looking for him.
