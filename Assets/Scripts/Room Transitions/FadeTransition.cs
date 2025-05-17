@@ -8,6 +8,9 @@ public class FadeTransition : MonoBehaviour
     private Image _fadeImage;
     private Color _fadeColor;
     private float _fadeDuration;
+    private GameObject _canvasObj;
+    private GameObject _fadeImageObj;
+
 
     public static void StartFade(string sceneName) // static to be globally accessable
     {
@@ -26,27 +29,27 @@ public class FadeTransition : MonoBehaviour
     private void InitializeCanvas()
     {
         // Create Canvas
-        GameObject canvasObj = new GameObject("FadeCanvas");
-        Canvas canvas = canvasObj.AddComponent<Canvas>();
+        _canvasObj = new GameObject("FadeCanvas");
+        Canvas canvas = _canvasObj.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        canvas.sortingOrder = 999; // make sure its on top
-        canvasObj.AddComponent<CanvasScaler>();
-        canvasObj.AddComponent<GraphicRaycaster>();
-        DontDestroyOnLoad(canvasObj);
+        canvas.sortingOrder = 999;
+        _canvasObj.AddComponent<CanvasScaler>();
+        _canvasObj.AddComponent<GraphicRaycaster>();
+        DontDestroyOnLoad(_canvasObj);
 
         // Create Fade Image
-        GameObject fadeImageObj = new GameObject("FadeScreen");
-        fadeImageObj.transform.SetParent(canvasObj.transform, false);
+        _fadeImageObj = new GameObject("FadeScreen");
+        _fadeImageObj.transform.SetParent(_canvasObj.transform, false);
 
-        RectTransform rectTransform = fadeImageObj.AddComponent<RectTransform>();
+        RectTransform rectTransform = _fadeImageObj.AddComponent<RectTransform>();
         rectTransform.anchorMin = Vector2.zero;
         rectTransform.anchorMax = Vector2.one;
         rectTransform.sizeDelta = Vector2.zero;
 
-        _fadeImage = fadeImageObj.AddComponent<Image>();
+        _fadeImage = _fadeImageObj.AddComponent<Image>();
         _fadeImage.color = new Color(_fadeColor.r, _fadeColor.g, _fadeColor.b, 0);
 
-        DontDestroyOnLoad(fadeImageObj);
+        DontDestroyOnLoad(_fadeImageObj);
     }
 
     private IEnumerator FadeAndLoadScene(string sceneName)
@@ -61,6 +64,8 @@ public class FadeTransition : MonoBehaviour
         yield return Fade(1f, 0f);
 
         // Clean up fade objects
+        Destroy(_fadeImageObj);
+        Destroy(_canvasObj);
         Destroy(gameObject);
     }
 

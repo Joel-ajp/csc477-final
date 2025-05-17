@@ -7676,7 +7676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: market
-  spawnPosition: {x: 0, y: 0}
+  spawnPosition: {x: -3, y: 8}
 --- !u!60 &629460889
 PolygonCollider2D:
   m_ObjectHideFlags: 0
