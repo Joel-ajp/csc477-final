@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class BossEnemyAI : MonoBehaviour
 {
-    private enum State { Follow, Charging, Teleporting }
+    private enum State { Follow, Teleporting }
+
+    [Header("Shard Drop")]
     [SerializeField] private GameObject shardPrefab;
-     private bool shardDropped = false;
-    private State currentState = State.Follow;
-    private bool hasEnteredPhaseTwo = false;
     [SerializeField] private Transform shardSpawnPoint;
+    private bool shardDropped = false;
 
     [Header("References")]
     [SerializeField] private Transform player;
@@ -16,57 +16,48 @@ public class BossEnemyAI : MonoBehaviour
 
     [Header("Phase-Switch")]
     [SerializeField] private int phaseTwoHealthThreshold = 1;
-    
-    [Header("Follow")]
+    private bool hasEnteredPhaseTwo = false;
+
+    [Header("Follow & Attack")]
     [SerializeField] private float followSpeed = 3f;
-    [SerializeField] private float detectionRadius = 5f;
+    [SerializeField] private float detectionRadius = 2f;
+    [SerializeField] private float attackDuration = 1f;  // total length of the swing anim
 
-    [Header("Charge Cycle")]
-    [SerializeField] private float chargePrepTime = 0.5f;
-    [SerializeField] private float chargeSpeed = 8f;
-    [SerializeField] private float chargeDuration = 0.5f;
-    [SerializeField] private float retreatSpeed = 3f;
-    [SerializeField] private float retreatDistance = 4f;
-    [SerializeField] private float recoverTime = 1f;
-
-    // Commented out animator parameters for now
-    // private const string _horizontal = "Horizontal";
-    // private const string _vertical = "Vertical";
-    // private const string _lastHorizontal = "LastHorizontal";
-    // private const string _lastVertical = "LastVertical";
+    private bool _isAttacking = false;
 
     [Header("Teleport Phase")]
     [SerializeField] private float invisibilityDuration = 1.5f;
-    [SerializeField] private float postAppearDelay = 0.8f;
-    [SerializeField] private float teleportFollowDuration = 0.5f;
+    [SerializeField] private float postAppearDelay = 0;
+    [SerializeField] private float teleportFollowDuration = 5f;
     [SerializeField] private float teleportRadius = 5f;
     [SerializeField] private float stopAnimationTime = 4f;
 
+    // Animator parameters
+    private const string _horizontal = "Horizontal";
+    private const string _vertical = "Vertical";
+    private const string _lastHorz = "LastHorizontal";
+    private const string _lastVert = "LastVertical";
+    private const string _attackBool = "Attack";
+
+    private State currentState = State.Follow;
     private Rigidbody2D rb;
-    // Commented out animator and sprite renderer for now
-    // private Animator anim;
-    // private SpriteRenderer sr;
-    private Vector2 movement;
+    private Animator anim;
+    private SpriteRenderer sr;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        // anim = GetComponent<Animator>();
-        // sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+        sr  = GetComponent<SpriteRenderer>();
 
-        if (player == null)
-            player = GameObject.FindWithTag("Player")?.transform;
-
-        if (health == null)
-            health = GetComponent<EnemyHealth>();
-
-        // if (anim == null)
-        //     Debug.LogWarning($"[{name}] No Animator found on boss.");
+        if (player == null) player = GameObject.FindWithTag("Player")?.transform;
+        if (health == null) health = GetComponent<EnemyHealth>();
     }
 
     private void Update()
     {
-          if (!shardDropped && health.CurrentHealth <= 0)
+        // 1) Death & shard drop
+        if (!shardDropped && health.CurrentHealth <= 0)
         {
             DropShard();
             shardDropped = true;
@@ -74,7 +65,7 @@ public class BossEnemyAI : MonoBehaviour
             return;
         }
 
-        // Phase-2 trigger
+        // 2) Switch to teleport phase
         if (!hasEnteredPhaseTwo && health.CurrentHealth <= phaseTwoHealthThreshold)
         {
             hasEnteredPhaseTwo = true;
@@ -84,131 +75,124 @@ public class BossEnemyAI : MonoBehaviour
             return;
         }
 
-
+        // 3) Follow or attack
         if (currentState == State.Follow)
         {
+            // if already swinging, ignore follow/attack checks
+            if (_isAttacking)
+                return;
+
             FollowPlayer();
 
-            if (Vector2.Distance(rb.position, player.position) < detectionRadius)
-                StartCoroutine(ChargeRoutine());
+            float dist = Vector2.Distance(rb.position, player.position);
+            if (dist < detectionRadius)
+            {
+                // start the swing coroutine
+                StartCoroutine(AttackRoutine());
+            }
+        }
+        else
+        {
+            // ensure attack flag is reset if we teleport away mid‐swing
+            anim.SetBool(_attackBool, false);
+            _isAttacking = false;
         }
     }
 
     private void FollowPlayer()
     {
         Vector2 dir = ((Vector2)player.position - rb.position).normalized;
-        movement = dir;
         rb.velocity = dir * followSpeed;
-        // Animation disabled for now
-        // SetAnimation(dir);
+        SetAnimation(dir);
     }
 
-    private IEnumerator ChargeRoutine()
+    private IEnumerator AttackRoutine()
     {
-        currentState = State.Charging;
+        _isAttacking = true;
+
+        // stop movement
         rb.velocity = Vector2.zero;
+        // enter attack anim
+        anim.SetBool(_attackBool, true);
 
-        yield return new WaitForSeconds(chargePrepTime);
+        // wait halfway if you need to time any “hit” effect here:
+        yield return new WaitForSeconds(attackDuration * 0.5f);
 
-        Vector2 dir = ((Vector2)player.position - rb.position).normalized;
-        float t = 0f;
-        while (t < chargeDuration)
-        {
-            // SetAnimation(dir);
-            rb.velocity = dir * chargeSpeed;
-            t += Time.deltaTime;
-            yield return null;
-        }
+        // deal damage / spawn hit effect / etc.
 
-        Vector2 retreat = -dir;
-        while (Vector2.Distance(transform.position, player.position) < retreatDistance)
-        {
-            // SetAnimation(retreat);
-            rb.velocity = retreat * retreatSpeed;
-            yield return null;
-        }
+        // finish the rest of the animation
+        yield return new WaitForSeconds(attackDuration * 0.5f);
 
-        rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(recoverTime);
-
-        currentState = State.Follow;
+        // exit attack anim
+        anim.SetBool(_attackBool, false);
+        _isAttacking = false;
     }
 
     private IEnumerator TeleportPhase()
     {
         while (true)
         {
-            // go invisible & pause animation (disabled)
+            // invisibility (commented out)
             // sr.enabled = false;
-            // if (anim != null)
-            //     anim.enabled = false;
+            // anim.enabled = false;
 
             float timer = 0f;
-            bool doneTeleport = false;
+            bool teleported = false;
             while (timer < invisibilityDuration)
             {
-                if (!doneTeleport)
+                if (!teleported)
                 {
                     Vector2 dest = (Vector2)player.position + Random.insideUnitCircle * teleportRadius;
                     rb.position = dest;
                     rb.velocity = Vector2.zero;
-                    doneTeleport = true;
+                    teleported = true;
                 }
                 timer += Time.deltaTime;
                 yield return null;
             }
 
-            // re-show animation (disabled)
-            // sr.enabled = true;
-            // if (anim != null)
-            //     anim.enabled = true;
-            yield return new WaitForSeconds(postAppearDelay);
+            sr.enabled  = true;
+            anim.enabled = true;
 
-            // follow burst
             float elapsed = 0f;
             while (elapsed < teleportFollowDuration)
             {
                 Vector2 dir = ((Vector2)player.position - rb.position).normalized;
-                // Animation disabled
                 rb.velocity = dir * followSpeed;
+                SetAnimation(dir);
+                   float dist = Vector2.Distance(rb.position, player.position);
+            if (dist < detectionRadius)
+            {
+                // start the swing coroutine
+                StartCoroutine(AttackRoutine());
+            }
                 elapsed += Time.deltaTime;
                 yield return null;
             }
 
-            // stop and idle
             rb.velocity = Vector2.zero;
-            yield return new WaitForSeconds(stopAnimationTime);
-
-            // go invisible for next cycle (disabled)
-            // sr.enabled = false;
-            // if (anim != null)
-            //     anim.enabled = false;
         }
     }
 
-    // Animation method commented out
-    // private void SetAnimation(Vector2 dir)
-    // {
-    //     anim.SetFloat(_horizontal, dir.x);
-    //     anim.SetFloat(_vertical, dir.y);
-    //     if (dir != Vector2.zero)
-    //     {
-    //         anim.SetFloat(_lastHorizontal, dir.x);
-    //         anim.SetFloat(_lastVertical, dir.y);
-    //     }
-    // }
-     private void DropShard()
+    private void SetAnimation(Vector2 dir)
+    {
+        anim.SetFloat(_horizontal, dir.x);
+        anim.SetFloat(_vertical, dir.y);
+        if (dir != Vector2.zero)
+        {
+            anim.SetFloat(_lastHorz, dir.x);
+            anim.SetFloat(_lastVert, dir.y);
+        }
+    }
+
+    private void DropShard()
     {
         if (shardPrefab == null)
         {
             Debug.LogWarning($"[{name}] No shard prefab assigned!");
             return;
         }
-
-        Vector3 spawnPos = shardSpawnPoint != null
-            ? shardSpawnPoint.position
-            : transform.position;
-
+        Vector3 spawnPos = shardSpawnPoint != null ? shardSpawnPoint.position : transform.position;
         Instantiate(shardPrefab, spawnPos, Quaternion.identity);
     }
 }
