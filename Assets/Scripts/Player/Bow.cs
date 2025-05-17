@@ -13,19 +13,25 @@ public class Bow : MonoBehaviour
     [SerializeField] private Vector2 downOffset;
     [SerializeField] private float projectileSpeed = 10f;
     [SerializeField] private float lifeTime = 5f;
-    [SerializeField] private int magazineSize = 5;
-    [SerializeField] private float reloadDuration = 2f;
     [SerializeField] private float attackDuration = 0.2f; // Duration of attack animation
     
-    private int _shotsRemaining;
-    private bool _isReloading = false;
+    // Mana system parameters
+    [Header("Mana System")]
+    [SerializeField] private float maxMana = 100f;
+    [SerializeField] private float currentMana = 100f;
+    [SerializeField] private float manaPerShot = 20f;
+    [SerializeField] private float manaRegenRate = 10f; // Mana regained per second
+    [SerializeField] private float manaRegenDelay = 1f; // Delay before mana starts regenerating after shooting
+    
     private bool _isAttacking = false;
+    private bool _canRegenMana = true;
+    private float _lastShotTime = -999f;
     private PlayerControls _controls;
     
     private void Awake()
     {
         _controls = new PlayerControls();
-        _shotsRemaining = magazineSize;
+        currentMana = maxMana;
     }
     
     private void OnEnable()
@@ -41,6 +47,12 @@ public class Bow : MonoBehaviour
     }
     
     private void Update()
+    {
+        UpdateFacing();
+        RegenMana();
+    }
+    
+    private void UpdateFacing()
     {
         Vector2 dir = playerMovement.LastMovement;
         if (dir == Vector2.zero) return;
@@ -66,6 +78,22 @@ public class Bow : MonoBehaviour
         }
     }
     
+    private void RegenMana()
+    {
+        // Check if we should start regenerating mana
+        if (Time.time > _lastShotTime + manaRegenDelay)
+        {
+            _canRegenMana = true;
+        }
+        
+        // Regenerate mana when not shooting
+        if (_canRegenMana && currentMana < maxMana)
+        {
+            currentMana += manaRegenRate * Time.deltaTime;
+            currentMana = Mathf.Min(currentMana, maxMana);
+        }
+    }
+    
     private void ApplyFacing(float zAngle, Vector2 offset)
     {
         transform.localEulerAngles = new Vector3(0f, 0f, zAngle);
@@ -74,19 +102,16 @@ public class Bow : MonoBehaviour
     
     private void OnSwing(InputAction.CallbackContext ctx)
     {
-        // Don't allow shooting while attacking or reloading
-        if (_isAttacking || _isReloading)
+        // Don't allow shooting while attacking
+        if (_isAttacking)
         {
-            if (_isReloading)
-            {
-                Debug.Log("[Bow] Reloading – please wait.");
-            }
             return;
         }
         
-        if (_shotsRemaining <= 0)
+        // Check if we have enough mana
+        if (currentMana < manaPerShot)
         {
-            StartCoroutine(ReloadRoutine());
+            Debug.Log($"[Bow] Not enough mana! Current: {currentMana:F1}/{maxMana}");
             return;
         }
         
@@ -107,8 +132,12 @@ public class Bow : MonoBehaviour
         // Fire the arrow midway through the animation
         yield return new WaitForSeconds(attackDuration * 0.5f);
         
-        _shotsRemaining--;
-        Debug.Log($"[Bow] Fired! {_shotsRemaining}/{magazineSize} arrows left.");
+        // Consume mana
+        currentMana -= manaPerShot;
+        _lastShotTime = Time.time;
+        _canRegenMana = false;
+        
+        Debug.Log($"[Bow] Fired! Mana: {currentMana:F1}/{maxMana}");
         Shoot();
         
         // Wait for the rest of the animation to complete
@@ -121,9 +150,6 @@ public class Bow : MonoBehaviour
         playerMovement.EnableMovement();
         
         _isAttacking = false;
-        
-        if (_shotsRemaining <= 0)
-            StartCoroutine(ReloadRoutine());
     }
     
     private void Shoot()
@@ -134,19 +160,20 @@ public class Bow : MonoBehaviour
         Destroy(proj, lifeTime);
     }
     
-    private IEnumerator ReloadRoutine()
+    // Public getter for UI to display mana
+    public float GetCurrentMana()
     {
-        _isReloading = true;
-        
-        // Optional: You could trigger a reload animation here
-        // playerAnimator.SetBool("Reloading", true);
-        
-        yield return new WaitForSeconds(reloadDuration);
-        
-        // Optional: End reload animation
-        // playerAnimator.SetBool("Reloading", false);
-        
-        _shotsRemaining = magazineSize;
-        _isReloading = false;
+        return currentMana;
+    }
+    
+    public float GetMaxMana()
+    {
+        return maxMana;
+    }
+    
+    // Optional: UI helper method to get normalized mana (0-1)
+    public float GetManaPercentage()
+    {
+        return currentMana / maxMana;
     }
 }
