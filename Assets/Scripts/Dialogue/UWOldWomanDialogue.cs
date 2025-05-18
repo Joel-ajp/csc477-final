@@ -12,14 +12,6 @@ public class UWOldWomanDialogue : MonoBehaviour
     private DialogueObject _currentDialogue;
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
-    private bool seenBefore;    //if player has already talked to shopkeeper
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        seenBefore = false;
-        // gameObject.SetActive(false);
-    }
 
     //Start dialogue
     void OnEnable()
@@ -54,29 +46,22 @@ public class UWOldWomanDialogue : MonoBehaviour
                     index = 1;
                     NextLine();
                 }
-                //continue option 1 text
-                else if (index == 1)
-                {
-                    index++;
-                    NextLine();
-                }
                 //option 2 (button 2 or r)
                 else if ((index == 0 || index == 2) && (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.R)))
                 {
-                    index = seenBefore ? 9 : 3;
+                    index = 3;
+                    NextLine();
+                }
+                //continue option text
+                else if (index == 1 || index >= 3 && index <= 8)
+                {
+                    index++;
                     NextLine();
                 }
                 //exit state
-                else if (index == 2 || index > 6)
+                else if (index == 2 || index > 8)
                 {
                     gameObject.SetActive(false);
-                }
-                //continue option 2 text
-                else if (index >= 3 && index <= 6)
-                {
-                    index++;
-                    seenBefore = true;
-                    NextLine();
                 }
             }
             //fast forward text scroll

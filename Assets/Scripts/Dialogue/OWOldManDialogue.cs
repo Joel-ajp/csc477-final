@@ -18,12 +18,12 @@ public class OWOldManDialogue : MonoBehaviour
     void Start()
     {
         necklaceTaken = false;
-        // gameObject.SetActive(false);
     }
 
     void Awake() // At the start load the required Dialogue
     {
         _currentDialogue = Resources.Load<DialogueObject>("Dialogue/OWOldManDialogue");
+        invMan = GameObject.FindObjectOfType<InventoryManager>();
     }
 
     //Start dialogue
@@ -82,8 +82,8 @@ public class OWOldManDialogue : MonoBehaviour
                 {
                     index++;
                     necklaceTaken = true;
+                    //add shard to inventory
                     invMan.gainedCrystal(crystalColor.YELLOW);
-                    //add shard to inventory - PLACEHOLDER
 
                     NextLine();
                 }
