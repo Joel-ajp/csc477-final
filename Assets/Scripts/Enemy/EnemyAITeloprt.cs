@@ -19,12 +19,14 @@ public class EnemyAITeloprt : MonoBehaviour
     private Rigidbody2D _rb;
     private Animator _anim;
     private SpriteRenderer _sr;
+    private CapsuleCollider2D _col;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _sr = GetComponent<SpriteRenderer>();
+        _col = GetComponent<CapsuleCollider2D>();
 
         if (player == null)
         {
@@ -40,54 +42,56 @@ public class EnemyAITeloprt : MonoBehaviour
     }
 
     private IEnumerator TeleportFollowLoop()
-{
-    while (true)
     {
-        // 2) Go invisible & pause animator
-        _sr.enabled = false;
-        _anim.enabled = false;
-
-        float timer = 0f;
-        bool doneTeleport = false;
-        while (timer < invisibilityDuration)
+        while (true)
         {
-            if (!doneTeleport)
+            // 2) Go invisible & pause animator
+            _sr.enabled = false;
+            _anim.enabled = false;
+            _col.enabled = false;
+
+            float timer = 0f;
+            bool doneTeleport = false;
+            while (timer < invisibilityDuration)
             {
-                // perform teleport , while still hidden
-                Vector2 dest = (Vector2)player.position + Random.insideUnitCircle * teleportRadius;
-                _rb.position = dest;
-                _rb.velocity = Vector2.zero;
-                doneTeleport = true;
+                if (!doneTeleport)
+                {
+                    // perform teleport , while still hidden
+                    Vector2 dest = (Vector2)player.position + Random.insideUnitCircle * teleportRadius;
+                    _rb.position = dest;
+                    _rb.velocity = Vector2.zero;
+                    doneTeleport = true;
+                }
+
+                timer += Time.deltaTime;
+                yield return null;  // wait one frame, stay hidden
             }
 
-            timer += Time.deltaTime;
-            yield return null;  // wait one frame, stay hidden
-        }
+            // 4) Now that invisibility window is over, re-show & animate
+            _sr.enabled = true;
+            _anim.enabled = true;
+            _col.enabled = true;
+            yield return new WaitForSeconds(postAppearDelay);
 
-        // 4) Now that invisibility window is over, re-show & animate
-        _sr.enabled  = true;
-        _anim.enabled = true;
-        yield return new WaitForSeconds(postAppearDelay);
+            // 8) Follow the player
+            float elapsed = 0f;
+            while (elapsed < followDuration)
+            {
+                Vector2 dir = ((Vector2)player.position - _rb.position).normalized;
 
-        // 8) Follow the player
-        float elapsed = 0f;
-        while (elapsed < followDuration)
-        {
-            Vector2 dir = ((Vector2)player.position - _rb.position).normalized;
+                // animate
+                _anim.SetFloat(_horizontal, dir.x);
+                _anim.SetFloat(_vertical, dir.y);
+                _anim.SetFloat(_lastHorizontal, dir.x);
+                _anim.SetFloat(_lastVertical, dir.y);
 
-            // animate
-            _anim.SetFloat(_horizontal,dir.x);
-            _anim.SetFloat(_vertical,dir.y);
-            _anim.SetFloat(_lastHorizontal,dir.x);
-            _anim.SetFloat(_lastVertical,dir.y);
+                // move
+                _rb.velocity = dir * followSpeed;
 
-            // move
-            _rb.velocity = dir * followSpeed;
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-          // 4) Stop animation and wait before disappearing
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            // 4) Stop animation and wait before disappearing
             _rb.velocity = Vector2.zero;
             _anim.SetFloat(_horizontal, 0f);
             _anim.SetFloat(_vertical, 0f);
@@ -96,14 +100,15 @@ public class EnemyAITeloprt : MonoBehaviour
             while (stopTimer < stopAnimation)
             {
                 stopTimer += Time.deltaTime;
-                yield return null; 
+                yield return null;
             }
 
             // 5) Go invisible for the next teleport cycle
             _sr.enabled = false;
             _anim.enabled = false;
+            _col.enabled = false;
+        }
     }
-}
 
 }
 
