@@ -45,12 +45,12 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -114,11 +114,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 7
-        y: 204
+        y: 323
         width: 96
         height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -135,11 +135,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 108
-        y: 205
+        y: 325
         width: 96
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: guy spritesheet_2
       rect:
         serializedVersion: 2
-        x: 7
-        y: 126
+        x: 218
+        y: 322
         width: 96
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: guy spritesheet_3
       rect:
         serializedVersion: 2
-        x: 110
-        y: 125
+        x: 322
+        y: 322
         width: 96
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: guy spritesheet_4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 40
+        x: 7
+        y: 246
         width: 96
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: guy spritesheet_5
       rect:
         serializedVersion: 2
-        x: 114
-        y: 41
+        x: 110
+        y: 244
         width: 96
         height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,6 +231,174 @@ TextureImporter:
       bones: []
       spriteID: ecbf264b8c4fbab47a3646736cb88219
       internalID: 1304877899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 239
+        width: 96
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3af65cc603d6a847a5f28187670bda3
+      internalID: 750489088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 240
+        width: 96
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a1762102b20194696df8128595ede2
+      internalID: 225845352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 159
+        width: 96
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6e3c672ee95f64abab0cfa5f1d044a
+      internalID: 1590345417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 160
+        width: 96
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ab08541bf7c7b4ea2445501491e506
+      internalID: 834123090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 154
+        width: 96
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599c3f7047ce73341a82694b76791ed9
+      internalID: -74808473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 153
+        width: 96
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e631dae9ad4204c8d81c7dd730a500
+      internalID: 113666830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 65
+        width: 96
+        height: 84
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6956779b29cd74f897f78dc45a9d85
+      internalID: 1541147147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 66
+        width: 96
+        height: 84
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5227f0efc3d388c44a9421bdb537846d
+      internalID: 8000802
       vertices: []
       indices: 
       edges: []
@@ -248,10 +416,18 @@ TextureImporter:
     nameFileIdTable:
       guy spritesheet_0: -1319852431
       guy spritesheet_1: -441593871
+      guy spritesheet_10: -74808473
+      guy spritesheet_11: 113666830
+      guy spritesheet_12: 1541147147
+      guy spritesheet_13: 8000802
       guy spritesheet_2: -7626960
       guy spritesheet_3: -1651970326
       guy spritesheet_4: -409066806
       guy spritesheet_5: 1304877899
+      guy spritesheet_6: 750489088
+      guy spritesheet_7: 225845352
+      guy spritesheet_8: 1590345417
+      guy spritesheet_9: 834123090
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
