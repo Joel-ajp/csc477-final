@@ -256,14 +256,16 @@ public class EnvironmentManager : MonoBehaviour
         // Play transformation animation if animator exists
         if (playerAnimator != null)
         {
-            SoundManager.Instance.Play(SoundType.TRANSPORT);
+
             // Debug.Log("Playing transformation animation");
             playerAnimator.SetTrigger(TRANSFORMATION_ANIM);
-
+            SoundManager.Instance.Play(SoundType.SWAP_CHARGE);
             // Wait until the point where we want to show the flash
             yield return new WaitForSeconds(flashDelay);
 
+
             // Play screen flash effect
+            SoundManager.Instance.Play(SoundType.DIM_SWAP);
             StartCoroutine(PlayScreenFlash());
 
             // Wait for remaining animation time

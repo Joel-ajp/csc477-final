@@ -21,14 +21,16 @@ public enum SoundType
     SUCCESS,
     DING,
     FIREBALL_CAST,
+    FIRE_HIT,
     HIT_SOUND,
     KILL_SOUND,
     SHOP_PURCHASE,
     GAME_OVER,
     VICTORY,
-    TRANSPORT
-
-
+    TRANSPORT,
+    GATE_OPEN,
+    DIM_SWAP,
+    SWAP_CHARGE
 }
 
 public class SoundCollection
@@ -158,6 +160,18 @@ public class SoundManager : MonoBehaviour
             )},
             { SoundType.TRANSPORT, new SoundCollection(
                 "Interaction/Click"
+            )},
+            { SoundType.GATE_OPEN, new SoundCollection(
+                "Interaction/GATE"
+            )},
+            { SoundType.FIRE_HIT, new SoundCollection(
+                "Interaction/Fire_Hit"
+            )},
+            { SoundType.DIM_SWAP, new SoundCollection(
+                "Interaction/dim_swap"
+            )},
+            { SoundType.SWAP_CHARGE, new SoundCollection(
+                "Interaction/swap_charge"
             )},
 
         };

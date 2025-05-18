@@ -28,7 +28,9 @@ public class DamageEnemy : MonoBehaviour
         {
             int totalDamage = damageAmount + stats.attack_damage;
             enemy.TakeDamage(totalDamage);
+
             // where we could some indication of destruction of arrow
+            SoundManager.Instance.Play(SoundType.FIRE_HIT, -1f, .5f);
             Destroy(gameObject);
         }
     }
