@@ -30,7 +30,9 @@ public enum SoundType
     TRANSPORT,
     GATE_OPEN,
     DIM_SWAP,
-    SWAP_CHARGE
+    SWAP_CHARGE,
+    BACKGROUND_OW,
+    BACKGROUND_UW
 }
 
 public class SoundCollection
@@ -79,6 +81,88 @@ public class SoundCollection
 
 public class SoundManager : MonoBehaviour
 {
+
+    // Logic to manage consistent background music
+    private AudioSource _backgroundSpeaker;
+    private SoundType? _currentlyPlayingMusic = null;
+    public float mainVolume = 1.0f;
+    private Dictionary<SoundType, SoundCollection> sounds;
+    // private AudioSource audioSrc; Not using a audio source anymore. Making new audio instances to prevent overlap
+    public static SoundManager Instance { get; private set; }
+    private Coroutine _musicFadeCoroutine; // This is so we can reference and stop the coroutine
+
+    private void Start()
+    {
+        GameObject bgMusicObj = new GameObject("BackgroundMusic");
+        bgMusicObj.transform.SetParent(transform);
+        _backgroundSpeaker = bgMusicObj.AddComponent<AudioSource>();
+        _backgroundSpeaker.loop = true;
+        DontDestroyOnLoad(bgMusicObj);
+    }
+
+    public void PlayBackgroundMusic(SoundType musicType, float fadeDuration = 1f)
+    {
+        if (_currentlyPlayingMusic == musicType)
+        {
+            return;
+        }
+
+
+        AudioClip clip = GetClip(musicType);
+        if (clip != null)
+        {
+            if (_musicFadeCoroutine != null) // If audio fade is already active, stop it and start again.
+            {
+                StopCoroutine(_musicFadeCoroutine);
+            }
+
+            _musicFadeCoroutine = StartCoroutine(FadeAndSwitchMusic(clip, fadeDuration, musicType));
+            _currentlyPlayingMusic = musicType;
+        }
+        else
+        {
+        }
+    }
+
+
+    private IEnumerator FadeAndSwitchMusic(AudioClip newClip, float duration, SoundType musicType)
+    {
+        float startVolume = _backgroundSpeaker.volume;
+
+        // fade out
+        float time = 0f;
+        while (time < duration)
+        {
+            _backgroundSpeaker.volume = Mathf.Lerp(startVolume, 0f, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        _backgroundSpeaker.volume = 0f;
+
+        // swap the clip
+        _backgroundSpeaker.Stop();
+        _backgroundSpeaker.clip = newClip;
+
+        // bg music needs to start later because of how it starts
+        if (musicType == SoundType.BACKGROUND_UW)
+        {
+            _backgroundSpeaker.time = 2f;
+        }
+
+        _backgroundSpeaker.Play();
+
+        // fade in
+        time = 0f;
+        while (time < duration)
+        {
+            _backgroundSpeaker.volume = Mathf.Lerp(0f, mainVolume, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        _backgroundSpeaker.volume = mainVolume;
+    }
+
+
     public AudioClip GetClip(SoundType type)
     {
         if (sounds.ContainsKey(type))
@@ -87,12 +171,6 @@ public class SoundManager : MonoBehaviour
         }
         return null;
     }
-
-    public float mainVolume = 1.0f;
-    private Dictionary<SoundType, SoundCollection> sounds;
-    // private AudioSource audioSrc; Not using a audio source anymore. Making new audio instances to prevent overlap
-
-    public static SoundManager Instance { get; private set; }
 
     // unity life cycle
     private void Awake()
@@ -172,6 +250,12 @@ public class SoundManager : MonoBehaviour
             )},
             { SoundType.SWAP_CHARGE, new SoundCollection(
                 "Interaction/swap_charge"
+            )},
+            { SoundType.BACKGROUND_OW, new SoundCollection(
+                "World_Music/OW_BGM"
+            )},
+            { SoundType.BACKGROUND_UW, new SoundCollection(
+                "World_Music/UW_BGM"
             )},
 
         };

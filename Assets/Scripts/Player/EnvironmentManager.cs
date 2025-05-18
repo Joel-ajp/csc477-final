@@ -228,6 +228,8 @@ public class EnvironmentManager : MonoBehaviour
             }
         }
         UpdateRichardState();
+        SoundManager.Instance.PlayBackgroundMusic(currentIndex == 0 ? SoundType.BACKGROUND_OW : SoundType.BACKGROUND_UW);
+
     }
 
     private void OnSwapEnvironment(InputAction.CallbackContext ctx)
@@ -260,6 +262,7 @@ public class EnvironmentManager : MonoBehaviour
             // Debug.Log("Playing transformation animation");
             playerAnimator.SetTrigger(TRANSFORMATION_ANIM);
             SoundManager.Instance.Play(SoundType.SWAP_CHARGE);
+
             // Wait until the point where we want to show the flash
             yield return new WaitForSeconds(flashDelay);
 
@@ -293,8 +296,9 @@ public class EnvironmentManager : MonoBehaviour
             environments[currentIndex].SetActive(true);
             // Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
         }
-
+        SoundManager.Instance.PlayBackgroundMusic(currentIndex == 0 ? SoundType.BACKGROUND_OW : SoundType.BACKGROUND_UW); // Swaps bg music, fades out then fades back in 
         UpdateRichardState();
+
 
         // Allow input again
         playerMovement.EnableMovement();
