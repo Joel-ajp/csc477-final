@@ -29,7 +29,7 @@ public class LeverPuzzleTracker : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.5f); // Check every half second
-            Debug.Log("Door Is Checked");
+            // Debug.Log("Door Is Checked");
             if (CheckLeverState() && !_endDoorOpen)
             {
                 _endDoorOpen = true;

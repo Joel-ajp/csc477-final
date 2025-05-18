@@ -24,7 +24,7 @@ public class InventoryManager : MonoBehaviour
     private GameObject _player;
     private PlayerLives lives;
     public Dictionary<crystalColor, GameObject> crystalIcons = new Dictionary<crystalColor, GameObject>();
-    private static List<crystalColor> heldCrystals = new List<crystalColor>{};
+    private static List<crystalColor> heldCrystals = new List<crystalColor> { };
 
     //// private variables
     public int curCrystals = 0;

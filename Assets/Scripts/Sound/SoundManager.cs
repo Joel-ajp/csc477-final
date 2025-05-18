@@ -139,7 +139,7 @@ public class SoundManager : MonoBehaviour
                 "Interaction/Ding"
             )},
             { SoundType.FIREBALL_CAST, new SoundCollection(
-                "Interaction/Click"
+                "Interaction/Fireball"
             )},
             { SoundType.HIT_SOUND, new SoundCollection(
                 "Interaction/Click"
@@ -164,10 +164,8 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void Play(SoundType type, float pitch = -1f)
+    public void Play(SoundType type, float pitch = -1f, float volume = 1f)
     {
-
-
         if (sounds.ContainsKey(type))
         {
             GameObject parent = GameObject.Find("tempAudio"); // Make a gameObject that all temp objects are made under
@@ -180,7 +178,7 @@ public class SoundManager : MonoBehaviour
             tempAudioObject.transform.parent = parent.transform; // set location
             var speaker = tempAudioObject.AddComponent<AudioSource>();
 
-            speaker.volume = Random.Range(0.70f, 1.0f) * mainVolume;
+            speaker.volume = Random.Range(0.70f, 1.0f) * mainVolume * volume;
             // Randomizes pitch if it isnt specified.
             if (pitch == -1f)
             {

@@ -181,7 +181,7 @@ public class EnvironmentManager : MonoBehaviour
         // Apply the current environment state
         ApplyCurrentEnvironmentState();
 
-        Debug.Log($"Applied environment state in new scene: Environment_{(currentIndex == 0 ? 'A' : 'B')} active");
+        // Debug.Log($"Applied environment state in new scene: Environment_{(currentIndex == 0 ? 'A' : 'B')} active");
     }
 
     private void FindEnvironmentsInScene()
@@ -196,7 +196,7 @@ public class EnvironmentManager : MonoBehaviour
         environments[1] = envB;
 
         // Log what we found
-        Debug.Log($"Found environments in scene: A={envA != null}, B={envB != null}");
+        // Debug.Log($"Found environments in scene: A={envA != null}, B={envB != null}");
     }
 
     private void FindPlayerReferences()
@@ -207,7 +207,7 @@ public class EnvironmentManager : MonoBehaviour
         if (player != null)
             playerAnimator = player.GetComponent<Animator>();
 
-        Debug.Log($"Found player reference - playerAnimator: {playerAnimator != null}");
+        // Debug.Log($"Found player reference - playerAnimator: {playerAnimator != null}");
     }
 
     private void ApplyCurrentEnvironmentState()
@@ -215,7 +215,7 @@ public class EnvironmentManager : MonoBehaviour
         // Safety check
         if (environments == null || environments.Length < 2)
         {
-            Debug.LogWarning("Cannot apply environment state - environments not found");
+            // Debug.LogWarning("Cannot apply environment state - environments not found");
             return;
         }
 
@@ -234,7 +234,7 @@ public class EnvironmentManager : MonoBehaviour
     {
         if (!ctx.performed || isTransforming) return;
 
-        Debug.Log("Swap Environment Initiated");
+        // Debug.Log("Swap Environment Initiated");
 
         // Safety check
         if (environments == null || environments.Length < 2)
@@ -257,7 +257,7 @@ public class EnvironmentManager : MonoBehaviour
         if (playerAnimator != null)
         {
             SoundManager.Instance.Play(SoundType.TRANSPORT);
-            Debug.Log("Playing transformation animation");
+            // Debug.Log("Playing transformation animation");
             playerAnimator.SetTrigger(TRANSFORMATION_ANIM);
 
             // Wait until the point where we want to show the flash
@@ -279,7 +279,7 @@ public class EnvironmentManager : MonoBehaviour
         if (environments[currentIndex] != null)
         {
             environments[currentIndex].SetActive(false);
-            Debug.Log("Deactivated Environment_" + (currentIndex == 0 ? 'A' : 'B'));
+            // Debug.Log("Deactivated Environment_" + (currentIndex == 0 ? 'A' : 'B'));
         }
 
         // Switch to next environment
@@ -289,7 +289,7 @@ public class EnvironmentManager : MonoBehaviour
         if (environments[currentIndex] != null)
         {
             environments[currentIndex].SetActive(true);
-            Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
+            // Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
         }
 
         UpdateRichardState();

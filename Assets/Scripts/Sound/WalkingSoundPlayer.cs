@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+
 
 public class WalkingSurface : MonoBehaviour
 {
@@ -32,7 +34,7 @@ public class WalkingSurface : MonoBehaviour
     void Start()
     {
         _parentRB = GetComponentInParent<Rigidbody2D>();
-        SetSurface(GroundSurfaceState.WOOD); // default
+        SetSurface(GroundSurfaceState.SAND); // default
     }
 
     // Update is called once per frame
@@ -53,7 +55,7 @@ public class WalkingSurface : MonoBehaviour
         }
 
         // This is a roundabout way of doing it, didnt want to mess with movement script yet, this can be improved later
-        if (_parentRB.velocity.magnitude > 0.05f && !_walking && _currentTilemapFloor != null)
+        if (_parentRB.velocity.magnitude > 0.05f && !_walking)
         {
             UpdateSurfaceCheck();
         }
@@ -69,16 +71,25 @@ public class WalkingSurface : MonoBehaviour
             // Makes sure that the wait time is based off the proper speed
             float clipLengthAdjust = clip.length / _pitchSpeed;
 
-            SoundManager.Instance.Play(_currentSurfaceSound, _pitchSpeed);
+            SoundManager.Instance.Play(_currentSurfaceSound, _pitchSpeed, .5f);
             yield return new WaitForSeconds(clipLengthAdjust);
+        }
+        else
+        {
+            Debug.Log("null>");
         }
         _walking = false;
     }
 
     public void UpdateSurfaceCheck()
     {
+        TileBase tile = null;
         Vector2 playerPosition = (Vector2)_parentRB.transform.position; // Player location on grid
-        TileBase tile = _currentTilemapFloor.GetTile(_currentTilemapFloor.WorldToCell(playerPosition)); // what tile they are on
+        if (_currentTilemapFloor != null)
+        {
+            tile = _currentTilemapFloor.GetTile(_currentTilemapFloor.WorldToCell(playerPosition)); // what tile they are on
+        }
+
         if (tile != null)
         {
             if (audioData.ContainsKey(tile))
@@ -89,12 +100,13 @@ public class WalkingSurface : MonoBehaviour
             }
             else
             {
+                Debug.Log("test");
+                SetSurface(GroundSurfaceState.WOOD);
                 StartCoroutine(PlayWalkSound());
             }
         }
         else
         {
-
             StartCoroutine(PlayWalkSound());
         }
     }
@@ -125,22 +137,20 @@ public class WalkingSurface : MonoBehaviour
         {
             case GroundSurfaceState.CONCRETE:
                 _currentSurfaceSound = SoundType.WALK_CONCRETE;
-                _pitchSpeed = 1.75f;
+                _pitchSpeed = UnityEngine.Random.Range(0.70f, 1.0f);
                 break;
             case GroundSurfaceState.WOOD:
                 _currentSurfaceSound = SoundType.WALK_WOOD;
-                _pitchSpeed = 1.25f;
+                _pitchSpeed = UnityEngine.Random.Range(1.2f, 1.3f);
                 break;
             case GroundSurfaceState.METAL:
                 _currentSurfaceSound = SoundType.WALK_METAL;
-                _pitchSpeed = 1.3f;
+                _pitchSpeed = UnityEngine.Random.Range(1.25f, 1.35f);
                 break;
             case GroundSurfaceState.SAND:
                 _currentSurfaceSound = SoundType.WALK_SAND;
-                _pitchSpeed = 1.4f;
+                _pitchSpeed = UnityEngine.Random.Range(1.3f, 1.5f);
                 break;
         }
     }
-
-
 }
