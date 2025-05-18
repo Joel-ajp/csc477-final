@@ -126,7 +126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8127125615663900747
 RectTransform:
   m_ObjectHideFlags: 0
@@ -224,7 +224,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4079292250263401816}
-  currentDialogue: {fileID: 11400000, guid: c0ea721a9d01cfe41af2bc0cb3628334, type: 2}
   textSpeed: 0.05
 --- !u!1001 &1090565744808818600
 PrefabInstance:
@@ -237,6 +236,14 @@ PrefabInstance:
     - target: {fileID: 3156252497919110334, guid: 5932558d739f39d409955485525e7f39, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016922194415043312, guid: 5932558d739f39d409955485525e7f39, type: 3}
+      propertyPath: m_margin.w
+      value: -8.359299
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016922194415043312, guid: 5932558d739f39d409955485525e7f39, type: 3}
+      propertyPath: m_margin.y
+      value: -22.050209
       objectReference: {fileID: 0}
     - target: {fileID: 4056028959164274278, guid: 5932558d739f39d409955485525e7f39, type: 3}
       propertyPath: m_text

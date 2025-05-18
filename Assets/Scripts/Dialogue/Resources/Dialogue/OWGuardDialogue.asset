@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: OWGuardDialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - dialogue: '
-
-      Greetings, Stranger. You''d best turn back. This place isn''t
-      for the feint of heart.
+  - dialogue: 'Greetings, Stranger. You''d best turn back. This place isn''t for
+      the feint of heart.
 
       [1/E: "Thanks, I''ll go, then."]
 
