@@ -252,10 +252,10 @@ public class SoundManager : MonoBehaviour
                 "Interaction/swap_charge"
             )},
             { SoundType.BACKGROUND_OW, new SoundCollection(
-                "World_Music/OW_BGM"
+                "World_Music/light"
             )},
             { SoundType.BACKGROUND_UW, new SoundCollection(
-                "World_Music/UW_BGM"
+                "World_Music/dark"
             )},
 
         };
