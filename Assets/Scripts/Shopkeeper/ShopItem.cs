@@ -100,11 +100,22 @@ public class ShopItem : MonoBehaviour
             Debug.Log($"Upgraded stat {stat} for {price} coins!");
             inventory.updateStat(stat);
         }
-        else if (type == "crystal")
+        else if (type == "crystalOW" || type == "crystalUW")
         {
             Debug.Log($"Purchased {itemName} for {price} coins!");
-            //inventory.gainedCrystal();
-            Destroy(this);
+
+            if (type == "crystalOW")
+            {
+                inventory.gainedCrystal(crystalColor.GREEN);
+                ShopStateManager.Instance.OWcrystalPurchased = true;
+            }
+            else if (type == "crystalUW")
+            {
+                inventory.gainedCrystal(crystalColor.PINK);
+                ShopStateManager.Instance.UWcrystalPurchased = true;
+            }
+
+            Destroy(gameObject);
         }
         else
         {
