@@ -705,13 +705,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8345e8b6c244ae88574353a0fd865a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystalIcons:
-  - {fileID: 7801221374087957330}
-  - {fileID: 6284507723687482133}
-  - {fileID: 2904787640430283095}
-  - {fileID: 3993062388578306648}
-  - {fileID: 4779045042717797101}
-  - {fileID: 2217640032981662587}
+  red: {fileID: 0}
+  orange: {fileID: 0}
+  yellow: {fileID: 0}
+  green: {fileID: 0}
+  purple: {fileID: 0}
+  pink: {fileID: 0}
   move: {fileID: 5432515187506284733}
   a_sp: {fileID: 7405976160127985692}
   a_dam: {fileID: 9083092450711644033}
@@ -1621,7 +1620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2582941893520276405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3354,7 +3353,7 @@ RectTransform:
   m_GameObject: {fileID: 6039450558359644720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.37245592, y: 0.37245592, z: 0.37245592}
+  m_LocalScale: {x: 0.42292368, y: 0.42292368, z: 0.42292368}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3353009708381737735}
@@ -3363,7 +3362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: 14.6}
+  m_AnchoredPosition: {x: 12, y: 0.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6481286098243868793
