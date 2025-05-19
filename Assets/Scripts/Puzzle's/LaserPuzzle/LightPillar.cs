@@ -15,11 +15,14 @@ public class LightPillar : MonoBehaviour
     {
         _renderer = GetComponent<SpriteRenderer>();
         _light = GetComponentInChildren<Light2D>();
+        SetActive(false);
     }
 
     public void SetActive(bool active)
     {
         _renderer.sprite = active ? ActiveSprite : InactiveSprite;
         _light.color = active ? Color.green : Color.red;
+        _light.intensity = 2f;
+        _light.pointLightOuterRadius = 2f;
     }
 }
