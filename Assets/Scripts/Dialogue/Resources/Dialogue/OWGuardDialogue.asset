@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: OWGuardDialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - dialogue: 'Greetings, Stranger. You''d best turn back. This place isn''t for
-      the feint of heart.
+  - dialogue: 'Greetings, Stranger. This cave was collapsed by order of the king.
+      It was deemed too dangerous.
 
       [1/E: "Thanks, I''ll go, then."]
 
       [2/R:
       "I''ve never fainted in my life."]'
-  - dialogue: Glad you're listening to reason.
-  - dialogue: Well, this armor's too heavy for me to stop you. Just don't say I didn't
-      give fair warning.
+  - dialogue: Glad you're listening to reason, also best not to mess with the lasers.
+  - dialogue: Well, this armor's too heavy for me to stop you. But no way your getting
+      past this.

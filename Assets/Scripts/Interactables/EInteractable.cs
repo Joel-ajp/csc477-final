@@ -37,9 +37,7 @@ public class EInteractable : MonoBehaviour
         var player = GameObject.FindWithTag("Player")?.transform;
         if (player != null)
         {
-
             float d = Vector2.Distance(player.position, transform.position);
-
             Highlight(d <= highlightRadius);
         }
         else
@@ -51,25 +49,32 @@ public class EInteractable : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
+        {
             playerInRange = true;
+            Highlight(true);
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
+        {
             playerInRange = false;
+            Highlight(false);
+        }
+
     }
 
     void Highlight(bool on)
     {
         GameObject exPrefab = Resources.Load<GameObject>("Exclamation");
 
-
+        Debug.Log("turning on");
         if (on && exclamationHighlight == null) // if its on and an instance doesnt exist already
         {
             Vector3 worldPosition = transform.position + Vector3.up * 1f;
-            exclamationHighlight = Instantiate(exPrefab, worldPosition * 1f, Quaternion.identity);
-
+            exclamationHighlight = Instantiate(exPrefab, worldPosition, Quaternion.identity, transform);
         }
         else if (!on && exclamationHighlight != null) // if its off and a instance exists
         {

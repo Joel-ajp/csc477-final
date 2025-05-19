@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: UWGuardDialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - dialogue: 'Woah, Stranger! Meshie asks Stranger to retreat! For Stranger''s own
-      safety!
+  - dialogue: 'Woah, Stranger! Meshie sees the pillars gone red. The king awakens.
+      Please leave!
 
       [1/E: "Thanks, I''ll go then."]
 
-      [2/R: "Some silly cave
-      doesn''t scare me!".]'
-  - dialogue: Phew, Meshie is very glad!
-  - dialogue: This cave hold many dangers! Even the powerful Meshie is afraid! Please
-      reconsider!!
+      [2/R: "Some silly
+      cave doesn''t scare me!".]'
+  - dialogue: Meshie is very glad! Do not return!
+  - dialogue: This cave hold many dangers! Leave the gate closed. Please reconsider!
