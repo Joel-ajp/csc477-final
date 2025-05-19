@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LaserMaterial
+  m_Name: Laser
   m_Shader: {fileID: -6465566751694194690, guid: e8fc94889bb5258438e1de09aab81546, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Laser:
-        m_Texture: {fileID: 2800000, guid: a6d4462ecdab1c041952f383d220b7f0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 57b2cdf6322890e499de7424d7263061, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -62,14 +62,14 @@ Material:
     - _QueueOffset: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.8616352, g: 0, b: 0, a: 0}
-    - _EmmisionStrength: {r: 10, g: 5, b: 0, a: 0}
+    - _EmissionColor: {r: 0.25, g: 0, b: 0, a: 0}
+    - _EmmisionStrength: {r: 10, g: 0, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _LaserColor: {r: 0.8805031, g: 0, b: 0, a: 0}
-    - _LaserSpeed: {r: -8, g: 0, b: 0, a: 0}
+    - _LaserSpeed: {r: -12, g: 0, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &8448581920110539060
+--- !u!114 &5435570538577606288
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
