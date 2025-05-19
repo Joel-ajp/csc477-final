@@ -44,7 +44,7 @@ public class EInteractable : MonoBehaviour
         }
         else
         {
-            Debug.Log("Thats Wierd");
+            //  Debug.Log("Thats Wierd");
         }
     }
 
