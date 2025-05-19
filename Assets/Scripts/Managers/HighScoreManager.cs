@@ -5,30 +5,42 @@ using UnityEngine;
 
 public class HighScoreManger : MonoBehaviour
 {
-    private int _score = 0;
+    private static int _score = 0;
+    private static int _speedScore = 10000; // Starting score
+    private int decayRate = 15; // Score lost per second
 
-    // Made this before seeing player lives already has it. 
-    // If we want to use this instead it may be better as we can do points based off this
-    // So we can have points added per crystal taken
-    // But current, This is not used.
+    private Coroutine decayCoroutine;
+
     void Start()
     {
         HS.Init(this, "Fractured");
+        decayCoroutine = StartCoroutine(DecayScoreOverTime());
     }
 
-    public void increaseScore(int num)
+    public static void increaseScore(int num)
     {
         _score += num;
+        Debug.Log(_score);
     }
 
-    public void decreaseScore(int num)
+    public static void decreaseScore(int num)
     {
         _score -= num;
+    }
+
+    private IEnumerator DecayScoreOverTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            _speedScore = Mathf.Max(0, _speedScore - decayRate);
+        }
     }
 
     public IEnumerator EndGame(string name)
     {
         Debug.Log("Game Over, Uploading Score");
+        _score += _speedScore; // adds in the score for completion time
         yield return new WaitForSeconds(5.0f);
         HS.SubmitHighScore(this, name, _score);
     }
