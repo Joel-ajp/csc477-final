@@ -15343,7 +15343,6 @@ MonoBehaviour:
   - {fileID: 1942219250}
   - {fileID: 432823829}
   - {fileID: 633867269}
-  - {fileID: 0}
   - {fileID: 2103634022}
   LaserEmitter: {fileID: 1696582801}
   door: {fileID: 1900508075}

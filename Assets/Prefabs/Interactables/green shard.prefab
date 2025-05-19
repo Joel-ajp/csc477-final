@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3064300233760194963, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064300233760194963, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064300233760194963, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.12367368
+      objectReference: {fileID: 0}
     - target: {fileID: 5032289935847015042, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
       propertyPath: color
       value: 2
@@ -51,6 +63,26 @@ PrefabInstance:
     - target: {fileID: 5381659828235573236, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633327925396372067, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633327925396372067, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21024525
+      objectReference: {fileID: 0}
+    - target: {fileID: 5962562683343451345, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.299276
+      objectReference: {fileID: 0}
+    - target: {fileID: 5962562683343451345, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5962562683343451345, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.41154212
       objectReference: {fileID: 0}
     - target: {fileID: 7844287245297362262, guid: 22dbb587ab8c36c4d9f2e78a98759b2f, type: 3}
       propertyPath: m_Color.b

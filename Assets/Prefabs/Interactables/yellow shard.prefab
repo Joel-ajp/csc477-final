@@ -8,6 +8,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4284221199523908936, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284221199523908936, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284221199523908936, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99435246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849619801381926922, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10867833
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849619801381926922, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.87369627
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849619801381926922, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.98742133
+      objectReference: {fileID: 0}
     - target: {fileID: 5318644015187397578, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
       propertyPath: highlightRadius
       value: 2
@@ -73,7 +97,8 @@ PrefabInstance:
       value: 0.9741714
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1166152744618968275, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
