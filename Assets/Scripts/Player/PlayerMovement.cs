@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private static bool _shouldSetPosition = false;
 
     // Added flag to control whether player movement is enabled
-    private bool _movementEnabled = true;
+    public bool _movementEnabled = true;
 
     // Public property to check if movement is enabled
     public bool MovementEnabled => _movementEnabled;

@@ -13,6 +13,7 @@ public class OWShopDialogue : MonoBehaviour
     private int index;  //line of dialogue
     private bool seenBefore;    //if player has already talked to shopkeeper
     public Shopkeeper keeperui;
+    private PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class OWShopDialogue : MonoBehaviour
     void Awake() // At the start load the required Dialogue
     {
         _currentDialogue = Resources.Load<DialogueObject>("Dialogue/OWShopDialogue");
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     //Start dialogue
@@ -31,6 +33,14 @@ public class OWShopDialogue : MonoBehaviour
         index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
+        //disable movement
+        playerMovement._movementEnabled = false;
+    }
+
+    private void OnDisable()
+    {
+        //reenable movement
+        playerMovement._movementEnabled = true;
     }
 
     private void Update()

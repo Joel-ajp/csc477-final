@@ -11,10 +11,12 @@ public class OWGuardDialogue : MonoBehaviour
     private DialogueObject _currentDialogue;
     public float textSpeed;
     private int index;
+    private PlayerMovement playerMovement;
 
     void Awake() // At the start load the required Dialogue
     {
         _currentDialogue = Resources.Load<DialogueObject>("Dialogue/OWGuardDialogue");
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     // Start is called before the first frame update
@@ -29,6 +31,14 @@ public class OWGuardDialogue : MonoBehaviour
         index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
+        //disable movement
+        playerMovement._movementEnabled = false;
+    }
+
+    private void OnDisable()
+    {
+        //reenable movement
+        playerMovement._movementEnabled = true;
     }
 
     private void Update()

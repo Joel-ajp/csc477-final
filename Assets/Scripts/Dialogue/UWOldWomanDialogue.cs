@@ -12,6 +12,7 @@ public class UWOldWomanDialogue : MonoBehaviour
     private DialogueObject _currentDialogue;
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
+    private PlayerMovement playerMovement;
 
     //Start dialogue
     void OnEnable()
@@ -19,11 +20,20 @@ public class UWOldWomanDialogue : MonoBehaviour
         index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
+        //disable movement
+        playerMovement._movementEnabled = false;
+    }
+
+    private void OnDisable()
+    {
+        //reenable movement
+        playerMovement._movementEnabled = true;
     }
 
     void Awake() // At the start load the required Dialogue
     {
         _currentDialogue = Resources.Load<DialogueObject>("Dialogue/UWOldWomanDialogue");
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     private void Update()

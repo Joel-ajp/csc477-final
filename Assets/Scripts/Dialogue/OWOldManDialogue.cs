@@ -13,6 +13,7 @@ public class OWOldManDialogue : MonoBehaviour
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
     private bool necklaceTaken;    //if player has already talked to shopkeeper
+    private PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class OWOldManDialogue : MonoBehaviour
     {
         _currentDialogue = Resources.Load<DialogueObject>("Dialogue/OWOldManDialogue");
         invMan = GameObject.FindObjectOfType<InventoryManager>();
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     //Start dialogue
@@ -32,6 +34,14 @@ public class OWOldManDialogue : MonoBehaviour
         index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
+        //disable movement
+        playerMovement._movementEnabled = false;
+    }
+
+    private void OnDisable()
+    {
+        //reenable movement
+        playerMovement._movementEnabled = true;
     }
 
     private void Update()
