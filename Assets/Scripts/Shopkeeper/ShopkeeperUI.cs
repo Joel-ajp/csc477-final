@@ -20,13 +20,14 @@ public class Shopkeeper : MonoBehaviour
     public TextMeshProUGUI HB;
 
     [Header("Reference Variables")]
+    public string shopID;
     public List<ShopItem> shopItems;
-
     private bool isOpen;
     private int index = 0;
     private int columns = 3;
     private GameObject player;
     private PlayerStats stats;
+    private bool inRange;
 
     void Start()
     {
@@ -35,11 +36,23 @@ public class Shopkeeper : MonoBehaviour
         UpdateHighlight();
         player = GameObject.FindGameObjectWithTag("Player");
         stats = player.GetComponent<PlayerStats>();
+
+        // checks to see if the crystal has already been bought and removes it if so
+        if (ShopStateManager.Instance.OWcrystalPurchased && shopItems.Count >= 5 && shopID == "ow")
+        {
+            shopItems[4].gameObject.SetActive(false);
+            shopItems[4] = null;
+        }
+        else if (ShopStateManager.Instance.UWcrystalPurchased && shopItems.Count >= 5 && shopID == "uw")
+        {
+            shopItems[4].gameObject.SetActive(false);
+            shopItems[4] = null;
+        }
     }
 
     void Update()
     {
-        if (!isOpen && Input.GetKeyDown(KeyCode.E))
+        if (!isOpen && Input.GetKeyDown(KeyCode.E) && inRange)
         {
             //open dialogue
             dialogue.SetActive(true);
@@ -136,6 +149,27 @@ public class Shopkeeper : MonoBehaviour
     public void purchaseItem()
     {
         shopItems[index].tryPurchase();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+           // Debug.Log("player shopping");
+            inRange = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            //Debug.Log("player done shopping");
+            inRange = false;
+            isOpen = false;
+            index = 0;
+            keeperUI.SetActive(false);
+        }
     }
 }
 
