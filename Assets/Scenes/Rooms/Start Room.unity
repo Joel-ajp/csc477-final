@@ -36569,6 +36569,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 360.11127
       objectReference: {fileID: 0}
+    - target: {fileID: 4972345868232817870, guid: 3c193b6cfcda00142a6c42085180f687, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972345868232817870, guid: 3c193b6cfcda00142a6c42085180f687, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1604385237}
+    - target: {fileID: 4972345868232817870, guid: 3c193b6cfcda00142a6c42085180f687, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSubmitScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972345868232817870, guid: 3c193b6cfcda00142a6c42085180f687, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SubmitScore, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6320948656170721686, guid: 3c193b6cfcda00142a6c42085180f687, type: 3}
       propertyPath: m_Name
       value: GameOver
