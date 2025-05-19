@@ -1270,8 +1270,8 @@ RectTransform:
   - {fileID: 668534273}
   - {fileID: 1241117201}
   - {fileID: 1352433946}
-  - {fileID: 803028321}
   - {fileID: 1549837318}
+  - {fileID: 803028321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ecfc4160ed62c4699ac2abce37369e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  before_load: 5
+  before_load: 10
   name: Start Room
 --- !u!95 &1049822541
 Animator:
@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1764,7 +1764,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: fe06fcb7c54185643b18c3d5f151e688, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
