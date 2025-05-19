@@ -8,6 +8,7 @@ TagManager:
   - VirtualCamera
   - FloorTilemap
   - UI
+  - DontDestroyObject
   layers:
   - Default
   - TransparentFX

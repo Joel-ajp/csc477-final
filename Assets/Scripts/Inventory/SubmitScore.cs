@@ -3,6 +3,7 @@ using TMPro;       // for TMP_InputField
 using UnityEngine.UI;  // for Button
 using HighScore;
 using System;   // for HS
+using UnityEngine.SceneManagement;
 
 public class SubmitScore : MonoBehaviour
 {
@@ -42,6 +43,9 @@ public class SubmitScore : MonoBehaviour
         // cleanup / unpause
         Time.timeScale = 1f;
         gameOverPanel.SetActive(false);
+
+        SceneManager.LoadScene("Main Menu rahhh");
+
         Destroy(gameObject);
     }
 
