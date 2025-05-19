@@ -7641,7 +7641,7 @@ MonoBehaviour:
   lives: 6
   flashDuration: 0.2
   livesText: {fileID: 886273418}
-  livesText2: {fileID: 0}
+  livesText2: {fileID: 1609980913}
   gameOverPanel: {fileID: 1429811942}
   nameInputField: {fileID: 1606321731}
   submitButton: {fileID: 1491155958}
@@ -7680,6 +7680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
+  _movementEnabled: 1
 --- !u!70 &541462670
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -46043,7 +46044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1547935587
 Transform:
   m_ObjectHideFlags: 0
@@ -46087,6 +46088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ecfc4160ed62c4699ac2abce37369e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  before_load: 10
+  name: 
 --- !u!1 &1578818993
 GameObject:
   m_ObjectHideFlags: 0
@@ -47044,6 +47047,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606321729}
   m_CullTransparentMesh: 1
+--- !u!114 &1609980913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 670940943087049918, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+  m_PrefabInstance: {fileID: 886273416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1703833400
 GameObject:
   m_ObjectHideFlags: 0
@@ -53979,7 +53993,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9027946373879814995, guid: 8a681b6f9215c65f79e997afd615756b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

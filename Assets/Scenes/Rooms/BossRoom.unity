@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbd4597aa4975c7da67642414bd3c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 6
+  startingHealth: 100
   coinReward: 1
 --- !u!114 &112211396
 MonoBehaviour:
