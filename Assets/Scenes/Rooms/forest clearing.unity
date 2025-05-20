@@ -16295,7 +16295,7 @@ MonoBehaviour:
   - {x: -4, y: 0, z: 0}
   - {x: -3, y: 2, z: 0}
   crystalSpawnPoint: {fileID: 764725178}
-  crystalReward: {fileID: 6985981091216253348, guid: 1e38ae30a5fcabe4cb4397c4e3fd192e, type: 3}
+  crystalReward: {fileID: 7955176569618381420, guid: 140e5d8d45718da47b9c8d543d44ac89, type: 3}
 --- !u!1 &411116807
 GameObject:
   m_ObjectHideFlags: 0
