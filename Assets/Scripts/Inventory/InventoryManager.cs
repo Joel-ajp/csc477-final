@@ -17,6 +17,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject pink;
 
     [Header("UI Stuff")]
+    public GameObject IntroLore;
     public TextMeshProUGUI move;
     public TextMeshProUGUI a_sp;
     public TextMeshProUGUI a_dam;
@@ -58,6 +59,8 @@ public class InventoryManager : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
         _player.GetComponent<PlayerStats>().updateStats(stat_levels);
         lives = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLives>();
+
+        IntroLore.SetActive(true);
     }
 
     // Update is called once per frame
