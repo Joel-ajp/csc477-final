@@ -21,10 +21,15 @@ public class CrystalInteraction : EInteractable
     void Start()
     {
         _inventoryManager = FindObjectOfType<InventoryManager>();
-        if (_inventoryManager == null)
+        if (_inventoryManager != null)
         {
-            //Debug.LogError("uhh why is it null?");
+            if (_inventoryManager.HasCrystal(color))
+            {
+                Debug.Log("Already have this crystal");
+                Destroy(gameObject);
+            }
         }
+
     }
 
     // Update is called once per frame
