@@ -7,7 +7,7 @@ public class Coins : MonoBehaviour
 
     [SerializeField] private TMP_Text coinsText;
 
-    public int coins;
+    public static int coins;
 
     public void Start()
     {
