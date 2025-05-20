@@ -37,6 +37,8 @@ public class EnemyAICharge : MonoBehaviour
     private void Update()
 {
     if (isBusy) return;
+     if (player == null)       // ← if the player was destroyed, bail out
+        return;
     
     float dist = Vector2.Distance(transform.position, player.position);
     if (dist < detectionRadius)
