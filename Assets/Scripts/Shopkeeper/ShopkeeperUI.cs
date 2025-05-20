@@ -28,6 +28,8 @@ public class Shopkeeper : MonoBehaviour
     private GameObject player;
     private PlayerStats stats;
     private bool inRange;
+    private PlayerMovement playerMovement;
+    private EnvironmentManager sceneSwap;
 
     void Start()
     {
@@ -36,6 +38,8 @@ public class Shopkeeper : MonoBehaviour
         UpdateHighlight();
         player = GameObject.FindGameObjectWithTag("Player");
         stats = player.GetComponent<PlayerStats>();
+        playerMovement = player.GetComponent<PlayerMovement>();
+        sceneSwap = GameObject.Find("GameManager").GetComponent<EnvironmentManager>();
 
         // checks to see if the crystal has already been bought and removes it if so
         if (ShopStateManager.Instance.OWcrystalPurchased && shopItems.Count >= 5 && shopID == "ow")
@@ -143,7 +147,18 @@ public class Shopkeeper : MonoBehaviour
         index = 0;
         keeperUI.SetActive(isOpen);
         if (isOpen)
+        {
             UpdateHighlight();
+            //Disallow player movement
+            playerMovement._movementEnabled = false;
+            sceneSwap.swapAllowed = false;
+        }
+        else
+        {
+            //Allow movement
+            playerMovement._movementEnabled = true;
+            sceneSwap.swapAllowed = true;
+        }
     }
 
     public void purchaseItem()

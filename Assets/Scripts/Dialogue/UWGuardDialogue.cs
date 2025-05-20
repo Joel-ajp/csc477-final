@@ -12,6 +12,7 @@ public class UWGuardDialogue : MonoBehaviour
     public float textSpeed;
     private int index;
     private PlayerMovement playerMovement;
+    private EnvironmentManager sceneSwap;
 
     // Start is called before the first frame update
     void Start()
@@ -27,18 +28,21 @@ public class UWGuardDialogue : MonoBehaviour
         StartCoroutine(TypeLine());
         //disable movement
         playerMovement._movementEnabled = false;
+        sceneSwap.swapAllowed = false;
     }
 
     private void OnDisable()
     {
         //reenable movement
         playerMovement._movementEnabled = true;
+        sceneSwap.swapAllowed = true;
     }
 
     void Awake() // At the start load the required Dialogue
     {
         _currentDialogue = Resources.Load<DialogueObject>("Dialogue/UWGuardDialogue");
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        sceneSwap = GameObject.Find("GameManager").GetComponent<EnvironmentManager>();
     }
 
     private void Update()

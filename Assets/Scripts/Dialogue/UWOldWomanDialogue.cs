@@ -13,6 +13,7 @@ public class UWOldWomanDialogue : MonoBehaviour
     public float textSpeed; //scroll speed
     private int index;  //line of dialogue
     private PlayerMovement playerMovement;
+    private EnvironmentManager sceneSwap;
 
     //Start dialogue
     void OnEnable()
@@ -22,18 +23,21 @@ public class UWOldWomanDialogue : MonoBehaviour
         StartCoroutine(TypeLine());
         //disable movement
         playerMovement._movementEnabled = false;
+        sceneSwap.swapAllowed = false;
     }
 
     private void OnDisable()
     {
         //reenable movement
         playerMovement._movementEnabled = true;
+        sceneSwap.swapAllowed = true;
     }
 
     void Awake() // At the start load the required Dialogue
     {
         _currentDialogue = Resources.Load<DialogueObject>("Dialogue/UWOldWomanDialogue");
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        sceneSwap = GameObject.Find("GameManager").GetComponent<EnvironmentManager>();
     }
 
     private void Update()
