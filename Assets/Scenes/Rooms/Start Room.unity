@@ -4353,6 +4353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WIN game over
       objectReference: {fileID: 0}
+    - target: {fileID: 6562360767428793068, guid: 821b6c6b932fa6c4db0a4e3381932bfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9121792798214910533, guid: 821b6c6b932fa6c4db0a4e3381932bfe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1786.4095
