@@ -225,7 +225,7 @@ public class SoundManager : MonoBehaviour
                 "Interaction/enemy_hit"
             )},
             { SoundType.KILL_SOUND, new SoundCollection(
-                "Interaction/enemy_kill"
+                "Interaction/enemy_death"
             )},
             { SoundType.SHOP_PURCHASE, new SoundCollection(
                 "Interaction/shop_purchase"
