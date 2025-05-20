@@ -68,7 +68,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (curCrystals >= 6)
         {
-            _player.GetComponent<PlayerLives>().kill();
+            _player.GetComponent<PlayerLives>().HandleWinGameOver();
         }
     }
 
