@@ -151,12 +151,14 @@ public class EnvironmentManager : MonoBehaviour
 
     private void OnEnable()
     {
+         if (Instance != this) return;
         controls.Player.SwapEnvironment.performed += OnSwapEnvironment;
         controls.Player.Enable();
     }
 
     private void OnDisable()
     {
+         if (Instance != this) return;
         controls.Player.SwapEnvironment.performed -= OnSwapEnvironment;
         controls.Player.Disable();
     }
@@ -212,6 +214,7 @@ public class EnvironmentManager : MonoBehaviour
 
         if (player != null)
             playerAnimator = player.GetComponent<Animator>();
+            playerMovement = player.GetComponent<PlayerMovement>();
 
         // Debug.Log($"Found player reference - playerAnimator: {playerAnimator != null}");
     }

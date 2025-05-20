@@ -10,6 +10,7 @@ public class SceneCleaner : MonoBehaviour
 {
     [Tooltip("Tags of objects that should be destroyed when returning to Main Menu")]
     [SerializeField] private string[] tagsToDestroy = { "DontDestroyObject" };
+    [SerializeField] private string[] namesToActivate = { "richard" };
     
     [Tooltip("Names of objects that should be destroyed when returning to Main Menu")]
     [SerializeField] private string[] namesToDestroy = { 
@@ -20,10 +21,31 @@ public class SceneCleaner : MonoBehaviour
         "hud (use this one)",
     };
 
-    private void Start()
+    private void Awake()
     {
         // Clean up DontDestroyOnLoad objects when Main Menu loads
         CleanupDontDestroyObjects();
+    }
+
+    private void Update()
+    { 
+
+        ActivateObjects();
+
+    }
+
+    private void ActivateObjects()
+    {
+        foreach (string objName in namesToActivate)
+        {
+            if (string.IsNullOrEmpty(objName)) continue;
+
+            GameObject obj = GameObject.Find(objName);
+            if (obj != null)
+            {
+                obj.SetActive(true);
+            }
+        }
     }
 
     /// <summary>
@@ -36,7 +58,7 @@ public class SceneCleaner : MonoBehaviour
         foreach (string tag in tagsToDestroy)
         {
             if (string.IsNullOrEmpty(tag)) continue;
-            
+
             GameObject[] objectsToDestroy = GameObject.FindGameObjectsWithTag(tag);
             foreach (GameObject obj in objectsToDestroy)
             {
@@ -44,12 +66,12 @@ public class SceneCleaner : MonoBehaviour
                 Destroy(obj);
             }
         }
-        
+
         // Then try to find objects by name
         foreach (string objName in namesToDestroy)
         {
             if (string.IsNullOrEmpty(objName)) continue;
-            
+
             GameObject obj = GameObject.Find(objName);
             if (obj != null)
             {

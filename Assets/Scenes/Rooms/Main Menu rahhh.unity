@@ -286,9 +286,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagsToDestroy: []
+  namesToActivate:
+  - richard
   namesToDestroy:
-  - ControlsManager
-  - '[Debug Updater]'
   - ShopStateManager
   - hud (use this one)
 --- !u!4 &260501280
