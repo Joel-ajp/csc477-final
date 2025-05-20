@@ -98,6 +98,7 @@ public class OWOldManDialogue : MonoBehaviour
                     necklaceTaken = true;
                     //add shard to inventory
                     invMan.gainedCrystal(crystalColor.YELLOW);
+                    SoundManager.Instance.Play(SoundType.DING);
 
                     NextLine();
                 }
