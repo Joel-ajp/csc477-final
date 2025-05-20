@@ -9223,9 +9223,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1977082967}
-  - {fileID: 1155883130}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &862423511
@@ -16536,7 +16534,7 @@ Transform:
   - {fileID: 283669027}
   - {fileID: 814453394}
   - {fileID: 2082442189}
-  m_Father: {fileID: 846699058}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1181436699
 GameObject:
@@ -22439,7 +22437,7 @@ Transform:
   - {fileID: 617615689}
   - {fileID: 1479262135}
   - {fileID: 1006833912}
-  m_Father: {fileID: 846699058}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &1977082968
 Grid:
@@ -22748,6 +22746,8 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1155883130}
+  - {fileID: 1977082967}
   - {fileID: 846699058}
   - {fileID: 1832498677}
   - {fileID: 1449635275}

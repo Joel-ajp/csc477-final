@@ -195,13 +195,21 @@ public class EnvironmentManager : MonoBehaviour
     private void FindEnvironmentsInScene()
     {
         // Find Environment_A and Environment_B in the current scene
-        GameObject envA = GameObject.Find(ENV_A_NAME);
-        GameObject envB = GameObject.Find(ENV_B_NAME);
+            var roots = SceneManager.GetActiveScene()
+                          .GetRootGameObjects();
+    environments = new GameObject[2];
+    foreach (var go in roots)
+    {
+        if (go.name == ENV_A_NAME)
+            environments[0] = go;
+        else if (go.name == ENV_B_NAME)
+            environments[1] = go;
+    }
 
-        // Store references in our array
-        environments = new GameObject[2];
-        environments[0] = envA;
-        environments[1] = envB;
+    if (environments[0] == null)
+        Debug.LogError($"[{nameof(EnvironmentManager)}] Could not find {ENV_A_NAME} in scene!");
+    if (environments[1] == null)
+        Debug.LogError($"[{nameof(EnvironmentManager)}] Could not find {ENV_B_NAME} in scene!");
 
         // Log what we found
         // Debug.Log($"Found environments in scene: A={envA != null}, B={envB != null}");

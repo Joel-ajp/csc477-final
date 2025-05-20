@@ -77,19 +77,19 @@ public class InventoryManager : MonoBehaviour
         crystalIcons[color].SetActive(true);
         heldCrystals.Add(color);
         curCrystals++;
-        
+
         // Print the newly acquired crystal
         Debug.Log("Player picked up a " + color.ToString() + " crystal!");
-        
+
         // Print all crystals the player currently has
         PrintCrystalInventory();
     }
-    
+
     // New method to print all crystals in inventory
     private void PrintCrystalInventory()
     {
         string crystalList = "Current Crystal Inventory (" + curCrystals + " total): ";
-        
+
         if (heldCrystals.Count == 0)
         {
             crystalList += "Empty";
@@ -99,7 +99,7 @@ public class InventoryManager : MonoBehaviour
             for (int i = 0; i < heldCrystals.Count; i++)
             {
                 crystalList += heldCrystals[i].ToString();
-                
+
                 // Add comma if not the last item
                 if (i < heldCrystals.Count - 1)
                 {
@@ -107,7 +107,7 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
-        
+
         Debug.Log(crystalList);
     }
 
@@ -189,10 +189,34 @@ public class InventoryManager : MonoBehaviour
                 break;
         }
     }
-    
+
     // Optional: Add a public method to print crystals on demand from other scripts
     public void PrintCurrentInventory()
     {
         PrintCrystalInventory();
+    }
+    public static void ResetInventory()
+    {
+        // 1) clear the static collections
+        heldCrystals.Clear();
+        stat_levels = new List<int> {1,1,1,1};
+
+        // 2) find the active InventoryManager in the scene
+        var mgr = GameObject.FindObjectOfType<InventoryManager>();
+        if (mgr != null)
+        {
+            // hide all icons
+            foreach (var icon in mgr.crystalIcons.Values)
+                icon.SetActive(false);
+
+            // reset the instance counter
+            mgr.curCrystals = 0;
+        }
+        else
+        {
+            Debug.LogWarning("ResetInventory: no InventoryManager found in the scene!");
+        }
+
+        Debug.Log("[InventoryManager] crystals & stats reset.");
     }
 }

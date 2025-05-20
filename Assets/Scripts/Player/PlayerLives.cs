@@ -34,6 +34,7 @@ public class PlayerLives : MonoBehaviour
     {
         UpdateLivesUI();
         gameOverPanel.SetActive(false);
+        winGameOverPanel.SetActive(false);
     }
 
     void Update()

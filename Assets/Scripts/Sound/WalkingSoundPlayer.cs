@@ -92,18 +92,20 @@ public class WalkingSurface : MonoBehaviour
 
         if (tile != null)
         {
-            if (audioData.ContainsKey(tile))
-            {
-                // Set the surface sound and update the surface state
-                SetSurface(audioData[tile]); // Uses the dictionary made above
-                StartCoroutine(PlayWalkSound());
-            }
-            else
-            {
-                Debug.Log("test");
-                SetSurface(GroundSurfaceState.WOOD);
-                StartCoroutine(PlayWalkSound());
-            }
+            // if (audioData.ContainsKey(tile))
+            // {
+            //     // Set the surface sound and update the surface state
+            //     SetSurface(audioData[tile]); // Uses the dictionary made above
+            //     StartCoroutine(PlayWalkSound());
+            // }
+            // else
+            // {
+            //     Debug.Log("test");
+            //     SetSurface(GroundSurfaceState.WOOD);
+            //     StartCoroutine(PlayWalkSound());
+
+            // }
+            StartCoroutine(PlayWalkSound()); // No longer swaps, only ever defaults to sand, out of time
         }
         else
         {
