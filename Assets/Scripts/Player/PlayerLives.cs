@@ -89,7 +89,7 @@ public class PlayerLives : MonoBehaviour
         // pass the coin score into your submit object
         int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 0;
         SubmitScore.SetCoinScore(coinScore);
-
+        StopAllCoroutines();
         // destroy player sprite so it disappears
         Destroy(gameObject);
     }
@@ -104,6 +104,7 @@ public class PlayerLives : MonoBehaviour
         // pass the coin score into your submit object
         int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 0;
         SubmitScore.SetCoinScore(coinScore);
+        StopAllCoroutines();
 
         // destroy player sprite so it disappears
         Destroy(gameObject);

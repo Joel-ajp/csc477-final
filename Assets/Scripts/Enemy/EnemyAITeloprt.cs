@@ -43,7 +43,9 @@ public class EnemyAITeloprt : MonoBehaviour
 
     private IEnumerator TeleportFollowLoop()
     {
-        while (true)
+        if (player == null)
+        yield break;
+        while (enabled && player != null)
         {
             // 2) Go invisible & pause animator
             _sr.enabled = false;
