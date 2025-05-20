@@ -3,6 +3,7 @@ using TMPro;       // ← for TMP_Text / TextMeshProUGUI
 using HighScore;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class PlayerLives : MonoBehaviour
 {
@@ -13,12 +14,12 @@ public class PlayerLives : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_InputField nameInputField;
     [SerializeField] private Button submitButton;
-    [SerializeField] private SubmitScore submitScoreObject;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI winScoreText;
 
     [SerializeField] private GameObject winGameOverPanel;
     [SerializeField] private TMP_InputField winNameInputField;
     [SerializeField] private Button winSubmitButton;
-    [SerializeField] private SubmitScore winSubmitScoreObject;
 
     private SpriteRenderer spriteRenderer;
     private Color defaultColor;
@@ -79,6 +80,7 @@ public class PlayerLives : MonoBehaviour
 
     private void HandleGameOver()
     {
+        scoreText.text = SubmitScore.getReturnScore().ToString();
         Debug.Log("Game Over");
         SoundManager.Instance.Play(SoundType.GAME_OVER);
         Time.timeScale = 0f;
@@ -86,7 +88,7 @@ public class PlayerLives : MonoBehaviour
 
         // pass the coin score into your submit object
         int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 0;
-        submitScoreObject.SetCoinScore(coinScore);
+        SubmitScore.SetCoinScore(coinScore);
 
         // destroy player sprite so it disappears
         Destroy(gameObject);
@@ -101,7 +103,7 @@ public class PlayerLives : MonoBehaviour
 
         // pass the coin score into your submit object
         int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 0;
-        winSubmitScoreObject.SetCoinScore(coinScore);
+        SubmitScore.SetCoinScore(coinScore);
 
         // destroy player sprite so it disappears
         Destroy(gameObject);

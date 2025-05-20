@@ -115,7 +115,7 @@ public class ShopItem : MonoBehaviour
                 ShopStateManager.Instance.UWcrystalPurchased = true;
             }
 
-            HighScoreManger.increaseScore(5000);
+            SubmitScore.increaseScore(5000);
             Destroy(gameObject);
         }
         else

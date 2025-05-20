@@ -43,7 +43,7 @@ public class CrystalInteraction : EInteractable
         if (_inventoryManager != null)
         {
             _inventoryManager.gainedCrystal(color); // Add to Inventory
-            HighScoreManger.increaseScore(5000);
+            SubmitScore.increaseScore(5000);
         }
         SoundManager.Instance.Play(SoundType.DING);
         Destroy(gameObject);

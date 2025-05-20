@@ -711,6 +711,7 @@ MonoBehaviour:
   green: {fileID: 0}
   purple: {fileID: 0}
   pink: {fileID: 0}
+  IntroLore: {fileID: 0}
   move: {fileID: 5432515187506284733}
   a_sp: {fileID: 7405976160127985692}
   a_dam: {fileID: 9083092450711644033}
@@ -951,6 +952,7 @@ GameObject:
   - component: {fileID: 430743018766422639}
   - component: {fileID: 5887547603573735320}
   - component: {fileID: 4821326595104143078}
+  - component: {fileID: 8673993915158172238}
   m_Layer: 5
   m_Name: hud (use this one)
   m_TagString: Untagged
@@ -1045,6 +1047,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8673993915158172238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889714134542567839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc99de6a8c89be46833e93b7ab10e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  submitScore: {fileID: 0}
 --- !u!1 &1896580044115211457
 GameObject:
   m_ObjectHideFlags: 0

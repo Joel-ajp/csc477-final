@@ -7032,11 +7032,11 @@ MonoBehaviour:
   gameOverPanel: {fileID: 2012937016}
   nameInputField: {fileID: 1604385238}
   submitButton: {fileID: 1604385236}
-  submitScoreObject: {fileID: 1604385237}
+  scoreText: {fileID: 1604385239}
+  winScoreText: {fileID: 0}
   winGameOverPanel: {fileID: 0}
   winNameInputField: {fileID: 0}
   winSubmitButton: {fileID: 0}
-  winSubmitScoreObject: {fileID: 0}
 --- !u!95 &541462668
 Animator:
   serializedVersion: 5
@@ -20190,6 +20190,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8673993915158172238, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
+      propertyPath: submitScore
+      value: 
+      objectReference: {fileID: 1604385237}
     - target: {fileID: 8695555248035657362, guid: feeaa618c58b7418e93c6d021b49d889, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -36556,7 +36560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320948656170721686, guid: 3c193b6cfcda00142a6c42085180f687, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8231923921857052991, guid: 3c193b6cfcda00142a6c42085180f687, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36639,6 +36643,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1604385239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6802992858379961469, guid: 3c193b6cfcda00142a6c42085180f687, type: 3}
+  m_PrefabInstance: {fileID: 1604385234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1750605225

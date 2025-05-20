@@ -4,20 +4,17 @@ using UnityEngine.UI;  // for Button
 using HighScore;
 using System;   // for HS
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SubmitScore : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_InputField nameInputField;
     [SerializeField] private Button submitButton;
-    private int _coinScore = 0;
-    private bool _isSubmitted = false;
+    private static int _score;
+    public static int _speedScore = 10000; // Starting score
 
-    private void Awake()
-    {
-        HS.Init(this, "Fractured");
-        submitButton.onClick.AddListener(OnSubmitScore);
-    }
+    private bool _isSubmitted = false;
 
     public void OnSubmitScore()
     {
@@ -27,30 +24,54 @@ public class SubmitScore : MonoBehaviour
         if (string.IsNullOrEmpty(playerName))
             playerName = "Anonymous";
 
-        // pull coin total from your singleton
-        int coinScore = _coinScore;
-
-        // submit the score
-        // Debug.Log(coinScore);
         if (_isSubmitted == false)
         {
-            HS.SubmitHighScore(this, playerName, coinScore);
+            _score += _speedScore; // add in the speedscore
+            HS.SubmitHighScore(this, playerName, _score);
             _isSubmitted = true;
         }
 
-        Debug.Log("Score submitted!");
+        Debug.Log("Score submitted!" + _score.ToString() + _speedScore.ToString());
 
         // cleanup / unpause
         Time.timeScale = 1f;
         gameOverPanel.SetActive(false);
-
+        Reset();
         SceneManager.LoadScene("Main Menu rahhh");
 
         Destroy(gameObject);
     }
 
-    public void SetCoinScore(int coin)
+    void Reset()
     {
-        _coinScore = coin;
+        _speedScore = 10000;
+        _score = 0;
+        _isSubmitted = false;
+    }
+
+    public static void increaseScore(int num)
+    {
+        _score += num;
+        Debug.Log(_score);
+    }
+
+    public static void decreaseScore(int num)
+    {
+        _score -= num;
+    }
+
+    public static void DecreaseSpeedScore(int amount)
+    {
+        _speedScore = Mathf.Max(0, _speedScore - amount);
+    }
+
+    public static int getReturnScore()
+    {
+        return _score + _speedScore;
+    }
+
+    public static void SetCoinScore(int coin)
+    {
+        _score += coin;
     }
 }
