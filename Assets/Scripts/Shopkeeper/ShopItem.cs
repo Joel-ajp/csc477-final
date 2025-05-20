@@ -112,6 +112,7 @@ public class ShopItem : MonoBehaviour
             else if (type == "crystalUW")
             {
                 inventory.gainedCrystal(crystalColor.PINK);
+                SoundManager.Instance.Play(SoundType.DING);
                 ShopStateManager.Instance.UWcrystalPurchased = true;
             }
 
