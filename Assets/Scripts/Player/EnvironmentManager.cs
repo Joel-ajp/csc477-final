@@ -37,6 +37,8 @@ public class EnvironmentManager : MonoBehaviour
 
     // Input controls
     private PlayerControls controls;
+    // Prevent dimension swapping while in menus/dialogue
+    public bool swapAllowed;
 
     // Reference to player's Animator component
     private Animator playerAnimator;
@@ -88,6 +90,10 @@ public class EnvironmentManager : MonoBehaviour
 
     private void Awake()
     {
+        //swap now allowed when game starts
+        //enabled when arrive in start room scene
+        swapAllowed = true;
+
         // Singleton pattern
         if (Instance != null && Instance != this)
         {
@@ -251,58 +257,61 @@ public class EnvironmentManager : MonoBehaviour
 
     private IEnumerator PerformEnvironmentTransition()
     {
-        // Set transforming flag to block input
-        isTransforming = true;
-        playerMovement.DisableMovement();
-
-        // Play transformation animation if animator exists
-        if (playerAnimator != null)
+        if (swapAllowed)
         {
+            // Set transforming flag to block input
+            isTransforming = true;
+            playerMovement.DisableMovement();
 
-            // Debug.Log("Playing transformation animation");
-            playerAnimator.SetTrigger(TRANSFORMATION_ANIM);
-            SoundManager.Instance.Play(SoundType.SWAP_CHARGE);
+            // Play transformation animation if animator exists
+            if (playerAnimator != null)
+            {
 
-            // Wait until the point where we want to show the flash
-            yield return new WaitForSeconds(flashDelay);
+                // Debug.Log("Playing transformation animation");
+                playerAnimator.SetTrigger(TRANSFORMATION_ANIM);
+                SoundManager.Instance.Play(SoundType.SWAP_CHARGE);
+
+                // Wait until the point where we want to show the flash
+                yield return new WaitForSeconds(flashDelay);
 
 
-            // Play screen flash effect
-            SoundManager.Instance.Play(SoundType.DIM_SWAP);
-            StartCoroutine(PlayScreenFlash());
+                // Play screen flash effect
+                SoundManager.Instance.Play(SoundType.DIM_SWAP);
+                StartCoroutine(PlayScreenFlash());
 
-            // Wait for remaining animation time
-            yield return new WaitForSeconds(transformationDuration - flashDelay);
+                // Wait for remaining animation time
+                yield return new WaitForSeconds(transformationDuration - flashDelay);
+            }
+            else
+            {
+                Debug.LogWarning("Cannot play animation - player animator not found");
+                yield return new WaitForSeconds(transformationDuration);
+            }
+
+            // Deactivate current environment
+            if (environments[currentIndex] != null)
+            {
+                environments[currentIndex].SetActive(false);
+                // Debug.Log("Deactivated Environment_" + (currentIndex == 0 ? 'A' : 'B'));
+            }
+
+            // Switch to next environment
+            currentIndex = (currentIndex + 1) % environments.Length;
+
+            // Activate new environment
+            if (environments[currentIndex] != null)
+            {
+                environments[currentIndex].SetActive(true);
+                // Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
+            }
+            SoundManager.Instance.PlayBackgroundMusic(currentIndex == 0 ? SoundType.BACKGROUND_OW : SoundType.BACKGROUND_UW); // Swaps bg music, fades out then fades back in 
+            UpdateRichardState();
+
+
+            // Allow input again
+            playerMovement.EnableMovement();
+            isTransforming = false;
         }
-        else
-        {
-            Debug.LogWarning("Cannot play animation - player animator not found");
-            yield return new WaitForSeconds(transformationDuration);
-        }
-
-        // Deactivate current environment
-        if (environments[currentIndex] != null)
-        {
-            environments[currentIndex].SetActive(false);
-            // Debug.Log("Deactivated Environment_" + (currentIndex == 0 ? 'A' : 'B'));
-        }
-
-        // Switch to next environment
-        currentIndex = (currentIndex + 1) % environments.Length;
-
-        // Activate new environment
-        if (environments[currentIndex] != null)
-        {
-            environments[currentIndex].SetActive(true);
-            // Debug.Log($"Switched to Environment_{(currentIndex == 0 ? 'A' : 'B')}");
-        }
-        SoundManager.Instance.PlayBackgroundMusic(currentIndex == 0 ? SoundType.BACKGROUND_OW : SoundType.BACKGROUND_UW); // Swaps bg music, fades out then fades back in 
-        UpdateRichardState();
-
-
-        // Allow input again
-        playerMovement.EnableMovement();
-        isTransforming = false;
     }
 
     private void UpdateRichardState()

@@ -10238,7 +10238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1939756604874825024, guid: ad28f10bccd9af14b968b40e71ed880a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19356,7 +19356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1939756604874825024, guid: 100f15d8ca9a0aa418e500a1d2989c80, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19413,6 +19413,8 @@ MonoBehaviour:
   richardGood: {fileID: 0}
   richardEvil: {fileID: 0}
   playerVariant: {fileID: 0}
+  playerMovement: {fileID: 0}
+  swapAllowed: 0
 --- !u!1 &1207479025
 GameObject:
   m_ObjectHideFlags: 0

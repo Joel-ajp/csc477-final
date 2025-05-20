@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4079292250263401816}
-  textSpeed: 0
+  textSpeed: 0.05
 --- !u!1001 &1090565744808818600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,6 +236,14 @@ PrefabInstance:
     - target: {fileID: 3156252497919110334, guid: 5932558d739f39d409955485525e7f39, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016922194415043312, guid: 5932558d739f39d409955485525e7f39, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016922194415043312, guid: 5932558d739f39d409955485525e7f39, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4056028959164274278, guid: 5932558d739f39d409955485525e7f39, type: 3}
       propertyPath: m_text
