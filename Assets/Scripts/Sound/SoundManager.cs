@@ -88,7 +88,20 @@ public class SoundManager : MonoBehaviour
     public float mainVolume = 1.0f;
     private Dictionary<SoundType, SoundCollection> sounds;
     // private AudioSource audioSrc; Not using a audio source anymore. Making new audio instances to prevent overlap
-    public static SoundManager Instance { get; private set; }
+    public static SoundManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                GameObject obj = new GameObject("SoundManager");
+                _instance = obj.AddComponent<SoundManager>();
+            }
+            return _instance;
+        }
+    }
+    private static SoundManager _instance;
+
     private Coroutine _musicFadeCoroutine; // This is so we can reference and stop the coroutine
 
     private void Start()
@@ -175,7 +188,18 @@ public class SoundManager : MonoBehaviour
     // unity life cycle
     private void Awake()
     {
-        Instance = this;
+
+
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+
+
         // audioSrc = GetComponent<AudioSource>();
         sounds = new Dictionary<SoundType, SoundCollection> {
         //  #################################################
@@ -259,38 +283,45 @@ public class SoundManager : MonoBehaviour
             )},
 
         };
-    }
 
+    }
 
     public void Play(SoundType type, float pitch = -1f, float volume = 1f)
     {
-        if (sounds.ContainsKey(type))
+        try
         {
-            GameObject parent = GameObject.Find("tempAudio"); // Make a gameObject that all temp objects are made under
-            if (parent == null)
+            if (sounds.ContainsKey(type))
             {
-                parent = new GameObject("tempAudio");
-            }
+                GameObject parent = GameObject.Find("tempAudio"); // Make a gameObject that all temp objects are made under
+                if (parent == null)
+                {
+                    parent = new GameObject("tempAudio");
+                }
 
-            GameObject tempAudioObject = new GameObject($"tempAudioObject_{type}");
-            tempAudioObject.transform.parent = parent.transform; // set location
-            var speaker = tempAudioObject.AddComponent<AudioSource>();
+                GameObject tempAudioObject = new GameObject($"tempAudioObject_{type}");
+                tempAudioObject.transform.parent = parent.transform; // set location
+                var speaker = tempAudioObject.AddComponent<AudioSource>();
 
-            speaker.volume = Random.Range(0.70f, 1.0f) * mainVolume * volume;
-            // Randomizes pitch if it isnt specified.
-            if (pitch == -1f)
-            {
-                speaker.pitch = Random.Range(0.70f, 1.0f);
-            }
-            else
-            {
-                speaker.pitch = pitch;
-            }
+                speaker.volume = Random.Range(0.70f, 1.0f) * mainVolume * volume;
+                // Randomizes pitch if it isnt specified.
+                if (pitch == -1f)
+                {
+                    speaker.pitch = Random.Range(0.70f, 1.0f);
+                }
+                else
+                {
+                    speaker.pitch = pitch;
+                }
 
-            // Setting to 1 since it needs to sink to the animation better
-            speaker.clip = sounds[type].GetRandClip();
-            speaker.Play();
-            Destroy(tempAudioObject, speaker.clip.length / Mathf.Abs(speaker.pitch)); // Math to only exist for the length of the audio clip
+                // Setting to 1 since it needs to sink to the animation better
+                speaker.clip = sounds[type].GetRandClip();
+                speaker.Play();
+                Destroy(tempAudioObject, speaker.clip.length / Mathf.Abs(speaker.pitch)); // Math to only exist for the length of the audio clip
+            }
+        }
+        catch
+        {
+            Debug.Log("this was the issue");
         }
     }
 }
