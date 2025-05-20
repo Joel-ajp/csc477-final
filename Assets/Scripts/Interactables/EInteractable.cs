@@ -70,7 +70,7 @@ public class EInteractable : MonoBehaviour
     {
         GameObject exPrefab = Resources.Load<GameObject>("Exclamation");
 
-        Debug.Log("turning on");
+        // Debug.Log("turning on");
         if (on && exclamationHighlight == null) // if its on and an instance doesnt exist already
         {
             Vector3 worldPosition = transform.position + Vector3.up * 1f;
