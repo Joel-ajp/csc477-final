@@ -201,9 +201,9 @@ MonoBehaviour:
   normalColor: {r: 0.90588236, g: 0.48235294, b: 0.67058825, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   itemName: Lucky Crystal
-  itemDesc: Trust me, friend, this crystal is SO worth it. I pinky promise.
+  itemDesc: The crystal of POWER!!! Not a scam at all.
   type: crystalUW
-  price: 0
+  price: 250
   stat: 0
 --- !u!1 &59246012
 GameObject:
@@ -17912,9 +17912,9 @@ MonoBehaviour:
   normalColor: {r: 0.48235294, g: 0.7607843, b: 0.50980395, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   itemName: Dinky Crystal
-  itemDesc: Fell on my head, not even sure its worth anything
+  itemDesc: I think you need this more than me, pal.
   type: crystalOW
-  price: 0
+  price: 75
   stat: 0
 --- !u!1 &1057127114
 GameObject:
@@ -18116,6 +18116,7 @@ MonoBehaviour:
   richardEvil: {fileID: 0}
   playerVariant: {fileID: 0}
   playerMovement: {fileID: 0}
+  swapAllowed: 0
 --- !u!1 &1224329302
 GameObject:
   m_ObjectHideFlags: 0
