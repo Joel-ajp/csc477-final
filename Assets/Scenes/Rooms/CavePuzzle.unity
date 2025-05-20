@@ -15675,7 +15675,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.2, y: 1.68, z: 0}
-  m_LocalScale: {x: 8.772044, y: 8.772044, z: 8.772044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 354052118}
@@ -15728,7 +15728,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.024422884, y: -0.06512809}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 2.09
 --- !u!212 &915194806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23596,6 +23596,7 @@ MonoBehaviour:
   richardEvil: {fileID: 0}
   playerVariant: {fileID: 0}
   playerMovement: {fileID: 0}
+  swapAllowed: 0
 --- !u!4 &1394363571
 Transform:
   m_ObjectHideFlags: 0
