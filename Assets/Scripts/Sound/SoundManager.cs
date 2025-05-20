@@ -222,16 +222,16 @@ public class SoundManager : MonoBehaviour
                 "Interaction/Fireball"
             )},
             { SoundType.HIT_SOUND, new SoundCollection(
-                "Interaction/Click"
+                "Interaction/enemy_hit"
             )},
             { SoundType.KILL_SOUND, new SoundCollection(
-                "Interaction/Click"
+                "Interaction/enemy_kill"
             )},
             { SoundType.SHOP_PURCHASE, new SoundCollection(
-                "Interaction/Click"
+                "Interaction/shop_purchase"
             )},
             { SoundType.GAME_OVER, new SoundCollection(
-                "Interaction/Click"
+                "Interaction/player_death"
             )},
             { SoundType.VICTORY, new SoundCollection(
                 "Interaction/Click"
