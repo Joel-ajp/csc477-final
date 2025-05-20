@@ -63,10 +63,10 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (curCrystals >= 4)
+        if (curCrystals >= 6)
         {
             _player.GetComponent<PlayerLives>().kill();
-        }*/
+        }
     }
 
     public void gainedCrystal(crystalColor color)

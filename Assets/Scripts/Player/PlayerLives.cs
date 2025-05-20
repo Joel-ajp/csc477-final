@@ -15,6 +15,11 @@ public class PlayerLives : MonoBehaviour
     [SerializeField] private Button submitButton;
     [SerializeField] private SubmitScore submitScoreObject;
 
+    [SerializeField] private GameObject winGameOverPanel;
+    [SerializeField] private TMP_InputField winNameInputField;
+    [SerializeField] private Button winSubmitButton;
+    [SerializeField] private SubmitScore winSubmitScoreObject;
+
     private SpriteRenderer spriteRenderer;
     private Color defaultColor;
 
@@ -82,6 +87,21 @@ public class PlayerLives : MonoBehaviour
         // pass the coin score into your submit object
         int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 0;
         submitScoreObject.SetCoinScore(coinScore);
+
+        // destroy player sprite so it disappears
+        Destroy(gameObject);
+    }
+
+    public void HandleWinGameOver()
+    {
+        Debug.Log("You Win!");
+        SoundManager.Instance.Play(SoundType.GAME_OVER);
+        Time.timeScale = 0f;
+        winGameOverPanel.SetActive(true);
+
+        // pass the coin score into your submit object
+        int coinScore = (Coins.Instance != null) ? Coins.Instance.CurrentCoins : 0;
+        winSubmitScoreObject.SetCoinScore(coinScore);
 
         // destroy player sprite so it disappears
         Destroy(gameObject);
