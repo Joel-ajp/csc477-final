@@ -3159,6 +3159,7 @@ MonoBehaviour:
   richardEvil: {fileID: 0}
   playerVariant: {fileID: 0}
   playerMovement: {fileID: 0}
+  swapAllowed: 0
 --- !u!1 &174173596
 GameObject:
   m_ObjectHideFlags: 0
@@ -17114,9 +17115,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.024422884, y: -0.06512809}
+  m_Offset: {x: -0.024422884, y: -0.63}
   serializedVersion: 2
-  m_Radius: 0.91929483
+  m_Radius: 1.2
 --- !u!212 &1411086634
 SpriteRenderer:
   m_ObjectHideFlags: 0
