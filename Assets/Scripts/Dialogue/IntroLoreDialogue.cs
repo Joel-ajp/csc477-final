@@ -11,6 +11,8 @@ public class IntroLoreDialogue : MonoBehaviour
     private int index;
     private PlayerMovement playerMovement;
     private EnvironmentManager sceneSwap;
+    [SerializeField] private InventoryToggle invenToggler;
+    [SerializeField] private ControlToggle contToggler;
 
     void Awake() // At the start load the required Dialogue
     {
@@ -28,6 +30,8 @@ public class IntroLoreDialogue : MonoBehaviour
         //disable movement
         playerMovement._movementEnabled = false;
         sceneSwap.swapAllowed = false;
+        invenToggler.enabled = false;
+        contToggler.enabled = false;
     }
 
     private void OnDisable()
@@ -35,6 +39,8 @@ public class IntroLoreDialogue : MonoBehaviour
         //reenable movement
         playerMovement._movementEnabled = true;
         sceneSwap.swapAllowed = true;
+        invenToggler.enabled = true;
+        contToggler.enabled = true;
     }
 
     private void Update()
