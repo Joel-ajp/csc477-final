@@ -291,6 +291,7 @@ MonoBehaviour:
   namesToDestroy:
   - ShopStateManager
   - hud (use this one)
+  - GameManager
 --- !u!4 &260501280
 Transform:
   m_ObjectHideFlags: 0
