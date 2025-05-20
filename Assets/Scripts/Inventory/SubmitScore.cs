@@ -47,6 +47,7 @@ public class SubmitScore : MonoBehaviour
         _speedScore = 10000;
         _score = 0;
         _isSubmitted = false;
+        InventoryManager.ResetInventory();
     }
 
     public static void increaseScore(int num)
