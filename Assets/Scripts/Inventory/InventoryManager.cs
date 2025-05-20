@@ -74,6 +74,44 @@ public class InventoryManager : MonoBehaviour
         crystalIcons[color].SetActive(true);
         heldCrystals.Add(color);
         curCrystals++;
+        
+        // Print the newly acquired crystal
+        Debug.Log("Player picked up a " + color.ToString() + " crystal!");
+        
+        // Print all crystals the player currently has
+        PrintCrystalInventory();
+    }
+    
+    // New method to print all crystals in inventory
+    private void PrintCrystalInventory()
+    {
+        string crystalList = "Current Crystal Inventory (" + curCrystals + " total): ";
+        
+        if (heldCrystals.Count == 0)
+        {
+            crystalList += "Empty";
+        }
+        else
+        {
+            for (int i = 0; i < heldCrystals.Count; i++)
+            {
+                crystalList += heldCrystals[i].ToString();
+                
+                // Add comma if not the last item
+                if (i < heldCrystals.Count - 1)
+                {
+                    crystalList += ", ";
+                }
+            }
+        }
+        
+        Debug.Log(crystalList);
+    }
+
+    // New method to check if a crystal color is already in inventory
+    public bool HasCrystal(crystalColor color)
+    {
+        return heldCrystals.Contains(color);
     }
 
     /*public void lostCrystal(crystalColor color)
@@ -147,6 +185,11 @@ public class InventoryManager : MonoBehaviour
                 Debug.Log("Did not enter a correct stat type");
                 break;
         }
-
+    }
+    
+    // Optional: Add a public method to print crystals on demand from other scripts
+    public void PrintCurrentInventory()
+    {
+        PrintCrystalInventory();
     }
 }
