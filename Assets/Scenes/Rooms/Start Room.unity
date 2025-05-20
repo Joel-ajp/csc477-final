@@ -36857,7 +36857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbd4597aa4975c7da67642414bd3c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 1
+  startingHealth: 2
   coinReward: 200
 --- !u!1 &1766245410
 GameObject:

@@ -421,9 +421,9 @@ MonoBehaviour:
   shardSpawnPoint: {fileID: 0}
   player: {fileID: 0}
   health: {fileID: 112211395}
-  phaseTwoHealthThreshold: 3
-  followSpeed: 3
-  detectionRadius: 5
+  phaseTwoHealthThreshold: 50
+  followSpeed: 4
+  detectionRadius: 1
   attackDuration: 1
   invisibilityDuration: 1
   postAppearDelay: 0.8
